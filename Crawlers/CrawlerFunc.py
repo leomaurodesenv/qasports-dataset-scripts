@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def Request(
+def request_link(
     url: str,
     url_base: str,
     wiki_special: str = "/wiki/Special:AllPages",
@@ -64,7 +64,7 @@ def Request(
 
         # request next page
         if proxima != -1:
-            url_wiki, other_url, broken_url = Request(
+            url_wiki, other_url, broken_url = request_link(
                 url=proxima,
                 url_base=url_base,
                 url_wiki=url_wiki,

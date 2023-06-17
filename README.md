@@ -16,21 +16,22 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 
 We have sorted the resources into five separate folders.
 - 🔧 [Crawlers/](Crawlers/) - Gathering wiki links.
-- 🔧 [Fetching/](Fetching/) - 
+- 🔧 [Fetching/](Fetching/) - Fetching raw data from links.
 - 🔧 [Processing/](Processing/) - 
 - 🔧 [ExtractingContexts/](ExtractingContexts/) - 
 - 🔧 [QuestionAnswering/](QuestionAnswering/) - .
 
 ```sh
-# Creating a virtual Python machine
+# Creating a virtual environment
 $ python -m venv .venv
 $ source .venv/bin/activate
 # Installing packages
 $ pip install -r requirements.txt
 
-# 1. Gathering links (35 seconds to run)
-# outputs in Output/ folder
+# 1. Gathering links (run: ~35 seconds)
 $ python -m Crawlers.CrawlerRun
+# 2. Fetching wiki pages (run: )
+$ python -m Fetching.FetchRun
 
 # ..doing..
 ```

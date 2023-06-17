@@ -1,6 +1,8 @@
 # dev
 black
 isort
+tqdm
 # crawler
 requests~=2.31.0
 beautifulsoup4~=4.12.2
+pandas~=2.0.2

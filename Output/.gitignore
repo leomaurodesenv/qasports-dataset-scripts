@@ -1,4 +1,5 @@
 *.txt
 *.csv
+*.json
 *.html
 !.gitkeep
