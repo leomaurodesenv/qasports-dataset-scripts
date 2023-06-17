@@ -16,7 +16,7 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 
 We have sorted the resources into five separate folders.
 - 🔧 [Crawlers/](Crawlers/) - Gathering wiki links.
-- 🔧 [Fetching/](Fetching/) - Fetching raw data from links.
+- 🔧 [Fetching/](Fetching/) - Fetching raw HTML from links.
 - 🔧 [Processing/](Processing/) - 
 - 🔧 [ExtractingContexts/](ExtractingContexts/) - 
 - 🔧 [QuestionAnswering/](QuestionAnswering/) - .

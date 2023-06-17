@@ -4,7 +4,7 @@ from .FetchFunc import fetch_all_html
 print("Fetching basketball")
 fetch_all_html(
     links_path="Output/basketball_links.csv",
-    folder_path="Output/raw/basketball",
+    folder_path="Output/raw_html/basketball",
     test=True,
 )
 
@@ -12,7 +12,7 @@ fetch_all_html(
 print("Fetching soccer")
 fetch_all_html(
     links_path="Output/soccer_links.csv",
-    folder_path="Output/raw/soccer",
+    folder_path="Output/raw_html/soccer",
     test=True
 )
 
@@ -20,6 +20,6 @@ fetch_all_html(
 print("Fetching american football")
 fetch_all_html(
     links_path="Output/football_links.csv",
-    folder_path="Output/raw/football",
+    folder_path="Output/raw_html/football",
     test=True
 )
