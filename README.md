@@ -19,7 +19,7 @@ We have sorted the resources into five separate folders.
 - 🔧 [Fetching/](Fetching/) - Fetching raw HTML from links.
 - 🔧 [Processing/](Processing/) - Process and clean textual data.
 - 🔧 [ExtractingContexts/](ExtractingContexts/) - Extract contexts from data.
-- 🔧 [QuestionAnswering/](QuestionAnswering/) - Generate question and answers.
+- 🔧 [QuestionAnswering/](QuestionAnswering/) - Generate questions and answers.
 
 ```sh
 # Creating a virtual environment
@@ -36,8 +36,8 @@ $ python -m Fetching.FetchRun
 $ python -m Processing.ProcRun
 # 4. Extracting context (run: ~35 seconds)
 $ python -m ExtractingContexts.ContextRun
-# 5. Question and answer generation (run: ~39 days)
-$ python -m 
+# 5. Questions and answers generation (run: ~39 days)
+$ python -m QuestionAnswer.QARun
 ```
 
 ---
