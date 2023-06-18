@@ -32,9 +32,10 @@ $ pip install -r requirements.txt
 $ python -m Crawlers.CrawlerRun
 # 2. Fetching wiki pages (run: ~97h)
 $ python -m Fetching.FetchRun
-# 3. Processing, clean text (run: 50 minutes)
+# 3. Processing, clean text (run: ~50 minutes)
 $ python -m Processing.ProcRun
-
+# 4. Extracting context (run: ~35 seconds)
+$ python -m ExtractingContexts.ContextRun
 
 # ..doing..
 ```
