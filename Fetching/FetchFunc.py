@@ -88,7 +88,7 @@ def fetch_html(url: str, folder_path: str):
 def fetch_all_html(links_path: str, folder_path: str, test: bool = False):
     """Fetching all urls in CSV"""
     df = pd.read_csv(links_path)
-    print(f"{folder_path}:", df.shape[0])
+    print(f"{folder_path} (Testing={test}):", df.shape[0])
     for i, row in tqdm(df.iterrows()):
         fetch_html(url=row["url"], folder_path=folder_path)
         if test and i > 99:
