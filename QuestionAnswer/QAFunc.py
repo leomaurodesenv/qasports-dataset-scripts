@@ -27,7 +27,7 @@ def generate_qa(input_file: str, output_file: str, test: bool = False):
     print("total documents", len(document_store.get_all_documents()))
 
     # Generate Questions and Answers
-    question_generator = QuestionGenerator()
+    question_generator = QuestionGenerator(num_queries_per_doc=1)
     reader = FARMReader("deepset/roberta-base-squad2", return_no_answer=True)
     qag_pipeline = QuestionAnswerGenerationPipeline(question_generator, reader)
 
