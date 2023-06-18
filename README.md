@@ -4,7 +4,7 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 
 **Paper**: _under submission review_.
 
-> **Abstract**: doing
+> **Abstract**: writing.
 
 ---
 ## Download
@@ -18,8 +18,8 @@ We have sorted the resources into five separate folders.
 - 🔧 [Crawlers/](Crawlers/) - Gathering wiki links.
 - 🔧 [Fetching/](Fetching/) - Fetching raw HTML from links.
 - 🔧 [Processing/](Processing/) - Process and clean textual data.
-- 🔧 [ExtractingContexts/](ExtractingContexts/) - 
-- 🔧 [QuestionAnswering/](QuestionAnswering/) - 
+- 🔧 [ExtractingContexts/](ExtractingContexts/) - Extract contexts from data.
+- 🔧 [QuestionAnswering/](QuestionAnswering/) - Generate question and answers.
 
 ```sh
 # Creating a virtual environment
@@ -36,8 +36,8 @@ $ python -m Fetching.FetchRun
 $ python -m Processing.ProcRun
 # 4. Extracting context (run: ~35 seconds)
 $ python -m ExtractingContexts.ContextRun
-
-# ..doing..
+# 5. Question and answer generation (run: ~39 days)
+$ python -m 
 ```
 
 ---
