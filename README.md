@@ -19,7 +19,7 @@ We have sorted the resources into five separate folders.
 - 🔧 [Fetching/](Fetching/) - Fetching raw HTML from links.
 - 🔧 [Processing/](Processing/) - Process and clean textual data.
 - 🔧 [ExtractingContexts/](ExtractingContexts/) - Extract contexts from data.
-- 🔧 [QuestionAnswering/](QuestionAnswering/) - Generate questions and answers.
+- 🔧 [QuestionAnswer/](QuestionAnswer/) - Generate questions and answers.
 
 ```sh
 # Creating a virtual environment
