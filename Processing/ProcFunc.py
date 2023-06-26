@@ -14,7 +14,7 @@ def clean_text(text: str):
     text = text.replace("\n", " ")
     text = text.replace("\\", " ")
     text = re.sub(r"[ ]+", " ", text)
-    return text
+    return text.strip()
 
 
 def process_htlm(folder_path: str, output_path: str):
@@ -40,7 +40,7 @@ def process_htlm(folder_path: str, output_path: str):
                     infobox = ""
             else:
                 infobox = ""
-            data["infobox"] = infobox
+            data["infobox"] = clean_text(infobox)
 
             # body content
             body = content.get_text()
@@ -50,6 +50,8 @@ def process_htlm(folder_path: str, output_path: str):
             body = body.split("References")[0]
 
             data["text"] = body
+            data["title"] = data["title"][0]
+            data["categories"] = [clean_text(item) for item in data["categories"]]
             data.pop("html")
 
             file_output = str(Path(output_path) / filename)

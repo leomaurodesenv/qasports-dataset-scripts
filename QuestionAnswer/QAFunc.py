@@ -15,13 +15,14 @@ logging.getLogger("haystack").setLevel(logging.INFO)
 def generate_qa(input_file: str, output_file: str, test: bool = False):
     """Generate Questions and Answers"""
     df = pd.read_csv(input_file, sep=",")
-    print(df)
+    # print(df)
 
     # Document Store
     document_store = InMemoryDocumentStore()
     # Save documents in Document Store
     docs = [{"content": row["context"], **row} for _, row in df.iterrows()]
-    if test: docs = docs[:5]
+    if test:
+        docs = docs[:5]
     document_store.write_documents(docs)
 
     print("total documents", len(document_store.get_all_documents()))

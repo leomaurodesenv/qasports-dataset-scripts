@@ -30,7 +30,7 @@ $ pip install -r requirements.txt
 
 # 1. Gathering links (run: ~35 seconds)
 $ python -m Crawlers.CrawlerRun
-# 2. Fetching wiki pages (run: ~97h)
+# 2. Fetching wiki pages (run: ~40h)
 $ python -m Fetching.FetchRun
 # 3. Processing, clean text (run: ~50 minutes)
 $ python -m Processing.ProcRun
