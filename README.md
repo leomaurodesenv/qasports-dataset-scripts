@@ -36,7 +36,7 @@ $ python -m Fetching.FetchRun
 $ python -m Processing.ProcRun
 # 4. Extracting context (run: ~35 seconds)
 $ python -m ExtractingContexts.ContextRun
-# 5. Questions and answers generation (run: ~39 days)
+# 5. Questions and answers generation (run: ~36 days)
 $ python -m QuestionAnswer.QARun
 ```
 
