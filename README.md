@@ -1,6 +1,6 @@
 # 📄 QASports: Question Answering Dataset about Sports
 
-This repository presents a collection of codes to elaborate the dataset named "QASports", the first large sports question answering dataset for open questions. QASports contains real data of players, teams and matches from the sports soccer, basketball and American football. It counts over 1.8 million questions and answers about 54k preprocessed, cleaned and organized documents from Wikipedia-like sources.
+This repository presents a collection of codes to elaborate the dataset named "QASports", the first large sports question answering dataset for open questions. QASports contains real data of players, teams and matches from the sports soccer, basketball and American football. It counts over 1.5 million questions and answers about 54k preprocessed, cleaned and organized documents from Wikipedia-like sources.
 
 **Paper**: _under submission review_.
 
@@ -9,7 +9,8 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 ---
 ## Download
 
-🎲 Dataset: https://osf.io/n7r23/
+- 🎲 Dataset: https://osf.io/n7r23/
+- 🎲 Dataset: https://huggingface.co/datasets/PedroCJardim/QASports/
 
 ---
 ## Dataset Elaboration
