@@ -47,10 +47,14 @@ $ python -m QuestionAnswer.QARun
 The citation will be updated when accepted, _paper is under submission review_.
 
 ```tex
-@misc{jardim:2023:qasports-dataset,
+@inproceedings{jardim:2023:qasports-dataset,
     author={Pedro Calciolari Jardim and Leonardo Mauro Pereira Moraes and Cristina Dutra Aguiar},
-    title={QASports: Question Answering Dataset about Sports},
-    year={2023},
-    url={https://github.com/leomaurodesenv/qasports-dataset-scripts},
+    title = {{QASports}: A Question Answering Dataset about Sports}, 
+    booktitle = {Proceedings of the Brazilian Symposium on Databases: Dataset Showcase Workshop},
+    address = {Belo Horizonte, MG, Brazil},
+    url = {https://github.com/leomaurodesenv/qasports-dataset-scripts},
+    publisher = {Brazilian Computer Society},
+    pages = {1-12},
+    year = {2023}
 }
 ```
