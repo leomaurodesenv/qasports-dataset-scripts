@@ -3,6 +3,7 @@ black==24.3.0
 isort==5.13.2
 tqdm==4.65.0
 commitizen==3.18.4
+pre-commit==3.6.2
 # crawler
 requests~=2.31
 beautifulsoup4~=4.12
