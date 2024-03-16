@@ -1,4 +1,4 @@
-from .CrawlerFunc import request_link, create_csv
+from .CrawlerFunc import create_csv, request_link
 
 # Basketball
 url_wiki, other_url, broken_url = request_link(

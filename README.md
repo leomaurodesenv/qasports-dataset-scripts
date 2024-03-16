@@ -28,6 +28,8 @@ $ python -m venv .venv
 $ source .venv/bin/activate
 # Installing packages
 $ pip install -r requirements.txt
+# Setup pre-commit
+$ pre-commit install
 
 # 1. Gathering links (run: ~35 seconds)
 $ python -m Crawlers.CrawlerRun
@@ -47,7 +49,7 @@ $ python -m QuestionAnswer.QARun
 ```tex
 @inproceedings{jardim:2023:qasports-dataset,
     author={Pedro Calciolari Jardim and Leonardo Mauro Pereira Moraes and Cristina Dutra Aguiar},
-    title = {{QASports}: A Question Answering Dataset about Sports}, 
+    title = {{QASports}: A Question Answering Dataset about Sports},
     booktitle = {Proceedings of the Brazilian Symposium on Databases: Dataset Showcase Workshop},
     address = {Belo Horizonte, MG, Brazil},
     url = {https://github.com/leomaurodesenv/qasports-dataset-scripts},
