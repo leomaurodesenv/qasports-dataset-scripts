@@ -28,6 +28,8 @@ $ python -m venv .venv
 $ source .venv/bin/activate
 # Installing packages
 $ pip install -r requirements.txt
+# Setup pre-commit
+$ pre-commit install
 
 # 1. Gathering links (run: ~35 seconds)
 $ python -m Crawlers.CrawlerRun
