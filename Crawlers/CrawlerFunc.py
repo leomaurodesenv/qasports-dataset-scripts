@@ -23,9 +23,10 @@ def request_link(
         # request HTML page
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
-        soup = soup.body.contents[7].contents[5].contents[3]
+        soup_content = soup.body.contents[9].contents[7]
+
         # get page links
-        links = soup.find_all("a")
+        links = soup_content.find_all("a")
         urls_and_titles = [(link.get("href")) for link in links]
 
         # controllers
