@@ -1,0 +1,16 @@
+name: "Continuous Integration"
+run-name: Running tests on "${{ github.ref }}" by "${{ github.actor }}"
+on: push
+
+jobs:
+  # Run pre-commit hooks
+  pre-commit:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: "pip" # caching pip dependencies
+      - run: pip install -r requirements.txt
+      - run: pre-commit run --all-files
