@@ -37,7 +37,7 @@ $ pip install -r requirements.txt
 $ pre-commit install
 
 # 1. Gathering links (run: ~35 seconds)
-$ python -m Crawlers.CrawlerRun
+$ python -m src.crawlers.run
 # 2. Fetching wiki pages (run: ~40h)
 $ python -m Fetching.FetchRun
 # 3. Processing, clean text (run: ~50 minutes)
