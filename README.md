@@ -21,11 +21,11 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 ## Dataset Elaboration
 
 We have sorted the resources into five separate folders.
-- 🔧 [Crawlers/](Crawlers/) - Gathering wiki links.
-- 🔧 [Fetching/](Fetching/) - Fetching raw HTML from links.
-- 🔧 [Processing/](Processing/) - Process and clean textual data.
-- 🔧 [ExtractingContexts/](ExtractingContexts/) - Extract contexts from data.
-- 🔧 [QuestionAnswer/](QuestionAnswer/) - Generate questions and answers.
+- 🔧 [src/Crawlers/](src/Crawlers/) - Gathering wiki links.
+- 🔧 [src/Fetching/](src/Fetching/) - Fetching raw HTML from links.
+- 🔧 [src/Processing/](src/Processing/) - Process and clean textual data.
+- 🔧 [src/ExtractingContexts/](src/ExtractingContexts/) - Extract contexts from data.
+- 🔧 [src/QuestionAnswer/](src/QuestionAnswer/) - Generate questions and answers.
 
 ```sh
 # Creating a virtual environment
@@ -37,7 +37,7 @@ $ pip install -r requirements.txt
 $ pre-commit install
 
 # 1. Gathering links (run: ~35 seconds)
-$ python -m Crawlers.CrawlerRun
+$ python -m src.crawlers.run
 # 2. Fetching wiki pages (run: ~40h)
 $ python -m Fetching.FetchRun
 # 3. Processing, clean text (run: ~50 minutes)
