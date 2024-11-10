@@ -24,7 +24,7 @@ We have sorted the resources into five separate folders.
 - 🔧 [src/crawlers/](src/crawlers/) - Gathering wiki links.
 - 🔧 [src/fetching/](src/fetching/) - Fetching raw HTML from links.
 - 🔧 [src/processing/](src/processing/) - Process and clean textual data.
-- 🔧 [src/ExtractingContexts/](src/ExtractingContexts/) - Extract contexts from data.
+- 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
 - 🔧 [src/QuestionAnswer/](src/QuestionAnswer/) - Generate questions and answers.
 
 ```sh
@@ -43,7 +43,7 @@ $ python -m src.fetching.run
 # 3. Processing, clean text (run: ~50 minutes)
 $ python -m src.processing.run
 # 4. Extracting context (run: ~35 seconds)
-$ python -m ExtractingContexts.ContextRun
+$ python -m src.extracting_context.run
 # 5. Questions and answers generation (run: ~36 days)
 $ python -m QuestionAnswer.QARun
 ```
