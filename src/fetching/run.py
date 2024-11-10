@@ -17,7 +17,7 @@ fetching_pages = [
     },
 ]
 
-# Get the URLs
+# fecthing the URLs
 for wiki_page in fetching_pages:
     folder_name, csv_name = wiki_page["folder_name"], wiki_page["csv_name"]
     fetch_all_html(
