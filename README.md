@@ -24,7 +24,7 @@ We have sorted the resources into five separate folders.
 - 🔧 [src/crawlers/](src/crawlers/) - Gathering wiki links.
 - 🔧 [src/fetching/](src/fetching/) - Fetching raw HTML from links.
 - 🔧 [src/processing/](src/processing/) - Process and clean textual data.
-- 🔧 [src/ExtractingContexts/](src/ExtractingContexts/) - Extract contexts from data.
+- 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
 - 🔧 [src/QuestionAnswer/](src/QuestionAnswer/) - Generate questions and answers.
 
 ```sh
