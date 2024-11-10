@@ -21,9 +21,9 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 ## Dataset Elaboration
 
 We have sorted the resources into five separate folders.
-- 🔧 [src/Crawlers/](src/crawlers/) - Gathering wiki links.
-- 🔧 [src/Fetching/](src/fetching/) - Fetching raw HTML from links.
-- 🔧 [src/Processing/](src/processing/) - Process and clean textual data.
+- 🔧 [src/crawlers/](src/crawlers/) - Gathering wiki links.
+- 🔧 [src/fetching/](src/fetching/) - Fetching raw HTML from links.
+- 🔧 [src/processing/](src/processing/) - Process and clean textual data.
 - 🔧 [src/ExtractingContexts/](src/ExtractingContexts/) - Extract contexts from data.
 - 🔧 [src/QuestionAnswer/](src/QuestionAnswer/) - Generate questions and answers.
 

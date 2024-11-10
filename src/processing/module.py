@@ -17,7 +17,7 @@ def clean_text(text: str):
     return text.strip()
 
 
-def process_htlm(folder_path: str, output_path: str):
+def process_html(folder_path: str, output_path: str):
     """Process and clen HTML textual data"""
     # create output path
     Path(output_path).mkdir(parents=True, exist_ok=True)
@@ -49,7 +49,7 @@ def process_htlm(folder_path: str, output_path: str):
             body = body.split("External links")[0]
             body = body.split("References")[0]
 
-            data["text"] = body
+            data["text"] = body.strip()
             data["title"] = data["title"][0]
             data["categories"] = [clean_text(item) for item in data["categories"]]
             data.pop("html")

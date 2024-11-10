@@ -1,22 +1,22 @@
-from .ProcFunc import process_htlm
+from ..module import CLEAN_JSON_PATH, RAW_HTML_PATH
+from .module import process_html
 
-# Basketball
-print("Processing basketball")
-process_htlm(
-    folder_path="Output/raw_html/basketball",
-    output_path="Output/clean_json/basketball",
-)
+processing_pages = [
+    {
+        "folder_name": "basketball",
+    },
+    {
+        "folder_name": "football",
+    },
+    {
+        "folder_name": "americanfootball",
+    },
+]
 
-# Soccer
-print("Processing soccer")
-process_htlm(
-    folder_path="Output/raw_html/soccer",
-    output_path="Output/clean_json/soccer",
-)
-
-# American Football
-print("Processing american football")
-process_htlm(
-    folder_path="Output/raw_html/football",
-    output_path="Output/clean_json/football",
-)
+# processing the URLs
+for wiki_page in processing_pages:
+    folder_name = wiki_page["folder_name"]
+    process_html(
+        folder_path=(RAW_HTML_PATH / folder_name),
+        output_path=(CLEAN_JSON_PATH / folder_name)
+    )
