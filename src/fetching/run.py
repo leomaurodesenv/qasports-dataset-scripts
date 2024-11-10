@@ -1,25 +1,27 @@
-from .FetchFunc import fetch_all_html
+from ..module import OUTPUT_PATH, RAW_HTML_PATH
+from .module import fetch_all_html
 
-# Basketball
-print("Fetching basketball")
-fetch_all_html(
-    links_path="Output/basketball_links.csv",
-    folder_path="Output/raw_html/basketball",
-    test=True,
-)
+TESTING = True
+fetching_pages = [
+    {
+        "folder_name": "basketball",
+        "csv_name": "basketball-links.csv"
+    },
+    {
+        "folder_name": "football",
+        "csv_name": "football-links.csv"
+    },
+    {
+        "folder_name": "americanfootball",
+        "csv_name": "americanfootball-links.csv"
+    },
+]
 
-# Soccer
-print("Fetching soccer")
-fetch_all_html(
-    links_path="Output/soccer_links.csv",
-    folder_path="Output/raw_html/soccer",
-    test=True,
-)
-
-# American Football
-print("Fetching american football")
-fetch_all_html(
-    links_path="Output/football_links.csv",
-    folder_path="Output/raw_html/football",
-    test=True,
-)
+# Get the URLs
+for wiki_page in fetching_pages:
+    folder_name, csv_name = wiki_page["folder_name"], wiki_page["csv_name"]
+    fetch_all_html(
+        links_file=(OUTPUT_PATH / csv_name),
+        folder_path=(RAW_HTML_PATH / folder_name),
+        test=TESTING,
+    )
