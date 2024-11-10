@@ -35,12 +35,14 @@ def process_html(folder_path: str, output_path: str):
             infobox = content.find(class_="infobox")
             if infobox != None:
                 infobox = infobox.extract().get_text()
-                infobox = clean_text(text=infobox)
                 if infobox.startswith(" NOTE: This"):
                     infobox = ""
             else:
                 infobox = ""
             data["infobox"] = clean_text(infobox)
+
+            # remove table content
+            [table.extract() for table in content.find_all("table")]
 
             # body content
             body = content.get_text()
@@ -50,7 +52,7 @@ def process_html(folder_path: str, output_path: str):
             body = body.split("References")[0]
 
             data["text"] = body.strip()
-            data["title"] = data["title"][0]
+            data["title"] = clean_text(data["title"][0])
             data["categories"] = [clean_text(item) for item in data["categories"]]
             data.pop("html")
 
