@@ -43,7 +43,7 @@ $ python -m src.fetching.run
 # 3. Processing, clean text (run: ~50 minutes)
 $ python -m src.processing.run
 # 4. Extracting context (run: ~35 seconds)
-$ python -m ExtractingContexts.ContextRun
+$ python -m src.extracting_context.run
 # 5. Questions and answers generation (run: ~36 days)
 $ python -m QuestionAnswer.QARun
 ```
