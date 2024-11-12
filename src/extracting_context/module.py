@@ -10,7 +10,7 @@ def split_text_into_chunks(input_folder, output_file, chunk_size = 256):
     # initialize a list to hold all the text chunks
     text_chunks = []
 
-    # lLoop through each file in the input folder
+    # loop through each file in the input folder
     for filename in os.listdir(input_folder):
         file_path = Path(input_folder) / filename
 

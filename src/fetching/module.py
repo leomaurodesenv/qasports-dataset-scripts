@@ -60,8 +60,6 @@ def fetch_html(url: str, folder_path: str):
             for i in all_content:
                 if i != "," and i != "and" and i != "" and i != " \t\t\t":
                     categories.append(i)
-
-        # print(categories)
         instance["categories"] = categories
 
         # crawler date
