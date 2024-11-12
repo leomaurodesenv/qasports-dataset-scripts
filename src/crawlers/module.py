@@ -17,7 +17,7 @@ def request_link(
     """Collect all wiki links"""
     try:
         # request HTML page
-        response = requests.get(url, verify=False)
+        response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
         soup = soup.find(class_="mw-body-content")
         # get page links
@@ -40,7 +40,7 @@ def request_link(
             elif _url not in url_wiki and i is not None and "/wiki" in i:
                 url_wiki.append(_url)
 
-        # Request next page
+        # request next page
         if len(next_page_url):
             _next_page = next_page_url.pop()
             url_wiki, broken_url = request_link(
@@ -52,7 +52,6 @@ def request_link(
             )
 
     except requests.exceptions.RequestException:
-        # This is the correct syntax
         broken_url.append(url)
 
     return url_wiki, broken_url

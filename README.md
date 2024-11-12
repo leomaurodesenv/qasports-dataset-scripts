@@ -25,7 +25,7 @@ We have sorted the resources into five separate folders.
 - 🔧 [src/fetching/](src/fetching/) - Fetching raw HTML from links.
 - 🔧 [src/processing/](src/processing/) - Process and clean textual data.
 - 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
-- 🔧 [src/QuestionAnswer/](src/QuestionAnswer/) - Generate questions and answers.
+- 🔧 [src/question_answer/](src/question_answer/) - Generate questions and answers.
 
 ```sh
 # Creating a virtual environment
@@ -37,7 +37,7 @@ $ pip install -r requirements.txt
 $ pre-commit install
 
 # 1. Gathering links (run: ~35 seconds)
-$ python -W ignore -m src.crawlers.run
+$ python -W src.crawlers.run
 # 2. Fetching wiki pages (run: ~40h)
 $ python -m src.fetching.run
 # 3. Processing, clean text (run: ~50 minutes)
@@ -45,7 +45,7 @@ $ python -m src.processing.run
 # 4. Extracting context (run: ~35 seconds)
 $ python -m src.extracting_context.run
 # 5. Questions and answers generation (run: ~36 days)
-$ python -m QuestionAnswer.QARun
+$ python -m src.question_answer.run
 ```
 
 ---

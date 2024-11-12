@@ -56,6 +56,7 @@ def process_html(folder_path: str, output_path: str):
             data["categories"] = [clean_text(item) for item in data["categories"]]
             data.pop("html")
 
+            # save output document
             file_output = str(Path(output_path) / filename)
             with open(file_output, "w") as file:
                 file.write(json.dumps(data))

@@ -15,38 +15,37 @@ logging.getLogger("haystack").setLevel(logging.INFO)
 def generate_qa(input_file: str, output_file: str, test: bool = False):
     """Generate Questions and Answers"""
     df = pd.read_csv(input_file, sep=",")
-    # print(df)
 
-    # Document Store
+    # document Store
     document_store = InMemoryDocumentStore()
-    # Save documents in Document Store
+    # save documents in Document Store
     docs = [{"content": row["context"], **row} for _, row in df.iterrows()]
     if test:
         docs = docs[:5]
     document_store.write_documents(docs)
 
-    print("total documents", len(document_store.get_all_documents()))
+    print("total documents:", len(document_store.get_all_documents()))
 
-    # Generate Questions and Answers
+    # generate questions and answers
     question_generator = QuestionGenerator(num_queries_per_doc=1)
     reader = FARMReader("deepset/roberta-base-squad2", return_no_answer=True)
     qag_pipeline = QuestionAnswerGenerationPipeline(question_generator, reader)
 
     with open(output_file, "w", newline="") as csvfile:
         fieldnames = [
-            "id_qa",
-            "context_id",
-            "context",
+            "qa_id",
             "question",
             "answer",
+            "context",
+            "context_id",
+            "context_url",
             "context_title",
             "context_categories",
-            "url",
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
-        # Iterate by the Documents
+        # iterate by the Documents
         for _, document in enumerate(tqdm(document_store)):
             result = qag_pipeline.run(documents=[document])
 
@@ -57,22 +56,22 @@ def generate_qa(input_file: str, output_file: str, test: bool = False):
                     "text": answers[0].answer,
                     "offset": [offset.start, offset.end],
                 }
-                id_qa = mmh3.hash128(
+                qa_id = mmh3.hash128(
                     question + answer["text"] + document.content, signed=False
                 )
                 context_id = mmh3.hash128(document.content, signed=False)
                 writer.writerow(
                     {
-                        "id_qa": id_qa,
-                        "context_id": context_id,
-                        "context": document.content,
+                        "qa_id": qa_id,
                         "question": question,
                         "answer": answer,
+                        "context": document.content,
+                        "context_id": context_id,
+                        "context_url": document.meta["url"],
                         "context_title": document.meta["title"],
                         "context_categories": document.meta["categories"],
-                        "url": document.meta["url"],
                     }
                 )
 
-    print("Output:")
+    print("output:")
     print(pd.read_csv(output_file, sep=","))
