@@ -17,7 +17,7 @@ def request_link(
     """Collect all wiki links"""
     try:
         # request HTML page
-        response = requests.get(url, verify=False)
+        response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
         soup = soup.find(class_="mw-body-content")
         # get page links
