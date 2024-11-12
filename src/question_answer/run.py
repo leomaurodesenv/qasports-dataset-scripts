@@ -1,25 +1,24 @@
-from .QAFunc import generate_qa
+from ..module import OUTPUT_PATH
+from .module import generate_qa
 
-# Basketball
-print("Questions and answers basketball")
-generate_qa(
-    input_file="Output/basketball_contexts.csv",
-    output_file="Output/basketball_qa.csv",
-    test=True,
-)
+TESTING = True
+question_pages = [
+    {
+        "sport_name": "basketball",
+    },
+    {
+        "sport_name": "football",
+    },
+    {
+        "sport_name": "americanfootball",
+    },
+]
 
-# Soccer
-print("\n\nQuestions and answers soccer")
-generate_qa(
-    input_file="Output/soccer_contexts.csv",
-    output_file="Output/soccer_qa.csv",
-    test=True,
-)
-
-# American Football
-print("\n\nQuestions and answers american football")
-generate_qa(
-    input_file="Output/football_contexts.csv",
-    output_file="Output/football_qa.csv",
-    test=True,
-)
+# fecthing the URLs
+for wiki_page in question_pages:
+    sport_name = wiki_page["sport_name"]
+    generate_qa(
+        input_file=(OUTPUT_PATH / f"{sport_name}-contexts.csv"),
+        output_file=(OUTPUT_PATH / f"{sport_name}-qa.csv"),
+        test=TESTING,
+    )

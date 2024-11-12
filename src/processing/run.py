@@ -3,20 +3,20 @@ from .module import process_html
 
 processing_pages = [
     {
-        "folder_name": "basketball",
+        "sport_name": "basketball",
     },
     {
-        "folder_name": "football",
+        "sport_name": "football",
     },
     {
-        "folder_name": "americanfootball",
+        "sport_name": "americanfootball",
     },
 ]
 
 # processing the URLs
 for wiki_page in processing_pages:
-    folder_name = wiki_page["folder_name"]
+    sport_name = wiki_page["sport_name"]
     process_html(
-        folder_path=(RAW_HTML_PATH / folder_name),
-        output_path=(CLEAN_JSON_PATH / folder_name)
+        folder_path=(RAW_HTML_PATH / sport_name),
+        output_path=(CLEAN_JSON_PATH / sport_name)
     )
