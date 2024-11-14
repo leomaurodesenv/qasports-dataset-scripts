@@ -51,21 +51,24 @@ def generate_qa(input_file: str, output_file: str, test: bool = False):
 
             # Iterate by the Questions & Answers
             for question, answers in zip(result["queries"], result["answers"]):
-                offset = answers[0].offsets_in_context[0]
+                document_str = str(document.content)
+                answer_str = str(answers[0].answer)
+                offset = document_str.find(answer_str) if len(answer_str) else 0
+                offset = [offset, offset+len(answer_str)] if len(answer_str) else [0, 0]
                 answer = {
-                    "text": answers[0].answer,
-                    "offset": [offset.start, offset.end],
+                    "text": answer_str,
+                    "offset": offset,
                 }
                 qa_id = mmh3.hash128(
-                    question + answer["text"] + document.content, signed=False
+                    question + answer["text"] + document_str, signed=False
                 )
-                context_id = mmh3.hash128(document.content, signed=False)
+                context_id = mmh3.hash128(document_str, signed=False)
                 writer.writerow(
                     {
                         "qa_id": qa_id,
                         "question": question,
                         "answer": answer,
-                        "context": document.content,
+                        "context": document_str,
                         "context_id": context_id,
                         "context_url": document.meta["url"],
                         "context_title": document.meta["title"],
