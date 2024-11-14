@@ -27,3 +27,4 @@ wiki_pages = [
 
 wiki_pages = [dict(item, **{"csv_name": f'{item["sport_name"]}-links.csv'}) for item in wiki_pages]
 wiki_pages = [dict(item, **{"context_name": f'{item["sport_name"]}-contexts.csv'}) for item in wiki_pages]
+wiki_pages = [dict(item, **{"qa_name": f'{item["sport_name"]}-qa.csv'}) for item in wiki_pages]
