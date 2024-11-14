@@ -76,5 +76,5 @@ def generate_qa(input_file: str, output_file: str, test: bool = False):
                     }
                 )
 
-    print("output:")
+    print(input_file, "output:")
     print(pd.read_csv(output_file, sep=","))
