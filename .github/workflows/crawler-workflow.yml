@@ -1,8 +1,8 @@
 name: "Gathering Wiki Links"
-on:
-  workflow_dispatch:
-  schedule:
-  - cron: "0 12 1 * *"
+on: push
+  # workflow_dispatch:
+  # schedule:
+  # - cron: "0 12 1 * *"
 
 jobs:
   # Download wiki links
