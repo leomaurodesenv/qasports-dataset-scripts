@@ -17,12 +17,20 @@ jobs:
         with:
           python-version: "3.10"
           cache: "pip" # caching pip dependencies
-      - run: pip install -r requirements.txt
+      - name: pip install
+        run: pip install -r requirements.txt
       - run: python -m src.crawler.run
-      - run: |
+      - name: git config user
+        run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
-      - run: |
-          git add output/*.csv -f
-          git commit -m "ci(crawler-workflow): update base links"
-          git push
+      - name: git commit & push
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            git add output/*.csv -f
+            git commit -m "ci(crawler-workflow): update base links"
+            git push
+          else
+            echo "No changes were detected."
+          fi
+        shell: bash
