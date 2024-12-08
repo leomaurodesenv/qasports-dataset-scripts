@@ -1,9 +1,9 @@
 name: "Gathering Wiki Links"
 run-name: Gathering links on "${{ github.ref }}"
-on: push
-  # workflow_dispatch:
-  # schedule:
-  # - cron: "0 12 1 * *"
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 12 1 * *"
 permissions:
   contents: write
 
