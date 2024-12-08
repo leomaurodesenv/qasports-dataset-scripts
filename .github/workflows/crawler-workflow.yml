@@ -4,6 +4,8 @@ on: push
   # workflow_dispatch:
   # schedule:
   # - cron: "0 12 1 * *"
+permissions:
+  contents: write
 
 jobs:
   # Download wiki links
