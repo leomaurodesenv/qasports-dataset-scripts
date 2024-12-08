@@ -1,4 +1,5 @@
 name: "Gathering Wiki Links"
+run-name: Gathering links on "${{ github.ref }}"
 on: push
   # workflow_dispatch:
   # schedule:
@@ -16,4 +17,10 @@ jobs:
           cache: "pip" # caching pip dependencies
       - run: pip install -r requirements.txt
       - run: python -m src.crawler.run
-      - run: ls output/
+      - run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+      - run: |
+          git add output/*.csv -f
+          git commit -m "ci(crawler-workflow): update base links
+          git push
