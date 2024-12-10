@@ -23,6 +23,16 @@ wiki_pages = [
         "url_base": "https://americanfootball.fandom.com",
         "sport_name": "americanfootball",
     },
+    {
+        "url": "https://internationalcricket.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://internationalcricket.fandom.com",
+        "sport_name": "cricket",
+    },
+    {
+        "url": "https://internationalhockey.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://internationalhockey.fandom.com",
+        "sport_name": "hockey",
+    },
 ]
 
 wiki_pages = [dict(item, **{"csv_name": f'{item["sport_name"]}-links.csv'}) for item in wiki_pages]
