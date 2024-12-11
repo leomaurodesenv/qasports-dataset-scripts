@@ -51,7 +51,7 @@ def request_link(
                 controller=controller,
             )
 
-    except requests.exceptions.RequestException:
+    except:
         broken_url.append(url)
 
     return url_wiki, broken_url
