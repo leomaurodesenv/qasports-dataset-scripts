@@ -72,6 +72,41 @@ wiki_pages = [
         "url": "https://fitness.fandom.com/wiki/Special:AllPages",
         "url_base": "https://fitness.fandom.com",
         "sport_name": "fitness",
+    },
+    {
+        "url": "https://cycling.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://cycling.fandom.com",
+        "sport_name": "cycling",
+    },
+    {
+        "url": "https://badminton.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://badminton.fandom.com",
+        "sport_name": "badminton",
+    },
+    {
+        "url": "https://wagymnastics.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://wagymnastics.fandom.com",
+        "sport_name": "gymnastics",
+    },
+    {
+        "url": "https://handball.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://handball.fandom.com",
+        "sport_name": "handball",
+    },
+    {
+        "url": "https://skipedia.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://skipedia.fandom.com",
+        "sport_name": "skiing",
+    },
+    {
+        "url": "https://thoroughbred-racing.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://thoroughbred-racing.fandom.com",
+        "sport_name": "horse_racing",
+    },
+    {
+        "url": "https://f1.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://f1.fandom.com",
+        "sport_name": "f1",
     }
 ]
 
