@@ -52,6 +52,26 @@ wiki_pages = [
         "url": "https://baseball.fandom.com/wiki/Baseball",
         "url_base": "https://baseball.fandom.com",
         "sport_name": "baseball",
+    },
+    {
+        "url": "https://martialarts.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://martialarts.fandom.com",
+        "sport_name": "martialarts",
+    },
+    {
+        "url": "https://boxing.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://boxing.fandom.com",
+        "sport_name": "boxing",
+    },
+    {
+        "url": "https://mixedmartialarts.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://mixedmartialarts.fandom.com",
+        "sport_name": "mixedmartialarts",
+    },
+    {
+        "url": "https://fitness.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://fitness.fandom.com",
+        "sport_name": "fitness",
     }
 ]
 
