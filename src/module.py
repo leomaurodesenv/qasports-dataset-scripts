@@ -33,6 +33,26 @@ wiki_pages = [
         "url_base": "https://internationalhockey.fandom.com",
         "sport_name": "hockey",
     },
+    {
+        "url": "https://golf.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://golf.fandom.com",
+        "sport_name": "golf",
+    },
+    {
+        "url": "https://rugbyunion.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://rugbyunion.fandom.com",
+        "sport_name": "rugbyunion",
+    },
+    {
+        "url": "https://rugby.fandom.com/wiki/Special:AllPages",
+        "url_base": "https://rugby.fandom.com",
+        "sport_name": "rugby",
+    },
+    {
+        "url": "https://baseball.fandom.com/wiki/Baseball",
+        "url_base": "https://baseball.fandom.com",
+        "sport_name": "baseball",
+    }
 ]
 
 wiki_pages = [dict(item, **{"csv_name": f'{item["sport_name"]}-links.csv'}) for item in wiki_pages]
