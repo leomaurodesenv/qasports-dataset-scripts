@@ -19,7 +19,7 @@ jobs:
           cache: "pip" # caching pip dependencies
       - name: pip install
         run: pip install -r requirements.txt
-      - run: python -m src.crawler.run
+      - run: python -m src.gathering.run
       - name: git config user
         run: |
           git config user.name "${{ github.actor }}"
