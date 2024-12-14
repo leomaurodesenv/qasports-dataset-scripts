@@ -6,7 +6,7 @@ RAW_HTML_PATH = OUTPUT_PATH / Path("raw_html/")
 CLEAN_JSON_PATH = OUTPUT_PATH / Path("clean_json/")
 
 # Wiki page config
-TESTING = True
+TESTING = False
 wiki_pages = [
     {
         "url": "https://basketball.fandom.com/wiki/Special:AllPages",
