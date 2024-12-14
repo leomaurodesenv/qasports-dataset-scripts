@@ -1,6 +1,7 @@
 name: "Gathering Wiki Links"
 run-name: Gathering links on "${{ github.ref }}"
 on:
+  push:
   workflow_dispatch:
 permissions:
   contents: write
