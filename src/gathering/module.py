@@ -61,8 +61,8 @@ def create_csv(filename: str, urls: list):
     """Create a CSV from `urls`"""
     with open(filename, "w") as file:
         writer = csv.writer(file)
-        writer.writerow(["id", "url"])
+        writer.writerow(["url"])
 
-        for i, url in enumerate(urls):
+        for _, url in enumerate(urls):
             if url != None:
-                writer.writerow([i, url])
+                writer.writerow([url])
