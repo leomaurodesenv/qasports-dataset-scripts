@@ -49,7 +49,7 @@ wiki_pages = [
         "sport_name": "rugby",
     },
     {
-        "url": "https://baseball.fandom.com/wiki/Baseball",
+        "url": "https://baseball.fandom.com/wiki/Special:AllPages",
         "url_base": "https://baseball.fandom.com",
         "sport_name": "baseball",
     },
