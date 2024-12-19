@@ -38,5 +38,5 @@ def split_text_into_chunks(input_folder, output_file, chunk_size = 256):
     df = pd.DataFrame(text_chunks)
     df.to_csv(output_file, index=False, encoding='utf-8')
 
+    print(f"{input_folder} - quantity: {df.shape}")
     print(df.head(5))
-    print(f"quantity: {df.shape}")
