@@ -30,10 +30,10 @@ def process_html(folder_path: str, output_path: str):
         # parse htlm
         soup = BeautifulSoup(data["html"], "html.parser")
         content = soup.find(class_="mw-parser-output")
-        if content != None:
+        if content is not None:
             # infobox
             infobox = content.find(class_="infobox")
-            if infobox != None:
+            if infobox is not None:
                 infobox = infobox.extract().get_text()
                 if infobox.startswith(" NOTE: This"):
                     infobox = ""

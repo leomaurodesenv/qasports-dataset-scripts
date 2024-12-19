@@ -6,5 +6,5 @@ for wiki_page in wiki_pages:
     sport_name = wiki_page["sport_name"]
     process_html(
         folder_path=(RAW_HTML_PATH / sport_name),
-        output_path=(CLEAN_JSON_PATH / sport_name)
+        output_path=(CLEAN_JSON_PATH / sport_name),
     )

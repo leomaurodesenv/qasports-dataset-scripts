@@ -17,13 +17,12 @@ def fetch_html(url: str, folder_path: str):
 
         # build file name and path
         Path(folder_path).mkdir(parents=True, exist_ok=True)
-        file_name = (
-            soup.title.contents[0]
-            .split("|")[0][0:-1]
-        )
+        file_name = soup.title.contents[0].split("|")[0][0:-1]
         file_name = re.sub(r"[\ \/\:]", "_", file_name)
         file_name = re.sub(r"[\?\"\']", "", file_name)
-        file_name = file_name + ".json" if len(file_name) <= 90 else file_name[0:90] + ".json"
+        file_name = (
+            file_name + ".json" if len(file_name) <= 90 else file_name[0:90] + ".json"
+        )
         file_name = str(Path(folder_path) / file_name)
 
         file = open(file_name, "w")
@@ -35,7 +34,7 @@ def fetch_html(url: str, folder_path: str):
         # wiki categories
         cat = soup.find(class_="page-header__categories")
 
-        if cat != None:
+        if cat is not None:
             cat = cat.get_text().split("\n")
             if "\t" in cat[-1]:
                 all_content = cat[2:-1][0]
@@ -45,7 +44,7 @@ def fetch_html(url: str, folder_path: str):
             all_content = " "
 
         cat = soup.find(class_="page-header__categories-dropdown-content")
-        if cat != None:
+        if cat is not None:
             cat = cat.get_text().split("\n")
             for i in range(0, len(cat)):
                 if i != "":

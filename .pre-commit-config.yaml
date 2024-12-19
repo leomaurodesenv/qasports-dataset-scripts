@@ -9,8 +9,8 @@ repos:
     -   id: check-added-large-files
     -   id: check-json
     -   id: check-ast
--   repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.3
     hooks:
-    -   id: isort
-        args: ["--profile", "black", "--filter-files"]
+    -   id: ruff-format
+        types_or: [ python, pyi ]
