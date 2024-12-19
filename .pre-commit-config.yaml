@@ -14,3 +14,9 @@ repos:
     hooks:
     -   id: isort
         args: ["--profile", "black", "--filter-files"]
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.3
+    hooks:
+    -   id: ruff
+        types_or: [ python, pyi ]
+        args: [ --fix ]
