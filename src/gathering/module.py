@@ -1,4 +1,5 @@
 """Crawer method to extract wiki links"""
+
 import csv
 import logging
 

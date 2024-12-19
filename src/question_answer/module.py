@@ -54,7 +54,9 @@ def generate_qa(input_file: str, output_file: str, test: bool = False):
                 document_str = str(document.content)
                 answer_str = str(answers[0].answer)
                 offset = document_str.find(answer_str) if len(answer_str) else 0
-                offset = [offset, offset+len(answer_str)] if len(answer_str) else [0, 0]
+                offset = (
+                    [offset, offset + len(answer_str)] if len(answer_str) else [0, 0]
+                )
                 answer = {
                     "text": answer_str,
                     "offset": offset,

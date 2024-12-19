@@ -17,13 +17,12 @@ def fetch_html(url: str, folder_path: str):
 
         # build file name and path
         Path(folder_path).mkdir(parents=True, exist_ok=True)
-        file_name = (
-            soup.title.contents[0]
-            .split("|")[0][0:-1]
-        )
+        file_name = soup.title.contents[0].split("|")[0][0:-1]
         file_name = re.sub(r"[\ \/\:]", "_", file_name)
         file_name = re.sub(r"[\?\"\']", "", file_name)
-        file_name = file_name + ".json" if len(file_name) <= 90 else file_name[0:90] + ".json"
+        file_name = (
+            file_name + ".json" if len(file_name) <= 90 else file_name[0:90] + ".json"
+        )
         file_name = str(Path(folder_path) / file_name)
 
         file = open(file_name, "w")
