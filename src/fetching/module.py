@@ -35,7 +35,7 @@ def fetch_html(url: str, folder_path: str):
         # wiki categories
         cat = soup.find(class_="page-header__categories")
 
-        if cat != None:
+        if cat is not None:
             cat = cat.get_text().split("\n")
             if "\t" in cat[-1]:
                 all_content = cat[2:-1][0]
@@ -45,7 +45,7 @@ def fetch_html(url: str, folder_path: str):
             all_content = " "
 
         cat = soup.find(class_="page-header__categories-dropdown-content")
-        if cat != None:
+        if cat is not None:
             cat = cat.get_text().split("\n")
             for i in range(0, len(cat)):
                 if i != "":

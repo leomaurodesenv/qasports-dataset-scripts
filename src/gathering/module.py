@@ -51,7 +51,7 @@ def request_link(
                 controller=controller,
             )
 
-    except:
+    except requests.exceptions.RequestException:
         broken_url.append(url)
 
     return url_wiki, broken_url
@@ -64,5 +64,5 @@ def create_csv(filename: str, urls: list):
         writer.writerow(["url"])
 
         for _, url in enumerate(urls):
-            if url != None:
+            if url is not None:
                 writer.writerow([url])
