@@ -1,0 +1,562 @@
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+
+total documents: 36921
+36921it [23:52:02,  2.44s/it]
+36921it [23:52:02,  2.33s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/basketball-contexts.csv output:
+  qa_id  ...   context_categories
+0       112646235512676136544488858934941268081  ...  NCAA Division III schools, Schools in Colorado...
+1       254770574487077575364460833936729761384  ...  NCAA Division I schools, Metro Atlantic Athlet...
+2       144809708238437939802566798291352749837  ...  NCAA Division I schools, Metro Atlantic Athlet...
+3        42951645096592106589466748990363063348  ...  NCAA Division I schools, Metro Atlantic Athlet...
+4       246610699293619532006088926296094337034  ...  NCAA Division I schools, Metro Atlantic Athlet...
+... ...  ...        ...
+104985  258002890048946706893202782554312997651  ...  NCAA Division I schools, West Coast Conference...
+104986  207449563451862997407880231780198497956  ...  NCAA Division I schools, West Coast Conference...
+104987    1234423335120014081547872229745609702  ...  NCAA Division I schools, West Coast Conference...
+104988  294486007472322079294770747405773058994  ...  NCAA Division I schools, West Coast Conference...
+104989   67762581158523637545571971112022918315  ...  NCAA Division I schools, West Coast Conference...
+[104990 rows x 8 columns]
+
+total documents: 87012
+87011it [51:31:11,  2.52s/it]
+87012it [51:31:13,  2.41s/it]
+87012it [51:31:13,  2.13s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/football-contexts.csv output:
+  qa_id  ...   context_categories
+0        48146382447547579149875179311196015081  ...  League stubs, 2018-19 A-League season, A-Leagu...
+1        35474886940214671590860483440798905839  ...  League stubs, 2018-19 A-League season, A-Leagu...
+2       300358459474711723223383036131123820080  ...  League stubs, 2018-19 A-League season, A-Leagu...
+3       156289042712121196192773107566479855099  ...  League stubs, 2018-19 A-League season, A-Leagu...
+4         3277700288765583855411525129645782411  ...  League stubs, 2018-19 A-League season, A-Leagu...
+... ...  ...        ...
+228235   16230985726144183262927714823504276215  ...    Nottingham Forest F.C. squads, Squads
+228236   33277017265240088054280062032589728093  ...    Nottingham Forest F.C. squads, Squads
+228237  306410274984467538614711105597551969185  ...    Nottingham Forest F.C. squads, Squads
+228238   80212707247491821918202129916948766864  ...    Nottingham Forest F.C. squads, Squads
+228239  219529991648545047927589461335524277480  ...    Nottingham Forest F.C. squads, Squads
+[228240 rows x 8 columns]
+
+total documents: 76647
+76647it [46:44:29,  2.31s/it]
+76647it [46:44:29,  2.20s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/americanfootball-contexts.csv output:
+  qa_id  ...   context_categories
+0       185607335413933583851881922575398886954  ...  Canada West Universities Athletic Association,...
+1       305469366226962317040077269633565406760  ...  Canada West Universities Athletic Association,...
+2         3797910685478379908790975326473072665  ...  Canada West Universities Athletic Association,...
+3       258420572752924393975588619552805266722  ...  Canada West Universities Athletic Association,...
+4        25049184465434573319746526215052734404  ...  2013 college teams, 2013 NCAA Division III Tea...
+... ...  ...        ...
+208897  203517640231704871301497432048854688856  ...  2017 college teams, 2017 NCAA FCS teams, 2017 ...
+208898  105334821831639511590881766871222438692  ...  2017 college teams, 2017 NCAA FCS teams, 2017 ...
+208899    3602522004617400525860238892939157874  ...  1981 games, Miami (FL)-Penn State series, Miam...
+208900  200990664858631509592056242269502586396  ...  1981 games, Miami (FL)-Penn State series, Miam...
+208901  163752965517854495677634284427618235380  ...  1981 games, Miami (FL)-Penn State series, Miam...
+[208902 rows x 8 columns]
+
+total documents: 11238
+11238it [7:33:37,  2.86s/it]
+11238it [7:33:37,  2.42s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/cricket-contexts.csv output:
+ qa_id  ...   context_categories
+0       19187977816391728757649928159809152098  ...  Active player, 1989 births, Living people, Sou...
+1       79471211946331866616359332975548031216  ...  Active player, 1989 births, Living people, Sou...
+2       45659127589001383100645080122033802139  ...  Active player, 1989 births, Living people, Sou...
+3      334125731815719170584376759482375585474  ...    Article stubs, Test Matches
+4      212987339704007072726045781019342287237  ...    Article stubs, Test Matches
+......  ...        ...
+33514    1714180908125681900316040074558718266  ...Test Matches, 2019 Test matches
+33515   54273044110446789778635039495847488613  ...Test Matches, 2019 Test matches
+33516  176887759413245185109587285035096588605  ...Test Matches, 2019 Test matches
+33517  170011531206923586841643981733145980239  ...Test Matches, 2019 Test matches
+33518   31644564471757430146959300171980431433  ...Test Matches, 2019 Test matches
+[33519 rows x 8 columns]
+
+total documents: 30593
+30593it [19:43:55,  2.88s/it]
+30593it [19:43:55,  2.32s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/hockey-contexts.csv output:
+ qa_id  ...        context_categories
+0      107422816617583192558371827012924685160  ...    Junior national ice hockey teams
+1      284233484183230715351152381310188044885  ...    Junior national ice hockey teams
+2      121652389997657430228286502264569440037  ...    Junior national ice hockey teams
+3      189108316399942550738087607515518868905  ...    Junior national ice hockey teams
+4       68787440238842501775771789760204334666  ...    Junior national ice hockey teams
+......  ...   ...
+82125  323184597362267734991157974095927885310  ...     Tournaments
+82126  294575826356577137647534516032275732382  ...  Ice hockey teams in Czechoslovakia
+82127  239722782300074630966167931849809695191  ...  Ice hockey teams in Czechoslovakia
+82128  180991263324997971917729048054145209294  ...  Ice hockey teams in Czechoslovakia
+82129  217974713303299010982826555141807196179  ...  Ice hockey teams in Czechoslovakia
+[82130 rows x 8 columns]
+
+total documents: 979
+979it [31:53,  2.21s/it]
+979it [31:53,  1.95s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/golf-contexts.csv output:
+qa_id  ...   context_categories
+0      43492126916426355052997837149909933962  ...  1929 births, 2022 deaths, American male golfer...
+1     144579982705473291013885310342709703324  ...  1929 births, 2022 deaths, American male golfer...
+2     323972856916198190557585817432157602042  ...  1929 births, 2022 deaths, American male golfer...
+3      77737179696226841400638927544283635750  ...  1929 births, 2022 deaths, American male golfer...
+4     229095130263272857029915519240247292561  ...  1929 births, 2022 deaths, American male golfer...
+...         ...  ...        ...
+2502  314873791246485919237659498572515309318  ...  Pages with reference errors, The Open Champion...
+2503  274378211759569049484478928668128812801  ...  Pages with reference errors, The Open Champion...
+2504  144658431620933825333733001014636492333  ...  Pages with reference errors, The Open Champion...
+2505   13418739693575362293185198422728131534  ...  Pages with reference errors, The Open Champion...
+2506   63734782601781203547050358187082510979  ...  Pages with reference errors, The Open Champion...
+[2507 rows x 8 columns]
+
+total documents: 1590
+1590it [58:47,  1.46s/it]
+1590it [58:47,  2.22s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/rugbyunion-contexts.csv output:
+qa_id  ...   context_categories
+0     142086050382726524189984027789361945371  ...   Stubs, 1985 births
+1     105776980487557571225316169434151169756  ...   Stubs, 1985 births
+2     225352594929956278208334896553822787928  ...   Stubs, 1985 births
+3     177865565621151732002054712685259942897  ...  1980 births, Living people, Ba people, Fijian ...
+4     160238379602111286488394609147241135107  ...  1980 births, Living people, Ba people, Fijian ...
+...         ...  ...        ...
+4460   61550031806083211511137946225500271069  ...         African national women's rugby union teams
+4461  282525640026140083832740961658708251788  ...         African national women's rugby union teams
+4462   79850053041720608492560881546802788807  ...        NaN
+4463  209674240271641819665512110554456162858  ...        NaN
+4464  292759024427990793989673641760047778595  ...        NaN
+[4465 rows x 8 columns]
+
+total documents: 405
+405it [14:02,  1.77s/it]
+405it [14:02,  2.08s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/rugby-contexts.csv output:
+qa_id  ...context_categories
+0      82799190040276905989543671318851348073  ...  Rugby Union National Teams
+1      69235194062055861020392754738879529968  ...  Rugby Union National Teams
+2     291563075622368019237690785935963219702  ...  Rugby Union National Teams
+3      82369994595922064689870568730163232489  ...  Rugby Union National Teams
+4     270217364035575816830032967072345170937  ...  Rugby Union National Teams
+...         ...  ...     ...
+1091  313670807487973528229562952207309933419  ...     Rugby League Club Teams
+1092   24817248569938851276087560593100593706  ...     Rugby League Club Teams
+1093   51756737810480503426989264049395165017  ...     IRB
+1094  339029902860122134669496649941629021322  ...     IRB
+1095   64122268560030551264218287670593914411  ...     IRB
+[1096 rows x 8 columns]
+
+total documents: 55394
+55394it [38:43:00,  2.48s/it]
+55394it [38:43:00,  2.52s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/baseball-contexts.csv output:
+  qa_id  ...   context_categories
+0        51029326553474974181972428241810124089  ...        NaN
+1       180892620638371887113468140204416502193  ...        NaN
+2        26401511392236947815957536777867048551  ...        NaN
+3       110927979059375781781761882194097212086  ...  College baseball teams, NCAA baseball teams, N...
+4       216081091465191284014281740049345623425  ...  College baseball teams, NCAA baseball teams, N...
+... ...  ...        ...
+157821   88215923443441210219139140001180804587  ...  1862 births, 1912 deaths, Baseball players fro...
+157822  227289776708367860463553878101573269313  ...  1862 births, 1912 deaths, Baseball players fro...
+157823  164607555614461369116864511930528889507  ...  1862 births, 1912 deaths, Baseball players fro...
+157824  135424911073693322301647610876365164761  ...  1862 births, 1912 deaths, Baseball players fro...
+157825  186381473998195142123532060185014377784  ...  1862 births, 1912 deaths, Baseball players fro...
+[157826 rows x 8 columns]
+
+total documents: 1171
+1171it [42:57,  2.19s/it]
+1171it [42:57,  2.20s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/martialarts-contexts.csv output:
+qa_id  ...        context_categories
+0     223089275803721330030951805072887774785  ...  Chinese Martial Arts, Manga, Anime
+1      46616842718343188813516539421488972405  ...  Chinese Martial Arts, Manga, Anime
+2      59747473551709365042043335070719183531  ...  Chinese Martial Arts, Manga, Anime
+3      31082342304706428143281214538642514405  ...  Chinese Martial Arts, Manga, Anime
+4      98380156797140858821061238143529545554  ...  Chinese Martial Arts, Manga, Anime
+...         ...  ...   ...
+2973  198455942185080002532277015436224311848  ... Martial Artists
+2974  101956941366865355694098951876140257916  ... Martial Artists
+2975  144520107251638797034666149154736864164  ... Martial Artists
+2976   11127764796024099043300714065569050557  ... Martial Artists
+2977  209001191874232709462431028338551694610  ... Martial Artists
+[2978 rows x 8 columns]
+
+total documents: 2465
+2465it [1:27:31,  2.08s/it]
+2465it [1:27:31,  2.13s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/boxing-contexts.csv output:
+qa_id  ...   context_categories
+0      59888978016519196789340098947529172867  ...        NaN
+1     245801156851435767211827279160426994374  ...        NaN
+2      24983131234450255488141801226242774827  ...        NaN
+3      37721823430950078036648096269678333752  ...        NaN
+4     253848546347814926021590000359465510488  ...  All articles with dead external links, Article...
+...         ...  ...        ...
+6710  103065220963643630468936722867487757901  ...  Famous boxing matches, 1936 in boxing, Boxing ...
+6711  274021709204470333436885351876229375809  ...  Famous boxing matches, 1936 in boxing, Boxing ...
+6712  291309670257913344121826402092215985557  ...  Famous boxing matches, 1936 in boxing, Boxing ...
+6713  279851700232112584551556412325556996695  ...  Famous boxing matches, 1936 in boxing, Boxing ...
+6714  231088336572211171085126044455398891181  ...  Famous boxing matches, 1936 in boxing, Boxing ...
+[6715 rows x 8 columns]
+
+total documents: 7012
+7012it [4:07:41,  1.99s/it]
+7012it [4:07:41,  2.12s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/mixedmartialarts-contexts.csv output:
+ qa_id  ...   context_categories
+0      154486088266305556119520513530893433282  ...  Articles in need of attention, Living people, ...
+1      115305682908477200664187658276882631583  ...  Articles in need of attention, Living people, ...
+2      207480449138173944174147189652185986900  ...  Articles in need of attention, Living people, ...
+3      251138437418764567872716693975220283734  ...  Articles in need of attention, Living people, ...
+4      171109940401168592144452564321685821990  ...  Articles in need of attention, Living people, ...
+......  ...        ...
+17941    1745478380110397447131385387346774562  ...  Articles in need of attention, Japanese mixed ...
+17942  304131300201326692834560230799151960003  ...  Articles in need of attention, Japanese mixed ...
+17943  301510916073126965788621227824637695999  ...  Articles in need of attention, Japanese mixed ...
+17944  121271667271381513506553098286893189347  ...  Articles in need of attention, Japanese mixed ...
+17945   61548164171890469515020541692634958527  ...  Articles in need of attention, Japanese mixed ...
+[17946 rows x 8 columns]
+
+total documents: 829
+829it [27:48,  1.55s/it]
+829it [27:48,  2.01s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/fitness-contexts.csv output:
+qa_id  ... context_categories
+0     259103098546181466697971609852885378211  ...  Dieting
+1      66027662598797151988508455775060560156  ...  Dieting
+2     144553112048799461745993898574604078123  ...  Dieting
+3     104787815064986850277106526088604525967  ...  Dieting
+4     126535019287103193863427797446448446188  ...  Dieting
+...         ...  ...      ...
+1963  158889794778103025597798197061871526620  ...   Exercises, Chest
+1964  120316610274021618592190254878083254111  ...   Exercises, Chest
+1965  231442153850507118074389663064045087787  ...   Exercises, Chest
+1966   74855301863400879414485430126069962861  ...   Exercises, Chest
+1967  335221368603249668625446241169465059819  ...         Yogi, Yoga
+[1968 rows x 8 columns]
+
+total documents: 1032
+1032it [33:01,  1.47s/it]
+1032it [33:01,  1.92s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/cycling-contexts.csv output:
+qa_id  ...  context_categories
+0     204543574870465317853581007901965602743  ...       NaN
+1     320678685094482293757609600180037300704  ...       NaN
+2     166737551364920530351920620423719188242  ...  Cycle distributors
+3      94605106503443408371946478319796270208  ...       NaN
+4     180217946699300655908011518301785508484  ...       NaN
+...         ...  ...       ...
+2418   84573094644033154978440092944809799673  ...       NaN
+2419  318275643515178080357128965615881005069  ...       NaN
+2420  265516308474619654825611922650230402950  ...       NaN
+2421  231236038296851661549793787528575975896  ...       NaN
+2422  178650237940703707660186011908373940271  ...       NaN
+[2423 rows x 8 columns]
+
+total documents: 152
+152it [05:33,  3.23s/it]
+152it [05:33,  2.20s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/badminton-contexts.csv output:
+         qa_id  ...        context_categories
+0    192461202688583768003117224802381952032  ...   NaN
+1    188711294827892194762268664546958396541  ...  Badminton equipment, Racket sports
+2    159085977610795331201020427717337345233  ...  Badminton equipment, Racket sports
+3     73676607659917207702933087035619956836  ...  Badminton equipment, Racket sports
+4     92972122909119695609679413366895229731  ...  Badminton equipment, Racket sports
+..         ...  ...   ...
+369  168786949105987797932072111761272310667  ...   NaN
+370  230944343396641736792151869392545376176  ...       Main Page
+371   83098321756146328666131576604413707264  ...       Main Page
+372   94994397350269488074327095000572760203  ...       Main Page
+373  247708336771092785655290825628961464635  ...       Main Page
+[374 rows x 8 columns]
+
+total documents: 15306
+15306it [9:58:29,  2.18s/it]
+15306it [9:58:29,  2.35s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/gymnastics-contexts.csv output:
+ qa_id  ...    context_categories
+0      331437759463260228289728241817607805081  ...         NaN
+1      223968524957834602203867887591871398400  ...         NaN
+2       46437020338415696305341686328961217395  ...         NaN
+3      312288209995604139460516860976804926724  ...         NaN
+4      178608245941591424074948975084058744804  ...         NaN
+......  ...         ...
+41697  304348977025172436785262891208696298495  ...  Universiade, 1963 Competitions
+41698  334805836847872828694208380983259301757  ...  Universiade, 1963 Competitions
+41699   72111891807160679077031932336267944446  ...  Universiade, 1963 Competitions
+41700  137808924334546774651365336202405737474  ...  Universiade, 1963 Competitions
+41701   85647367715150603081545729767635410234  ...  Universiade, 1963 Competitions
+[41702 rows x 8 columns]
+
+total documents: 215
+215it [07:34,  2.11s/it]
+215it [07:34,  2.11s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/handball-contexts.csv output:
+         qa_id  ...     context_categories
+0    248399482110611244677364076689994795477  ...NaN
+1    223953059971301549448432543157163746737  ...NaN
+2     28668978007599709837713139785055452851  ...NaN
+3    213881243066611995803866967930110397024  ...NaN
+4    137347876321504616416365858247861138719  ...NaN
+..         ...  ......
+590  228066284607410652021418689880407307385  ...  Spanish players, Itxako players
+591  339334503207835082091139816854959870190  ...  Spanish players, Itxako players
+592   87228855963195061798246216243956817685  ...  Spanish players, Itxako players
+593  256060553152419709193704468500747795455  ...  Spanish players, Itxako players
+594  134576864105923694625906695894226271673  ...  Spanish players, Itxako players
+[595 rows x 8 columns]
+
+total documents: 87
+87it [02:45,  1.94s/it]
+87it [02:45,  1.91s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/skiing-contexts.csv output:
+         qa_id  ...    context_categories
+0    110712176460992481359418667219471427756  ...Skiing clubs in Sweden
+1     25381524371365312572585388163725274185  ...Skiing clubs in Sweden
+2     60228965157784090691773966616665960339  ...Skiing clubs in Sweden
+3     55815713503778546110555879523410074344  ...  Defunct skiing clubs in Sweden
+4    130976573940897883348555908336671923060  ...  Defunct skiing clubs in Sweden
+..         ...  ...         ...
+210  112709754032331941684079664670256725422  ...     Content
+211  214455814900003605661556875617446445712  ...     Content
+212  216317689080424445276564601459909459025  ...     Content
+213  223795130166723774073094798413458212945  ...     Content
+214  336309017658509272391809254852180218307  ...     Content
+[215 rows x 8 columns]
+
+total documents: 559
+559it [25:37,  2.39s/it]
+559it [25:37,  2.75s/it]
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO - Using devices: CPU - Number of GPUs: 0
+INFO -  * LOADING MODEL: 'deepset/roberta-base-squad2' (Roberta)
+INFO - Auto-detected model language: english
+INFO - Loaded 'deepset/roberta-base-squad2' (Roberta model) from model hub.
+INFO - Using devices: CPU - Number of GPUs: 0
+output/horse_racing-contexts.csv output:
+qa_id  ...   context_categories
+0     136830360954456771639137851487172270280  ...  Races, Grade I races, Stakes races, Races in t...
+1      73723453443692587194282975013598209195  ...  Races, Grade I races, Stakes races, Races in t...
+2     214986998388745413555958856264828164250  ...  Races, Grade I races, Stakes races, Races in t...
+3     227993191967941826358690963738223831978  ...  Races, Grade I races, Stakes races, Races in t...
+4      45781663036192497101657715479176164838  ...  Races, Grade I races, Stakes races, Races in t...
+...         ...  ...        ...
+1747  239628422412735416782094607264156854349  ...  Races, Triple Crown Races, Belmont Stakes race...
+1748   61041980573771559578150290031389687222  ...  Races, Triple Crown Races, Belmont Stakes race...
+1749  153249872611242214323794309035036953344  ...  Races, Triple Crown Races, Belmont Stakes race...
+1750  136000960762611860425106296909671241810  ...  Races, Triple Crown Races, Belmont Stakes race...
+1751  257384648979258707537614100691625956149  ...  Races, Triple Crown Races, Belmont Stakes race...
+[1752 rows x 8 columns]
+
+total documents: 44095
+44095it [27:30:49,  3.09s/it]
+44095it [27:30:49,  2.25s/it]
+output/f1-contexts.csv output:
+  qa_id  ...   context_categories
+0       168926163525974071301345806335246440919  ...People, Living people
+1       234859375432069218919254596785581045638  ...People, Living people
+2        78501185689030603879584532616791607900  ...People, Living people
+3       157426090012024436406522619368201247331  ...People, Living people
+4        98980407174775351799049557787059396635  ...People, Living people
+... ...  ...        ...
+118303  107229388349397049257940677891819894511  ...  Drivers, 1912 births, 1950 Debut Drivers, 1959...
+118304   65253239794778157715047547258301417219  ...  Drivers, 1912 births, 1950 Debut Drivers, 1959...
+118305   73253562353018024738831433778974256130  ...  Drivers, 1912 births, 1950 Debut Drivers, 1959...
+118306  299331662729982637503950178195048233544  ...  Drivers, 1912 births, 1950 Debut Drivers, 1959...
+118307    7772662835898861268998491716881170458  ...  Drivers, 1912 births, 1950 Debut Drivers, 1959...
+[118308 rows x 8 columns]
