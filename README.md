@@ -26,6 +26,7 @@ We have sorted the resources into five separate folders.
 - 🔧 [src/processing/](src/processing/) - Process and clean textual data.
 - 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
 - 🔧 [src/question_answer/](src/question_answer/) - Generate questions and answers.
+- 🔧 [src/sampling/](src/sampling/) - Sampling representative questions and answers.
 
 ```sh
 # Creating a virtual environment
@@ -46,7 +47,7 @@ $ python -m src.processing.run
 $ python -m src.extracting_context.run
 # 5. Questions and answers generation (run: ~36 days)
 $ python -m src.question_answer.run
-
+# 6. Sampling representative questions (run: )
 $ python -m src.sampling.run
 ```
 
