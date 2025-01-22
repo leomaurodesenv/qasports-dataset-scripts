@@ -46,6 +46,8 @@ $ python -m src.processing.run
 $ python -m src.extracting_context.run
 # 5. Questions and answers generation (run: ~36 days)
 $ python -m src.question_answer.run
+
+$ python -m src.sampling.run
 ```
 
 ---
