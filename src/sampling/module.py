@@ -5,8 +5,16 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def batch_sampling(df_questions, model, threshold):
-    """Batch sampling"""
+def batch_sampling(df_questions: pd.DataFrame, model: any, threshold: int):
+    """
+    Batch sampling
+    Args:
+        df_questions (pd.DataFrame): The dataset to sample
+        model (any): The sentence transformer model
+        threshold (int): The similarity threshold
+    Returns:
+        pd.DataFrame: The sampled dataset
+    """
     # Compute the similarity matrix
     embeddings = model.encode(df_questions["question"].tolist())
     selected_questions, used_indices = list(), set()
