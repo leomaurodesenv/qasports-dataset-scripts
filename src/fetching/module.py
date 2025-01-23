@@ -1,3 +1,5 @@
+"""Module for fetching html content from a list of URLs"""
+
 import json
 import re
 from datetime import datetime
@@ -10,7 +12,12 @@ from tqdm import tqdm
 
 
 def fetch_html(url: str, folder_path: str):
-    """Fetching one url"""
+    """
+    Fetching one url
+    Args:
+        url (str): The URL to fetch
+        folder_path (str): The folder path to save the HTML content
+    """
     try:
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
@@ -75,10 +82,16 @@ def fetch_html(url: str, folder_path: str):
 
 
 def fetch_all_html(links_file: str, folder_path: str, test: bool = False):
-    """Fetching all urls in CSV"""
+    """
+    Fetching all URLs
+    Args:
+        links_file (str): The file containing the URLs
+        folder_path (str): The folder path to save the HTML content
+        test (bool): Whether to test the function
+    """
     df = pd.read_csv(links_file)
+    if test:
+        df = df.sample(10)
     print(f"{folder_path} (Testing={test}):", df.shape[0])
-    for i, row in tqdm(df.iterrows()):
+    for i, row in tqdm(df.iterrows(), desc="Fetching", total=len(df)):
         fetch_html(url=row["url"], folder_path=folder_path)
-        if test and i > 9:
-            break
