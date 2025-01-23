@@ -1,35 +1,27 @@
 import pandas as pd
 import numpy as np
+from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def recursive_sampling(df_questions, model, threshold, max_samples: int = 500):
-    """Recursive sampling"""
-    # Break the questions into two parts
-    print(f"Sampling {len(df_questions)} questions")
-    if len(df_questions) > max_samples + 1:
-        selected_first = recursive_sampling(
-            df_questions.iloc[:max_samples], model, threshold, max_samples
-        )
-        selected_last = recursive_sampling(
-            df_questions.iloc[max_samples:], model, threshold, max_samples
-        )
-        # TODO: fix the recursive sampling
-        df_questions = pd.concat([selected_first, selected_last])
-
+def batch_sampling(df_questions, model, threshold):
+    """Batch sampling"""
     # Compute the similarity matrix
     embeddings = model.encode(df_questions["question"].tolist())
-    similarity_matrix = cosine_similarity(embeddings)
     selected_questions, used_indices = list(), set()
 
     # Sampling the dataset
-    for i, (_, row) in enumerate(df_questions.iterrows()):
+    for i, (_, row) in tqdm(
+        enumerate(df_questions.iterrows()), desc="Sampling", total=len(df_questions)
+    ):
         if i not in used_indices:
             values = {column: row[column] for column in df_questions.columns}
             values["embedding"] = embeddings[i]
             selected_questions.append(values)
-            similar_indices = similarity_matrix[i] >= threshold
+            # compute the similarity for the current question
+            similarity_row = cosine_similarity([embeddings[i]], embeddings)[0]
+            similar_indices = np.where(similarity_row >= threshold)[0]
             used_indices.update(similar_indices)
     return pd.DataFrame(selected_questions)
 
@@ -38,7 +30,7 @@ def sampling(
     input_file: str,
     output_file: str,
     test: bool = False,
-    threshold: int = 0.5,
+    threshold: int = 0.4,
     model_name: str = "all-MiniLM-L6-v2",
 ):
     """Sampling a Question-Answering dataset"""
@@ -48,7 +40,7 @@ def sampling(
         df = df.sample(10)
 
     model = SentenceTransformer(model_name)
-    df_selected = recursive_sampling(df, model, threshold)
+    df_selected = batch_sampling(df, model, threshold)
     df_selected.to_csv(output_file, index=False)
     print(df_selected)
     print(f"Saved {len(df_selected)} samples to {output_file}")
