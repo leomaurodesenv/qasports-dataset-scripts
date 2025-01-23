@@ -41,7 +41,15 @@ def sampling(
     threshold: int = 0.4,
     model_name: str = "all-MiniLM-L6-v2",
 ):
-    """Sampling a Question-Answering dataset"""
+    """
+    Sampling a Question-Answering dataset
+    Args:
+        input_file (str): The input file
+        output_file (str): The output file
+        test (bool): Whether to test the function
+        threshold (int): The similarity threshold
+        model_name (str): The sentence transformer model name
+    """
     df = pd.read_csv(input_file, sep=",")
     print(f"Loaded {len(df)} samples from {input_file} (Testing={test})")
     if test:
