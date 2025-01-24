@@ -64,5 +64,5 @@ def split_text_from_files(input_folder: str, output_file: str, chunk_size: int =
     df = pd.DataFrame(every_chunks)
     df.to_csv(output_file, index=False, encoding="utf-8")
 
-    print(df.sample())
+    print(df.head())
     print(f"Saved {output_file}: {df.shape}")

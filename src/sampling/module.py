@@ -55,10 +55,10 @@ def sampling(
     df = pd.read_csv(input_file, sep=",")
     print(f"Loaded {len(df)} samples from {input_file} (Testing={test})")
     if test:
-        df = df.sample(10)
+        df = df.head()
 
     model = SentenceTransformer(model_name)
     df_selected = batch_sampling(df, model, threshold)
     df_selected.to_csv(output_file, index=False)
-    print(df_selected)
+    print(df_selected.head())
     print(f"Saved {len(df_selected)} samples to {output_file}")
