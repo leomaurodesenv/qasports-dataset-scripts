@@ -16,7 +16,7 @@ def split_text_into_chunks(file_path: str, chunk_size: int):
     Returns:
         list: The text chunks
     """
-    text_chunks = []
+    text_chunks = list()
 
     try:
         with open(file_path, "r", encoding="utf-8") as file:
@@ -49,7 +49,7 @@ def split_text_from_files(input_folder: str, output_file: str, chunk_size: int =
         chunk_size (int): The size of the text chunks
     """
     # initialize a list to hold all the text chunks
-    every_chunks = []
+    every_chunks = list()
 
     # loop through each file in the input folder
     print(f"Reading files from {input_folder}")
@@ -58,11 +58,11 @@ def split_text_from_files(input_folder: str, output_file: str, chunk_size: int =
         # only process text files
         if os.path.isfile(file_path) and filename.endswith(".json"):
             text_chunks = split_text_into_chunks(file_path, chunk_size)
-            every_chunks.append(text_chunks)
+            every_chunks = every_chunks + text_chunks
 
     # write the CSV file
-    df = pd.DataFrame(text_chunks)
+    df = pd.DataFrame(every_chunks)
     df.to_csv(output_file, index=False, encoding="utf-8")
 
-    print(df.head(5))
+    print(df.sample())
     print(f"Saved {output_file}: {df.shape}")
