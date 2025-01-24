@@ -21,12 +21,12 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 ## Dataset Elaboration
 
 We have sorted the resources into five separate folders.
-- 🔧 [src/gathering/](src/gathering/) - Gathering wiki links.
-- 🔧 [src/fetching/](src/fetching/) - Fetching raw HTML from links.
+- 🔧 [src/gathering/](src/gathering/) - Gather wiki links.
+- 🔧 [src/fetching/](src/fetching/) - Fetch raw HTML from links.
 - 🔧 [src/processing/](src/processing/) - Process and clean textual data.
 - 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
 - 🔧 [src/question_answer/](src/question_answer/) - Generate questions and answers.
-- 🔧 [src/sampling/](src/sampling/) - Sampling representative questions and answers.
+- 🔧 [src/sampling/](src/sampling/) - Sample representative questions and answers.
 
 ```sh
 # Creating a virtual environment
@@ -55,6 +55,7 @@ $ python -m src.sampling.run
 ## Citation
 
 ```tex
+# QASports: A Question Answering Dataset about Sports
 @inproceedings{jardim:2023:qasports-dataset,
     author={Pedro Calciolari Jardim and Leonardo Mauro Pereira Moraes and Cristina Dutra Aguiar},
     title = {{QASports}: A Question Answering Dataset about Sports},
