@@ -12,6 +12,8 @@ TESTING = True
 def generate_wiki_pages() -> list:
     """
     Generate a list of dictionaries containing the base pages for each sport.
+    Returns:
+        list: A list of dictionaries containing the base pages for each sport
     """
     base_pages = [
         {
@@ -129,4 +131,5 @@ def generate_wiki_pages() -> list:
     return base_pages
 
 
+# Generate the wiki pages information
 wiki_pages = generate_wiki_pages()

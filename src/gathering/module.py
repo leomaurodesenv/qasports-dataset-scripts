@@ -15,7 +15,19 @@ def request_link(
     broken_url: list = list(),
     controller: list = list(),
 ):
-    """Collect all wiki links"""
+    """
+    Request link from `url` and extract all wiki links
+    Args:
+        url (str): The URL to request
+        url_base (str): The base URL
+        wiki_special (str): The special wiki URL
+        url_wiki (list): The list of wiki URLs
+        broken_url (list): The list of broken URLs
+        controller (list): The controller list
+    Returns:
+        list: The list of wiki URLs
+        list: The list of broken URLs
+    """
     try:
         # request HTML page
         response = requests.get(url)
@@ -59,7 +71,12 @@ def request_link(
 
 
 def create_csv(filename: str, urls: list):
-    """Create a CSV from `urls`"""
+    """
+    Create a CSV from `urls`
+    Args:
+        filename (str): The filename
+        urls (list): The list of URLs
+    """
     with open(filename, "w") as file:
         writer = csv.writer(file)
         writer.writerow(["url"])
