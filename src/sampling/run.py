@@ -1,5 +1,7 @@
 from ..module import OUTPUT_PATH, TESTING, wiki_pages
-from .semantic import sampling
+
+# from .semantic import semantic_sampling as sampling
+from .affinity import affinity_sampling as sampling
 
 # sampling the questions
 for wiki_page in wiki_pages:

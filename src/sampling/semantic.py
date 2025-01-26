@@ -7,13 +7,13 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def batch_semantic_sampling(df_questions: pd.DataFrame, model: any, threshold: int):
+def batch_semantic_sampling(df_questions: pd.DataFrame, model: any, threshold: float):
     """
     Batch semantic sampling
     Args:
         df_questions (pd.DataFrame): The dataset to sample
         model (any): The sentence transformer model
-        threshold (int): The similarity threshold
+        threshold (float): The similarity threshold
     Returns:
         pd.DataFrame: The sampled dataset
     """
@@ -40,7 +40,7 @@ def semantic_sampling(
     input_file: str,
     output_file: str,
     test: bool = False,
-    threshold: int = 0.4,
+    threshold: float = 0.4,
     model_name: str = "all-MiniLM-L6-v2",
 ):
     """
@@ -49,7 +49,7 @@ def semantic_sampling(
         input_file (str): The input file
         output_file (str): The output file
         test (bool): Whether to test the function
-        threshold (int): The similarity threshold
+        threshold (float): The similarity threshold
         model_name (str): The sentence transformer model name
     """
     df = pd.read_csv(input_file, sep=",")
