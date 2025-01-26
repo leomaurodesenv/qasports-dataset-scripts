@@ -7,12 +7,13 @@ from tqdm import tqdm
 import pandas as pd
 
 
-def split_text_into_chunks(file_path: str, chunk_size: int):
+def split_text_into_chunks(file_path: str, chunk_size: int, overlap: int = 20):
     """
     Extract context from texts
     Args:
         file_path (str): The file path
         chunk_size (int): The size of the text chunks
+        overlap (int): The overlap between chunks
     Returns:
         list: The text chunks
     """
@@ -22,8 +23,8 @@ def split_text_into_chunks(file_path: str, chunk_size: int):
         with open(file_path, "r", encoding="utf-8") as file:
             file_content = json.load(file)
 
-            # split the content into chunks of 256 characters
-            for i in range(0, len(file_content["text"]), chunk_size):
+            # split the content into chunks with a moving window
+            for i in range(0, len(file_content["text"]), chunk_size - overlap):
                 text_chunk = file_content["text"][i : i + chunk_size]
                 text_chunks.append(
                     {
