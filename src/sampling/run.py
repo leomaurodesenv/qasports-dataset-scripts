@@ -1,5 +1,5 @@
 from ..module import OUTPUT_PATH, TESTING, wiki_pages
-from .module import sampling
+from .semantic import sampling
 
 # sampling the questions
 for wiki_page in wiki_pages:
