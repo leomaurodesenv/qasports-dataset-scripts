@@ -38,7 +38,7 @@ def batch_affinity_sampling(df_questions: pd.DataFrame, model: any, batch: int):
     for idx in clustering.cluster_centers_indices_.tolist():
         row = df_questions.iloc[idx]
         values = {column: row[column] for column in df_questions.columns}
-        values["embedding"] = model.encode(row["question"])[0]
+        values["embedding"] = model.encode(row["question"])
         selected_questions.append(values)
     return pd.DataFrame(selected_questions)
 
