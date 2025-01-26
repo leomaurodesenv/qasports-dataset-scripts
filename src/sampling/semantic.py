@@ -1,4 +1,4 @@
-"""Sampling module for the QASports dataset"""
+"""Semantic sampling module for textual dataset"""
 
 import pandas as pd
 import numpy as np
@@ -7,13 +7,13 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def batch_sampling(df_questions: pd.DataFrame, model: any, threshold: int):
+def batch_semantic_sampling(df_questions: pd.DataFrame, model: any, threshold: float):
     """
-    Batch sampling
+    Batch semantic sampling
     Args:
         df_questions (pd.DataFrame): The dataset to sample
         model (any): The sentence transformer model
-        threshold (int): The similarity threshold
+        threshold (float): The similarity threshold
     Returns:
         pd.DataFrame: The sampled dataset
     """
@@ -36,20 +36,20 @@ def batch_sampling(df_questions: pd.DataFrame, model: any, threshold: int):
     return pd.DataFrame(selected_questions)
 
 
-def sampling(
+def semantic_sampling(
     input_file: str,
     output_file: str,
     test: bool = False,
-    threshold: int = 0.4,
+    threshold: float = 0.4,
     model_name: str = "all-MiniLM-L6-v2",
 ):
     """
-    Sampling a Question-Answering dataset
+    Semantic sampling a Question-Answering dataset
     Args:
         input_file (str): The input file
         output_file (str): The output file
         test (bool): Whether to test the function
-        threshold (int): The similarity threshold
+        threshold (float): The similarity threshold
         model_name (str): The sentence transformer model name
     """
     df = pd.read_csv(input_file, sep=",")
@@ -58,7 +58,7 @@ def sampling(
         df = df.head()
 
     model = SentenceTransformer(model_name)
-    df_selected = batch_sampling(df, model, threshold)
+    df_selected = batch_semantic_sampling(df, model, threshold)
     df_selected.to_csv(output_file, index=False)
     print(df_selected.head())
     print(f"Saved {len(df_selected)} samples to {output_file}")
