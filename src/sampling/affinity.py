@@ -18,25 +18,27 @@ def batch_affinity_sampling(df_questions: pd.DataFrame, model: any, batch: int):
         pd.DataFrame: The sampled dataset
     """
     # Base clustering parameters
-    base_parameters = {"random_state": 42, "damping": 0.5, "max_iter": 1_000}
-    # Compute the embeddings
-    embeddings = model.encode(df_questions["question"].tolist())
+    base_parameters = {"random_state": 42, "damping": 0.5, "max_iter": 10_000}
     # Divide the dataset into batches
     selected_questions, exemplar_indices = list(), set()
     for i in tqdm(range(0, len(df_questions), batch), desc="Batching"):
-        batch_embeddings = embeddings[i : i + batch]
+        batch_embeddings = model.encode(
+            df_questions["question"].iloc[i : i + batch].tolist()
+        )
         clustering = AffinityPropagation(**base_parameters)
         clustering.fit(batch_embeddings)
         exemplar = clustering.cluster_centers_indices_.tolist()
         exemplar_indices.update(exemplar)
     # Bacth examplar clustering
-    exemplar_embeddings = embeddings[list(exemplar_indices)]
+    exemplar_embeddings = model.encode(
+        df_questions["question"].iloc[list(exemplar_indices)].tolist()
+    )
     clustering = AffinityPropagation(**base_parameters)
     clustering.fit(exemplar_embeddings)
     for idx in clustering.cluster_centers_indices_.tolist():
         row = df_questions.iloc[idx]
         values = {column: row[column] for column in df_questions.columns}
-        values["embedding"] = embeddings[i]
+        values["embedding"] = model.encode(row["question"])[0]
         selected_questions.append(values)
     return pd.DataFrame(selected_questions)
 
