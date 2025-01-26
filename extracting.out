@@ -178,3 +178,203 @@ output/clean_json/f1 - quantity: (44516, 5)
 4                       s 22 Position 14th Results[]  ...  Nico Hulkenberg, 2010 Formula One Season, Driv...
 
 [5 rows x 5 columns]
+Reading files from output/clean_json/basketball
+                                             context  ...                                         categories
+0  Colorado College External Links[] Official ath...  ...  NCAA Division III schools, Schools in Colorado...
+1  The Mount St. Mary's Mountaineers Basketball t...  ...  NCAA Division I schools, Metro Atlantic Athlet...
+2  NCAA Division I Men's Basketball Tournament wa...  ...  NCAA Division I schools, Metro Atlantic Athlet...
+3  . Gerald Jermaine Wallace (born July 23, 1982)...  ...  American basketball players, Born in 1982, Sma...
+4  asketball for the Alabama Crimson Tide. Conten...  ...  American basketball players, Born in 1982, Sma...
+
+[5 rows x 5 columns]
+Saved output/basketball-contexts.csv: (37152, 5)
+Reading files from output/clean_json/football
+                                             context  ...                                         categories
+0  The 2018-19 A-League was the 42nd season of to...  ...  League stubs, 2018-19 A-League season, A-Leagu...
+1  nd Final will take place on Sunday 19 May 2019...  ...  League stubs, 2018-19 A-League season, A-Leagu...
+2  3.3 Grand Final 4 Statistics 4.1 Player stats ...  ...  League stubs, 2018-19 A-League season, A-Leagu...
+3  n players[] The following do not fill a Visa p...  ...  League stubs, 2018-19 A-League season, A-Leagu...
+4  zens (and New Zealand citizens, in the case of...  ...  League stubs, 2018-19 A-League season, A-Leagu...
+
+[5 rows x 5 columns]
+Saved output/football-contexts.csv: (88829, 5)
+Reading files from output/clean_json/americanfootball
+                                             context  ...                                         categories
+0  The Manitoba Bisons are a member of the CIS Ca...  ...  Canada West Universities Athletic Association,...
+1              8 External Links[] Official team site  ...  Canada West Universities Athletic Association,...
+2  2013 Montclair State Red Hawks Head Coach: Ric...  ...  2013 college teams, 2013 NCAA Division III Tea...
+3  2004 Dayton Flyers Head Coach: Mike Kelly (24t...  ...  2004 college teams, 2004 NCAA Division 1-AA, 2...
+4  The Colorado College Tigers football team repr...  ...                  Discontinued College Teams, Teams
+
+[5 rows x 5 columns]
+Saved output/americanfootball-contexts.csv: (77182, 5)
+Reading files from output/clean_json/cricket
+                                             context  ...                                         categories
+0  Carl Junior Dala (born 29 December 1989) is a ...  ...  Active player, 1989 births, Living people, Sou...
+1  This article is a stub. You can help Internati...  ...                        Article stubs, Test Matches
+2  mpire Close of play Match notes Day 1 Day 2 Da...  ...                        Article stubs, Test Matches
+3  A left-arm unorthodox spin delivery. Left-arm ...  ...                                Cricket terminology
+4  owever, the ball will usually turn more sharpl...  ...                                Cricket terminology
+
+[5 rows x 5 columns]
+Saved output/cricket-contexts.csv: (15348, 5)
+Reading files from output/clean_json/hockey
+                                             context  ...                        categories
+0  main The Dutch men's national under 20 ice hoc...  ...  Junior national ice hockey teams
+1  ands men's national under-18 ice hockey team i...  ...  Junior national ice hockey teams
+2   and hosted the 2012 IIHF World U18 Championsh...  ...  Junior national ice hockey teams
+3  Frederick Mellor Hutchinson (February 5, 1892 ...  ...                   British players
+4     k H. for supplying information on this player.  ...                   British players
+
+[5 rows x 5 columns]
+Saved output/hockey-contexts.csv: (30921, 5)
+Reading files from output/clean_json/golf
+                                             context  ...                                         categories
+0  Template:Infobox golfer Robert George Goalby (...  ...  1929 births, 2022 deaths, American male golfer...
+1  nship among 11 Tour wins achieved between 1958...  ...  1929 births, 2022 deaths, American male golfer...
+2  ior wins (1) 7 Major championships 7.1 Wins (1...  ...  1929 births, 2022 deaths, American male golfer...
+3  The following is a collection of magazine cove...  ...                                    Magazine covers
+4  Country club logo. IBIS is a scenic golfing co...  ...                               Florida golf courses
+
+[5 rows x 5 columns]
+Saved output/golf-contexts.csv: (984, 5)
+Reading files from output/clean_json/rugbyunion
+                                             context  ...                                         categories
+0  All events that happened in 1985: Rugby Union ...  ...                                 Stubs, 1985 births
+1  Ifereimi Rawaqa (born Sept 20, 1980 in Vuda La...  ...  1980 births, Living people, Ba people, Fijian ...
+2  pia. After four matches as substitute, the lan...  ...  1980 births, Living people, Ba people, Fijian ...
+3  u Rabeni. His build makes him an ideal line-ou...  ...  1980 births, Living people, Ba people, Fijian ...
+4  evo pulled up late in the first match of the N...  ...  1980 births, Living people, Ba people, Fijian ...
+
+[5 rows x 5 columns]
+Saved output/rugbyunion-contexts.csv: (1591, 5)
+Reading files from output/clean_json/rugby
+                                             context  ...                  categories
+0  France National Rugby Union Team logo The Fran...  ...  Rugby Union National Teams
+1  ght sixteen times, shared it a further eight t...  ...  Rugby Union National Teams
+2     IRB Hall only, and four to both Halls of Fame.  ...  Rugby Union National Teams
+3  File:Placeholder Karl Harrison, (born 20 Febru...  ...        Rugby League Players
+4  994. He was the head coach of Salford City Red...  ...        Rugby League Players
+
+[5 rows x 5 columns]
+Saved output/rugby-contexts.csv: (405, 5)
+Reading files from output/clean_json/baseball
+                                             context  ...                                         categories
+0  Loewen is a surname of Belgian origins. People...  ...                                                   
+1  Mount St. Mary's Mountaineers logo The Mount S...  ...  College baseball teams, NCAA baseball teams, N...
+2      nships: 1 External Links[] Official team site  ...  College baseball teams, NCAA baseball teams, N...
+3  Albert William Kaline (December 19, 1934 - Apr...  ...  1934 births, 2020 deaths, American baseball pl...
+4  tem and joining the team directly from high sc...  ...  1934 births, 2020 deaths, American baseball pl...
+
+[5 rows x 5 columns]
+Saved output/baseball-contexts.csv: (55733, 5)
+Reading files from output/clean_json/martialarts
+                                             context  ...                          categories
+0  Ironfist Chinmi Theme Chinese Martial Arts Gen...  ...  Chinese Martial Arts, Manga, Anime
+1  nmi) is a Japanese martial arts manga series w...  ...  Chinese Martial Arts, Manga, Anime
+2  onen in 1987. A part of this series was publis...  ...  Chinese Martial Arts, Manga, Anime
+3   anime television series in 1988, which was du...  ...  Chinese Martial Arts, Manga, Anime
+4  ) 2.4 Ryukai Arc (Chapters 12-18) 2.5 Black Fl...  ...  Chinese Martial Arts, Manga, Anime
+
+[5 rows x 5 columns]
+Saved output/martialarts-contexts.csv: (1171, 5)
+Reading files from output/clean_json/boxing
+                                             context  ...                                         categories
+0  ElTerribleProduction is a French YouTuber who ...  ...                                                   
+1  Dickie Eklund a former boxer whose peak of suc...  ...                                                   
+2  7 -Ep 1 Oscar De La Hoya (born February 4, 197...  ...  All articles with dead external links, Article...
+3  h School. De La Hoya was born in East Los Ange...  ...  All articles with dead external links, Article...
+4  ted Pound for Pound fighter in the world in 19...  ...  All articles with dead external links, Article...
+
+[5 rows x 5 columns]
+Saved output/boxing-contexts.csv: (2510, 5)
+Reading files from output/clean_json/mixedmartialarts
+                                             context  ...                                         categories
+0  Ross Pearson (born September 26, 1984 in Sunde...  ...  Articles in need of attention, Living people, ...
+1  raphy 1.1 The Ultimate Fighter 1.2 Ultimate Fi...  ...  Articles in need of attention, Living people, ...
+2  Dave "Dangerous" Beneteau is a retired Canadia...  ...  Articles in need of attention, 1968 births, Li...
+3  east" Severn. Currently Dave Beneteau works as...  ...  Articles in need of attention, 1968 births, Li...
+4  Ronda Rousey Born Ronda Jean RouseyFebruary 1,...  ...  American mixed martial artists, American judok...
+
+[5 rows x 5 columns]
+Saved output/mixedmartialarts-contexts.csv: (7034, 5)
+Reading files from output/clean_json/fitness
+                                             context  ... categories
+0  1. Create a caloric deficit. 2. Take in less e...  ...    Dieting
+1  ke those steps to lose weight, tone your body,...  ...    Dieting
+2  g you put into your mouth. Writing down all yo...  ...    Dieting
+3  nts or lose 10% body fat? Would you like to bu...  ...    Dieting
+4  r body parts you would like to see changes to....  ...    Dieting
+
+[5 rows x 5 columns]
+Saved output/fitness-contexts.csv: (841, 5)
+Reading files from output/clean_json/cycling
+                                             context  ...          categories
+0  Recreation is having fun whilst cycling on you...  ...                    
+1  Everyone Bikes is a cycle distributor aimed at...  ...  Cycle distributors
+2  Strava is a social network and fitness-trackin...  ...                    
+3  ysical activities and connecting with other at...  ...                    
+4  unctions and Features 3 Unique Aspects of Stra...  ...                    
+
+[5 rows x 5 columns]
+Saved output/cycling-contexts.csv: (1033, 5)
+Reading files from output/clean_json/badminton
+                                             context  ...                          categories
+0     Head Logo Write the text of your article here!  ...                                    
+1  Template:Short description Template:About File...  ...  Badminton equipment, Racket sports
+2  t has an open conical shape formed by feathers...  ...  Badminton equipment, Racket sports
+3  cork first, and remain in the cork-first orien...  ...  Badminton equipment, Racket sports
+4  Contents 1 Footwork Basics 1.1 Power 1.2 Dynam...  ...                                    
+
+[5 rows x 5 columns]
+Saved output/badminton-contexts.csv: (152, 5)
+Reading files from output/clean_json/gymnastics
+                                             context  ...                                    categories
+0  Lynnzee Ellise Brown (born September 4 in Inde...  ...                                              
+1  er and competing for their gymnastics team. Sh...  ...                                              
+2  AA Career 2 Elite Career 2.1 2023 2.2 2024 2.2...  ...                                              
+3                                       Main Gallery  ...  Austrian gymnast, 2005 births, 2024 Olympian
+4  The 2024 American Classic took place on April ...  ...           2024 Competitions, American Classic
+
+[5 rows x 5 columns]
+Saved output/gymnastics-contexts.csv: (16386, 5)
+Reading files from output/clean_json/handball
+                                             context  ... categories
+0  This article will try to explain general handb...  ...           
+1  Welcome to the... Handball Wiki 138 articles *...  ...           
+2  all) is a fast-paced sport where two teams of ...  ...           
+3  This is an overview of the year of 1958 in han...  ...      Years
+4  This is an overview of the year of 2006 in han...  ...      Years
+
+[5 rows x 5 columns]
+Saved output/handball-contexts.csv: (215, 5)
+Reading files from output/clean_json/skiing
+                                             context  ...                      categories
+0  Bodens BK is a sports club in Boden, Sweden. I...  ...          Skiing clubs in Sweden
+1  Ljusdals IF is a sports club in Ljusdal, Swede...  ...  Defunct skiing clubs in Sweden
+2  jumping, handball, ice hockey, orienteering an...  ...  Defunct skiing clubs in Sweden
+3  This is an overview of the year of 2000 in ski...  ...                           Years
+4  Nordic combined skiing is a form of skiing. It...  ...                 Types of skiing
+
+[5 rows x 5 columns]
+Saved output/skiing-contexts.csv: (87, 5)
+Reading files from output/clean_json/horse_racing
+                                             context  ...                                         categories
+0  The Stephen Foster Handicap is an American tho...  ...  Races, Grade I races, Stakes races, Races in t...
+1  uding "My Old Kentucky Home" which is the song...  ...  Races, Grade I races, Stakes races, Races in t...
+2  rogressed from Grade III status in 1988, to Gr...  ...  Races, Grade I races, Stakes races, Races in t...
+3   Reserve Classic, and the Kentucky Derby. The ...  ...  Races, Grade I races, Stakes races, Races in t...
+4  tates. The 2006 edition of the race produced i...  ...  Races, Grade I races, Stakes races, Races in t...
+
+[5 rows x 5 columns]
+Saved output/horse_racing-contexts.csv: (559, 5)
+Reading files from output/clean_json/f1
+                                             context  ...                                         categories
+0  Cora Schumacher Full name Cora Schumacher Date...  ...                              People, Living people
+1  Inaki Rueda Full name Inaki Rueda Date of birt...  ...            Scuderia Ferrari, People, Living people
+2  ia Ferrari. Races[] Competitions where Rueda h...  ...            Scuderia Ferrari, People, Living people
+3  Nico Hulkenberg Season Information Season 2010...  ...  Nico Hulkenberg, 2010 Formula One Season, Driv...
+4                       s 22 Position 14th Results[]  ...  Nico Hulkenberg, 2010 Formula One Season, Driv...
+
+[5 rows x 5 columns]
+Saved output/f1-contexts.csv: (44516, 5)
