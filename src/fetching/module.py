@@ -1,3 +1,5 @@
+"""Module for fetching html content from a list of URLs"""
+
 import json
 import re
 from datetime import datetime
@@ -10,20 +12,24 @@ from tqdm import tqdm
 
 
 def fetch_html(url: str, folder_path: str):
-    """Fetching one url"""
+    """
+    Fetching one url
+    Args:
+        url (str): The URL to fetch
+        folder_path (str): The folder path to save the HTML content
+    """
     try:
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
 
         # build file name and path
         Path(folder_path).mkdir(parents=True, exist_ok=True)
-        file_name = (
-            soup.title.contents[0]
-            .split("|")[0][0:-1]
-        )
+        file_name = soup.title.contents[0].split("|")[0][0:-1]
         file_name = re.sub(r"[\ \/\:]", "_", file_name)
         file_name = re.sub(r"[\?\"\']", "", file_name)
-        file_name = file_name + ".json" if len(file_name) <= 90 else file_name[0:90] + ".json"
+        file_name = (
+            file_name + ".json" if len(file_name) <= 90 else file_name[0:90] + ".json"
+        )
         file_name = str(Path(folder_path) / file_name)
 
         file = open(file_name, "w")
@@ -35,7 +41,7 @@ def fetch_html(url: str, folder_path: str):
         # wiki categories
         cat = soup.find(class_="page-header__categories")
 
-        if cat != None:
+        if cat is not None:
             cat = cat.get_text().split("\n")
             if "\t" in cat[-1]:
                 all_content = cat[2:-1][0]
@@ -45,7 +51,7 @@ def fetch_html(url: str, folder_path: str):
             all_content = " "
 
         cat = soup.find(class_="page-header__categories-dropdown-content")
-        if cat != None:
+        if cat is not None:
             cat = cat.get_text().split("\n")
             for i in range(0, len(cat)):
                 if i != "":
@@ -76,10 +82,16 @@ def fetch_html(url: str, folder_path: str):
 
 
 def fetch_all_html(links_file: str, folder_path: str, test: bool = False):
-    """Fetching all urls in CSV"""
+    """
+    Fetching all URLs
+    Args:
+        links_file (str): The file containing the URLs
+        folder_path (str): The folder path to save the HTML content
+        test (bool): Whether to test the function
+    """
     df = pd.read_csv(links_file)
+    if test:
+        df = df.sample(10)
     print(f"{folder_path} (Testing={test}):", df.shape[0])
-    for i, row in tqdm(df.iterrows()):
+    for i, row in tqdm(df.iterrows(), desc="Fetching", total=len(df)):
         fetch_html(url=row["url"], folder_path=folder_path)
-        if test and i > 9:
-            break
