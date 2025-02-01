@@ -18,29 +18,31 @@ def batch_affinity_sampling(df_questions: pd.DataFrame, model: any, batch: int):
         pd.DataFrame: The sampled dataset
     """
     # Base clustering parameters
-    base_parameters = {"random_state": 42, "damping": 0.5, "max_iter": 10_000}
+    base_parameters = {
+        "random_state": 42,
+        "damping": 0.5,
+        "max_iter": 10_000,
+        "convergence_iter": 10,
+        "affinity": "euclidean",
+    }
     # Divide the dataset into batches
     selected_questions, exemplar_indices = list(), set()
     for i in tqdm(range(0, len(df_questions), batch), desc="Batching"):
-        batch_embeddings = model.encode(
-            df_questions["question"].iloc[i : i + batch].tolist()
-        )
+        df_questions_batch = df_questions.iloc[i : i + batch]
+        batch_embeddings = model.encode(df_questions_batch["question"].tolist())
         clustering = AffinityPropagation(**base_parameters)
         clustering.fit(batch_embeddings)
-        exemplar = clustering.cluster_centers_indices_.tolist()
-        exemplar_indices.update(exemplar)
-    # Bacth examplar clustering
-    exemplar_embeddings = model.encode(
-        df_questions["question"].iloc[list(exemplar_indices)].tolist()
+        exemplar_batch = clustering.cluster_centers_indices_
+        if exemplar_batch is not None:
+            exemplar_batch = exemplar_batch.tolist()
+            exemplar_idx = df_questions_batch.iloc[exemplar_batch].index.to_list()
+            exemplar_indices.update(exemplar_idx)
+    # Batch exemplar clustering
+    print(f"Exemplar indices: {len(exemplar_indices)}")
+    df_examplars = (
+        df_questions.iloc[list(exemplar_indices)].copy(deep=True).reset_index(drop=True)
     )
-    clustering = AffinityPropagation(**base_parameters)
-    clustering.fit(exemplar_embeddings)
-    for idx in clustering.cluster_centers_indices_.tolist():
-        row = df_questions.iloc[idx]
-        values = {column: row[column] for column in df_questions.columns}
-        values["embedding"] = model.encode(row["question"])
-        selected_questions.append(values)
-    return pd.DataFrame(selected_questions)
+    return df_examplars
 
 
 def affinity_sampling(
@@ -66,6 +68,7 @@ def affinity_sampling(
 
     model = SentenceTransformer(model_name)
     df_selected = batch_affinity_sampling(df, model, batch)
+    df_selected = batch_affinity_sampling(df_selected, model, batch)
     df_selected.to_csv(output_file, index=False)
     print(df_selected.head())
     print(f"Saved {len(df_selected)} samples to {output_file}")
