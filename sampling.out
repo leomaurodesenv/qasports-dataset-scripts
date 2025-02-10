@@ -1,0 +1,312 @@
+Loaded 113381 samples from output/basketball-qa.csv (Testing=False)
+Batching: 100%|██████████| 114/114 [02:10<00:00,  1.14s/it]
+Exemplar indices: 13331
+Batching: 100%|██████████| 14/14 [00:06<00:00,  2.11it/s]
+Exemplar indices: 1560
+                                     qa_id  ...                                 context_categories
+0  144809708238437939802566798291352749837  ...  NCAA Division I schools, Metro Atlantic Athlet...
+1  112691814493762877187096199019415204680  ...  Defunct NBA Arenas, Arenas, NBA Arenas, Basket...
+2  206261754991023295097816739385286622473  ...  1961 births, Retired, American basketball play...
+3  151220274313883732809732126461181244997  ...  National Basketball Association, National Bask...
+4   28522781439663122794844284666694133560  ...  Defunct NBA Arenas, Arenas, NBA Arenas, Basket...
+[5 rows x 8 columns]
+Saved 1560 samples to output/basketball-qa-sampling.csv
+
+
+Loaded 244909 samples from output/football-qa.csv (Testing=False)
+Batching: 100%|██████████| 245/245 [08:12<00:00,  2.01s/it]
+Exemplar indices: 30212
+Batching: 100%|██████████| 31/31 [01:32<00:00,  2.98s/it]
+Exemplar indices: 3384
+                                     qa_id  ...                                 context_categories
+0  229450132239648789250349856860799727356  ...  League stubs, 2018-19 A-League season, A-Leagu...
+1  163853169244566237911336296991082577385  ...  2023-24 Match Day info, Manchester City F.C. m...
+2  259084910680223360188413948109964116206  ...                                            Cleanup
+3    6924123306057735764985459709525124286  ...  League stubs, 2018-19 A-League season, A-Leagu...
+4  246708619873291704362828461656473855778  ...                         Squads, Celtic F.C. squads
+[5 rows x 8 columns]
+Saved 3384 samples to output/football-qa-sampling.csv
+
+
+Loaded 221292 samples from output/americanfootball-qa.csv (Testing=False)
+Batching: 100%|██████████| 222/222 [22:57<00:00,  6.20s/it]
+Exemplar indices: 25337
+Batching: 100%|██████████| 26/26 [01:30<00:00,  3.47s/it]
+Exemplar indices: 2973
+                                     qa_id  ...                                 context_categories
+0  266342470207632044584589666814633698082  ...  2024 college teams, 2024 NCAA Division III tea...
+1  158086915014850238761820148360180337240  ...  NCAA Division II Teams, Gulf South Conference,...
+2   62567533221060033504499197650302614904  ...  2023 college teams, 2023 NCAA Division III tea...
+3  159981049519393398404811559803535001402  ...                                                NaN
+4  107458157093618611583499052019722068905  ...  Article stubs, Templates, 2018 NFL Draftees, O...
+[5 rows x 8 columns]
+Saved 2973 samples to output/americanfootball-qa-sampling.csv
+
+
+Loaded 36020 samples from output/cricket-qa.csv (Testing=False)
+Batching: 100%|██████████| 37/37 [01:33<00:00,  2.52s/it]
+Exemplar indices: 4305
+Batching: 100%|██████████| 5/5 [00:02<00:00,  2.07it/s]
+Exemplar indices: 517
+                                     qa_id  ...                                 context_categories
+0   62596396797506075988401826173538574850  ...                          ODI match, 2013 ODI match
+1   15044936202059357009596390612755383415  ...  Indian cricket tours of Australia, Internation...
+2  314419169705114270061878114425078446547  ...     Article stubs, Test Matches, 2014 Test matches
+3  116038429178163382571818009993794814618  ...                                       Test Matches
+4   91151516048288788862495304949862559522  ...  2018 in Australian cricket, 2018 in South Afri...
+[5 rows x 8 columns]
+Saved 517 samples to output/cricket-qa-sampling.csv
+
+
+Loaded 87459 samples from output/hockey-qa.csv (Testing=False)
+Batching: 100%|██████████| 88/88 [29:51<00:00,  7.25s/it]
+Batching: 100%|██████████| 88/88 [29:51<00:00, 20.36s/it]
+Exemplar indices: 11226
+Batching: 100%|██████████| 12/12 [07:43<00:00, 38.65s/it]
+Exemplar indices: 1424
+                                     qa_id  ...                      context_categories
+0  322981050163374166438850533350573801013  ...                 Czech Extraliga seasons
+1  265114531110128293315858039655175533604  ...        Junior national ice hockey teams
+2  328240501882015438524335635239058186033  ...                               Countries
+3  261207633764195257175201037275144612495  ...  1910 in ice hockey, 1911 in ice hockey
+4   95643631504143270864048787793013328135  ...              2008-09 ice hockey leagues
+[5 rows x 8 columns]
+Saved 1424 samples to output/hockey-qa-sampling.csv
+
+
+Loaded 2678 samples from output/golf-qa.csv (Testing=False)
+Batching: 100%|██████████| 3/3 [00:02<00:00,  1.60it/s]
+Batching: 100%|██████████| 3/3 [00:02<00:00,  1.46it/s]
+Exemplar indices: 321
+Batching: 100%|██████████| 1/1 [00:00<00:00, 12.96it/s]
+Exemplar indices: 46
+                                     qa_id  ...                                 context_categories
+0  244014045674928308896363965882725470224  ...                                    Magazine covers
+1   85618811631324008859321283257788401027  ...  Sony Open in Hawaii, Golf in Hawaii, 1983 in g...
+2   99175428584095675852285999542766939586  ...  American female golfers, Furman Paladins women...
+3   81973412401319619847996134180372209192  ...                                                NaN
+4  241567791303627989445395207552542579655  ...                                    Golf tournament
+[5 rows x 8 columns]
+Saved 46 samples to output/golf-qa-sampling.csv
+
+
+Loaded 4828 samples from output/rugbyunion-qa.csv (Testing=False)
+Batching: 100%|██████████| 5/5 [00:02<00:00,  2.32it/s]
+Batching: 100%|██████████| 5/5 [00:02<00:00,  2.09it/s]
+Exemplar indices: 602
+Batching: 100%|██████████| 1/1 [00:00<00:00,  5.44it/s]
+Batching: 100%|██████████| 1/1 [00:00<00:00,  5.43it/s]
+Exemplar indices: 75
+                                     qa_id  ...                                 context_categories
+0  206983597679580609670033481665655671305  ...  IRFU Interprovincial Championship, Irish rugby...
+1  105776980487557571225316169434151169756  ...                                 Stubs, 1985 births
+2  170149059832414853266731095069573129805  ...                                 Stubs, 1969 Births
+3   25528126750335000630168758983171257517  ...                      New Zealand rugby union teams
+4  235775649505621257600740744074898277275  ...  Pages using duplicate arguments in template ca...
+[5 rows x 8 columns]
+Saved 75 samples to output/rugbyunion-qa-sampling.csv
+
+
+Loaded 1161 samples from output/rugby-qa.csv (Testing=False)
+Batching: 100%|██████████| 2/2 [00:00<00:00,  3.25it/s]
+Exemplar indices: 147
+Batching: 100%|██████████| 1/1 [00:00<00:00, 32.20it/s]
+Exemplar indices: 23
+                                     qa_id  ...          context_categories
+0  276553338727043749746194837359352167188  ...                         IRB
+1  125515162712373554861241876671025595255  ...    Rugby Union Competitions
+2  112776969352300620507974064352780228654  ...    Rugby Union Competitions
+3  248570130123875793851879685998175679503  ...                         IRB
+4   22588426972168320560817874217759201621  ...  Rugby Union National Teams
+[5 rows x 8 columns]
+Saved 23 samples to output/rugby-qa-sampling.csv
+
+
+Loaded 170295 samples from output/baseball-qa.csv (Testing=False)
+Batching: 100%|██████████| 171/171 [05:08<00:00,  1.80s/it]
+Exemplar indices: 20390
+Batching: 100%|██████████| 21/21 [01:24<00:00,  7.96s/it]
+Batching: 100%|██████████| 21/21 [01:24<00:00,  4.03s/it]
+Exemplar indices: 2246
+                                     qa_id  ...                                 context_categories
+0  257885137943892985629465045410201377080  ...                           Defunct baseball leagues
+1  130567908728251389785221927283386700038  ...  New York Yankees players, St. Louis Browns pla...
+2  332511544735223333330055038318137944225  ...                                              Dates
+3      37240562772104375396009283831317977  ...  Major League Baseball, 2021 season, Houston As...
+4  178476897120571604169756988522124315420  ...                           Defunct baseball leagues
+[5 rows x 8 columns]
+Saved 2246 samples to output/baseball-qa-sampling.csv
+
+
+Loaded 3202 samples from output/martialarts-qa.csv (Testing=False)
+Batching: 100%|██████████| 4/4 [00:01<00:00,  2.67it/s]
+Exemplar indices: 413
+Batching: 100%|██████████| 1/1 [00:00<00:00,  8.35it/s]
+Batching: 100%|██████████| 1/1 [00:00<00:00,  8.34it/s]
+Exemplar indices: 60
+                                     qa_id  ...                                 context_categories
+0   56462704472202815101338713246566563337  ...                                                NaN
+1   36631775360347162015904304656091748892  ...          Chinese Martial Arts, Modern Martial Arts
+2  173311944741398130183128298356131404650  ...  South American Martial Arts, Martial art style...
+3  161246833459702264982588426695505805707  ...  Chinese Martial Arts, Internal Martial Arts, T...
+4  106459748687652356233515073245676704459  ...  Chinese Martial Arts, Internal Martial Arts, T...
+[5 rows x 8 columns]
+Saved 60 samples to output/martialarts-qa-sampling.csv
+
+
+Loaded 7336 samples from output/boxing-qa.csv (Testing=False)
+Batching: 100%|██████████| 8/8 [01:18<00:00, 16.91s/it]
+Batching: 100%|██████████| 8/8 [01:18<00:00,  9.75s/it]
+Exemplar indices: 869
+Batching: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s]
+Batching: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s]
+Exemplar indices: 105
+                                     qa_id  ...                                 context_categories
+0   30419707763963169344810281729700037207  ...  Articles lacking sources from March 2009, Arti...
+1  123661904985624210452243090994479937029  ...                                          Redirects
+2  100582087068137602545108977654771132308  ...  Articles needing additional references from Oc...
+3   62963048389248664296962243362422415180  ...                                          Countries
+4  285035093102859135130317687986019272297  ...  Article stubs, 1986 births, Living people, Mex...
+[5 rows x 8 columns]
+Saved 105 samples to output/boxing-qa-sampling.csv
+
+
+Loaded 19227 samples from output/mixedmartialarts-qa.csv (Testing=False)
+Batching: 100%|██████████| 20/20 [03:58<00:00, 11.94s/it]
+Exemplar indices: 2248
+Batching: 100%|██████████| 3/3 [01:15<00:00, 25.03s/it]
+Exemplar indices: 279
+                                     qa_id  ...                                 context_categories
+0   99138301042107894299001437467402804152  ...  Articles in need of attention, 1980 births, Li...
+1  291447174487101952422670363507901503949  ...  Articles in need of attention, American mixed ...
+2   40476341615229088132680412009765569121  ...  Stubs, 2017 in mixed martial arts, Ultimate Fi...
+3   24471268277562050499555512420487609157  ...                       Promotions and organizations
+4  338618869892102048333899280910299961896  ...                                              Dates
+[5 rows x 8 columns]
+Saved 279 samples to output/mixedmartialarts-qa-sampling.csv
+
+
+Loaded 2130 samples from output/fitness-qa.csv (Testing=False)
+Batching: 100%|██████████| 3/3 [00:00<00:00,  3.26it/s]
+Exemplar indices: 273
+Batching: 100%|██████████| 1/1 [00:00<00:00, 16.27it/s]
+Exemplar indices: 38
+                                     qa_id  ...                                 context_categories
+0  263444034681119113624524540905820695508  ...                            Physical attractiveness
+1  269973300534586494254969354054088669210  ...  Karate, Martial Arts, Combat Sports, Agility, ...
+2  263424418733213142330495923094777838549  ...                                               Diet
+3  108480753751481973215424604197418906301  ...                                            Dieting
+4  283568617381476505366616456241274476335  ...                                          Exercises
+[5 rows x 8 columns]
+Saved 38 samples to output/fitness-qa-sampling.csv
+
+
+Loaded 2612 samples from output/cycling-qa.csv (Testing=False)
+Batching: 100%|██████████| 3/3 [00:01<00:00,  2.66it/s]
+Batching: 100%|██████████| 3/3 [00:01<00:00,  2.38it/s]
+Exemplar indices: 303
+Batching: 100%|██████████| 1/1 [00:00<00:00, 13.48it/s]
+Exemplar indices: 39
+                                     qa_id  ...  context_categories
+0  104972971939317956869731776705582694192  ...                 NaN
+1  179758941553295651662903149633655232179  ...  Brakes, Components
+2  234883745863665468950131308733113928169  ...                 NaN
+3  281973264774159352274341583345087216197  ...                 NaN
+4  331562219008626008344008340885322143071  ...                 NaN
+[5 rows x 8 columns]
+Saved 39 samples to output/cycling-qa-sampling.csv
+
+
+Loaded 414 samples from output/badminton-qa.csv (Testing=False)
+Batching: 100%|██████████| 1/1 [00:00<00:00,  7.57it/s]
+Batching: 100%|██████████| 1/1 [00:00<00:00,  7.56it/s]
+Exemplar indices: 59
+Batching: 100%|██████████| 1/1 [00:00<00:00, 48.42it/s]
+Exemplar indices: 11
+                                     qa_id  ...        context_categories
+0  192461202688583768003117224802381952032  ...                       NaN
+1  282017885198154953211373783399526561510  ...                       NaN
+2   39569843546314652705526392038293247177  ...                       NaN
+3  216897019935722682946522807038243955102  ...  Equipment, Rackets, SOTX
+4  275228297864063328325306006940818137929  ...                       NaN
+[5 rows x 8 columns]
+Saved 11 samples to output/badminton-qa-sampling.csv
+
+
+Loaded 44938 samples from output/gymnastics-qa.csv (Testing=False)
+Batching: 100%|██████████| 45/45 [01:37<00:00,  2.14it/s]
+Batching: 100%|██████████| 45/45 [01:37<00:00,  2.16s/it]
+Exemplar indices: 5364
+Batching: 100%|██████████| 6/6 [00:02<00:00,  2.07it/s]
+Exemplar indices: 639
+                                     qa_id  ...               context_categories
+0  184748306957220862105878678335792853543  ...                          Gallery
+1  233077801460669320594547069950441379581  ...  WOGA Classic, 2017 Competitions
+2  112717226518357703059108875729174001731  ...                          Gallery
+3   20755090707813093625997331365202030916  ...  WOGA Classic, 2017 Competitions
+4    6377762776767153580527637102066461977  ...                    Article stubs
+[5 rows x 8 columns]
+Saved 639 samples to output/gymnastics-qa-sampling.csv
+
+
+Loaded 612 samples from output/handball-qa.csv (Testing=False)
+Batching: 100%|██████████| 1/1 [00:00<00:00,  3.99it/s]
+Batching: 100%|██████████| 1/1 [00:00<00:00,  3.99it/s]
+Exemplar indices: 61
+Batching: 100%|██████████| 1/1 [00:00<00:00, 78.18it/s]
+Exemplar indices: 11
+                                     qa_id  ...                                 context_categories
+0  160077328870752041595798902853278896047  ...                                                NaN
+1  179165322216537433837120480784051326401  ...                                              Years
+2  211447346738566674432923273515852289434  ...     Article stubs, Spanish players, Itxako players
+3  262859488234182482854076962274831989934  ...                           Handball clubs in Sweden
+4   61420761867560832445096969314221339210  ...  Handball in Sweden, Men's national handball teams
+[5 rows x 8 columns]
+Saved 11 samples to output/handball-qa-sampling.csv
+
+
+Loaded 229 samples from output/skiing-qa.csv (Testing=False)
+Batching: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s]
+Exemplar indices: 33
+Batching: 100%|██████████| 1/1 [00:00<00:00, 72.71it/s]
+Exemplar indices: 8
+                                     qa_id  ...                  context_categories
+0  339892115052452110993898642428480431592  ...                               Years
+1  257061568878500880780697945992206536371  ...                                 NaN
+2  271009074376200274373155353114737485359  ...      Defunct skiing clubs in Sweden
+3   28093266568705937021613252498994376847  ...      Defunct skiing clubs in Sweden
+4   93310356887544056264094107395945991218  ...  Swedish alpine skiers, 1981 births
+[5 rows x 8 columns]
+Saved 8 samples to output/skiing-qa-sampling.csv
+
+
+Loaded 1923 samples from output/horse_racing-qa.csv (Testing=False)
+Batching: 100%|██████████| 2/2 [00:00<00:00,  2.00it/s]
+Batching: 100%|██████████| 2/2 [00:00<00:00,  2.00it/s]
+Exemplar indices: 207
+Batching: 100%|██████████| 1/1 [00:00<00:00, 20.99it/s]
+Exemplar indices: 37
+                                     qa_id  ...                                 context_categories
+0  151233129102775067481450654390705601610  ...  Thoroughbreds, Triple Crown Winners, Males, Am...
+1  289100065652741991847643770402034944900  ...  Thoroughbreds, Triple Crown Winners, Males, Am...
+2  318773226224179805772328649471919027589  ...  Jockeys, Triple Crown Winners, Males, American...
+3   88443172514848939684081120026333521064  ...             Races, Articles with Wikipedia content
+4  214039106753148372537539725792008340363  ...  Jockeys, Triple Crown Winners, Males, American...
+[5 rows x 8 columns]
+Saved 37 samples to output/horse_racing-qa-sampling.csv
+
+
+Loaded 127317 samples from output/f1-qa.csv (Testing=False)
+Batching: 100%|██████████| 128/128 [06:07<00:00,  2.87s/it]
+Exemplar indices: 15883
+Batching: 100%|██████████| 16/16 [03:51<00:00, 23.35s/it]
+Batching: 100%|██████████| 16/16 [03:51<00:00, 14.49s/it]
+Exemplar indices: 1945
+                                     qa_id  ...                                 context_categories
+0  129927356198721160346143948242995767708  ...  Drivers, 2000 births, United States Drivers, W...
+1   18895010549601775796288735366724142192  ...  Drivers, Italian Drivers, Maserati Drivers, 19...
+2  239507091774811904124150177989992429738  ...               2024 Grands Prix, Belgian Grand Prix
+3  123633695550748185616594701290410546483  ...  Drivers, Kiwi Drivers, 1980 births, Williams D...
+4  220870449821318019883758216260839588509  ...     Renault F1, People, Living people, 1939 births
+[5 rows x 8 columns]
+Saved 1945 samples to output/f1-qa-sampling.csv
