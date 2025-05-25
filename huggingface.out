@@ -1,0 +1,59 @@
+Loaded basketball dataset with 113381 rows.
+Split dataset into 90694 train, 11348 validation, and 11339 test sets.
+
+Loaded football dataset with 244909 rows.
+Split dataset into 195907 train, 24511 validation, and 24491 test sets.
+
+Loaded americanfootball dataset with 221292 rows.
+Split dataset into 177015 train, 22147 validation, and 22130 test sets.
+
+Loaded cricket dataset with 36020 rows.
+Split dataset into 28813 train, 3605 validation, and 3602 test sets.
+
+Loaded hockey dataset with 87459 rows.
+Split dataset into 69960 train, 8753 validation, and 8746 test sets.
+
+Loaded golf dataset with 2678 rows.
+Split dataset into 2142 train, 268 validation, and 268 test sets.
+
+Loaded rugbyunion dataset with 4828 rows.
+Split dataset into 3861 train, 484 validation, and 483 test sets.
+
+Loaded rugby dataset with 1161 rows.
+Split dataset into 927 train, 117 validation, and 117 test sets.
+
+Loaded baseball dataset with 170295 rows.
+Split dataset into 136221 train, 17044 validation, and 17030 test sets.
+
+Loaded martialarts dataset with 3202 rows.
+Split dataset into 2560 train, 321 validation, and 321 test sets.
+
+Loaded boxing dataset with 7336 rows.
+Split dataset into 5867 train, 735 validation, and 734 test sets.
+
+Loaded mixedmartialarts dataset with 19227 rows.
+Split dataset into 15379 train, 1925 validation, and 1923 test sets.
+
+Loaded fitness dataset with 2130 rows.
+Split dataset into 1703 train, 214 validation, and 213 test sets.
+
+Loaded cycling dataset with 2612 rows.
+Split dataset into 2088 train, 262 validation, and 262 test sets.
+
+Loaded badminton dataset with 414 rows.
+Split dataset into 330 train, 42 validation, and 42 test sets.
+
+Loaded gymnastics dataset with 44938 rows.
+Split dataset into 35946 train, 4498 validation, and 4494 test sets.
+
+Loaded handball dataset with 612 rows.
+Split dataset into 488 train, 62 validation, and 62 test sets.
+
+Loaded skiing dataset with 229 rows.
+Split dataset into 183 train, 23 validation, and 23 test sets.
+
+Loaded horse_racing dataset with 1923 rows.
+Split dataset into 1537 train, 193 validation, and 193 test sets.
+
+Loaded f1 dataset with 127317 rows.
+Split dataset into 101843 train, 12742 validation, and 12732 test sets.
