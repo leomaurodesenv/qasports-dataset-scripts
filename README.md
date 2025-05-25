@@ -14,8 +14,9 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 ---
 ## Download
 
-- 🎲 Dataset: https://osf.io/n7r23/
-- 🎲 Dataset: https://huggingface.co/datasets/PedroCJardim/QASports/
+- 🎲 Full Dataset: https://osf.io/n7r23/
+- 🎲 Preprocessed Dataset v1: https://huggingface.co/datasets/PedroCJardim/QASports
+- 🎲 Preprocessed Dataset v2: https://huggingface.co/datasets/leomaurodesenv/QASports2
 
 ---
 ## Dataset Elaboration
