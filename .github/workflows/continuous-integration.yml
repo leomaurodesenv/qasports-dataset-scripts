@@ -3,12 +3,15 @@ run-name: Running tests on "${{ github.ref }}" by "${{ github.actor }}"
 on:
   push:
     branches:
-    - 'main'
+      - 'main'
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: 
+      - opened
+      - reopened
+      - synchronize
   workflow_dispatch:
   schedule:
-  - cron: "0 12 1 * *"
+    - cron: "0 12 1 * *"
 
 jobs:
   # Run pre-commit hooks
