@@ -2,6 +2,8 @@ name: "Continuous Integration"
 run-name: Running tests on "${{ github.ref }}" by "${{ github.actor }}"
 on:
   push:
+    branches:
+    - 'main'
   pull_request:
     types: [opened, reopened]
   workflow_dispatch:
