@@ -20,4 +20,5 @@ sentence-transformers~=2.2.2
 protobuf~=3.20.0
 huggingface_hub~=0.21.0
 scikit-learn~=1.6.0
+torch~=2.2.2
 # fix: https://github.com/deepset-ai/haystack/issues/7492
