@@ -121,10 +121,10 @@ def generate_wiki_pages() -> list:
     for page in base_pages:
         page.update(
             {
-                "csv_name": f'{page["sport_name"]}-links.csv',
-                "context_name": f'{page["sport_name"]}-contexts.csv',
-                "qa_name": f'{page["sport_name"]}-qa.csv',
-                "sampling_name": f'{page["sport_name"]}-qa-sampling.csv',
+                "csv_name": f"{page['sport_name']}-links.csv",
+                "context_name": f"{page['sport_name']}-contexts.csv",
+                "qa_name": f"{page['sport_name']}-qa.csv",
+                "sampling_name": f"{page['sport_name']}-qa-sampling.csv",
             }
         )
 
