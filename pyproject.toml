@@ -1,7 +1,7 @@
 [project]
 name = "qasports-dataset-scripts"
-version = "0.1.0"
-description = "Add your description here"
+version = "2.1.0"
+description = "Scripts used to generate the (Question-Answering) QASports Dataset"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
