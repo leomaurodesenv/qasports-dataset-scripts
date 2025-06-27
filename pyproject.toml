@@ -3,7 +3,7 @@ name = "qasports-dataset-scripts"
 version = "2.1.0"
 description = "Scripts used to generate the (Question-Answering) QASports Dataset"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 dependencies = [
     "beautifulsoup4~=4.12",
     "datasets~=2.4.0",
