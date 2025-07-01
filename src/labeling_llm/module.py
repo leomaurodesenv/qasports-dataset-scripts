@@ -1,13 +1,11 @@
-
 #               IMPORTS
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
-
 #               CONFIGURATION
-CSV_PATH   = "/content/golf-qa-sampling.csv"         # Path to the CSV to evaluate
-MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"              # Choose one model:
+CSV_PATH = "/content/golf-qa-sampling.csv"  # Path to the CSV to evaluate
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"  # Choose one model:
 # MODEL_OPTIONS = [
 #     "Qwen/Qwen2.5-3B-Instruct",
 #     "Qwen/Qwen2.5-7B-Instruct",
@@ -15,24 +13,14 @@ MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"              # Choose one model:
 #     "Qwen/Qwen2.5-72B-Instruct"
 
 
-
 #               MODEL LOADING
 
-tokenizer = AutoTokenizer.from_pretrained(
-    MODEL_NAME,
-    trust_remote_code=True
-)
-
-
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
 
 
 model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME,
-    device_map="auto",
-    trust_remote_code=True
+    MODEL_NAME, device_map="auto", trust_remote_code=True
 ).eval()
-
-
 
 
 #               FUNCTIONS
@@ -68,7 +56,6 @@ Respond with only the number (1 or 2). Do not include explanations.
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-
     return answer.split("explanations.")[-1].strip()
 
 
@@ -101,6 +88,5 @@ Return only the number (1 or 2). Do not include any explanation.
     inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
 
     return answer.split("any explanation.")[-1].strip()
