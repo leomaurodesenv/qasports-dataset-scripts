@@ -1,5 +1,5 @@
-name: "Gathering Wiki Links"
-run-name: Gathering links on "${{ github.ref }}"
+name: "Crawler Wiki Links"
+run-name: Crawler links on "${{ github.ref }}"
 on:
   workflow_dispatch:
 permissions:
@@ -7,13 +7,13 @@ permissions:
 
 jobs:
   # Download wiki links
-  gathering_links:
+  crawler_links:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
       - run: uv sync
-      - run: uv run -m src.gathering.run
+      - run: uv run -m src.crawler.run
       - name: git config user
         run: |
           git config user.name "${{ github.actor }}"
