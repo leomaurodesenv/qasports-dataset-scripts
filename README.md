@@ -37,9 +37,9 @@ $ uv sync
 # Testing pre-commit
 $ uv run pre-commit run --all-files
 
-# 1. Crawler links (run: ~35 seconds)
+# 1. Crawler links (run: ~2 minutes)
 $ uv run -m src.crawler.run
-# 2. Fetching wiki pages (run: ~40h)
+# 2. Fetching wiki pages (run: ~20h)
 $ uv run -m src.fetching.run
 # 3. Processing, clean text (run: ~50 minutes)
 $ uv run -m src.processing.run
