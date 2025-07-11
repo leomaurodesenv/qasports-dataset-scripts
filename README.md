@@ -45,7 +45,7 @@ $ uv run -m src.fetching.run
 $ uv run -m src.processing.run
 # 4. Extracting context (run: ~35 seconds)
 $ uv run -m src.extracting_context.run
-# 5. Questions and answers generation (run: ~36 days)
+# 5. Questions and answers generation (run: ~4 days)
 $ uv run -m src.question_answer.run
 $ uv run -m src.question_answer.run_huggingface # optional
 # 6. Sampling representative questions (run: )
