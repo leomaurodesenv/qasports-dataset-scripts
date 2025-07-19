@@ -1,10 +1,9 @@
-#               IMPORTS
+"""Module to labeling the question-answering dataset"""
+
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-
-#               CONFIGURATION
-CSV_PATH = "/content/golf-qa-sampling.csv"  # Path to the CSV to evaluate
+MODEL_SHORT_NAME = "qwen"
 MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"  # Choose one model:
 # MODEL_OPTIONS = [
 #     "Qwen/Qwen2.5-3B-Instruct",
@@ -90,3 +89,14 @@ Return only the number (1 or 2). Do not include any explanation.
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     return answer.split("any explanation.")[-1].strip()
+
+
+def labeling(input_file: str, output_file: str, test: bool = False):
+    """
+    Labeling the question-answering dataset.
+    Args:
+        input_file (str): The input
+        output_file (str): The output
+        test (bool): testing parameter
+    """
+    pass

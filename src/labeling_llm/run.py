@@ -1,39 +1,55 @@
-#               IMPORTS
-import ast
-import json
-import pandas as pd
-from module import is_answer_correct, is_question_valid, CSV_PATH
+from ..module import OUTPUT_PATH, TESTING, wiki_pages
+from .module import MODEL_SHORT_NAME, labeling
 
 
-#           LOAD DATAFRAME
-df = pd.read_csv(CSV_PATH, on_bad_lines="skip")
-df["answer_dict"] = df["answer"].apply(ast.literal_eval)
-
-
-#           EVALUATION LOOP
-results = []
-
-for _, row in df.iterrows():  # Use .head(N) to test with a smaller sample
-    question = row["question"]
-    context = row["context"]
-    answer_text = row["answer_dict"]["text"]
-
-    valid_q = is_question_valid(question, context, answer_text)
-    correct_a = is_answer_correct(question, context, answer_text)
-
-    results.append(
-        {
-            "context": context,
-            "question": question,
-            "answer": answer_text,
-            "question_valid": valid_q,
-            "answer_correct": correct_a,
-        }
+# labeling dataset
+for wiki_page in wiki_pages:
+    labeling_name, sampling_name = (
+        wiki_page["labeling_name"],
+        wiki_page["sampling_name"],
+    )
+    labeling(
+        input_file=(OUTPUT_PATH / sampling_name),
+        output_file=(OUTPUT_PATH / "labeling" / MODEL_SHORT_NAME / labeling_name),
+        test=TESTING,
     )
 
-print("Evaluation completed:", len(results))
 
-with open("/content/avaliacoes.json", "w", encoding="utf-8") as f:
-    json.dump(results, f, ensure_ascii=False, indent=4)
+# import ast
+# import json
+# import pandas as pd
+# from module import is_answer_correct, is_question_valid, CSV_PATH
 
-print("Results saved to /content/evaluations.json")
+
+# #           LOAD DATAFRAME
+# df = pd.read_csv(CSV_PATH, on_bad_lines="skip")
+# df["answer_dict"] = df["answer"].apply(ast.literal_eval)
+
+
+# #           EVALUATION LOOP
+# results = []
+
+# for _, row in df.iterrows():  # Use .head(N) to test with a smaller sample
+#     question = row["question"]
+#     context = row["context"]
+#     answer_text = row["answer_dict"]["text"]
+
+#     valid_q = is_question_valid(question, context, answer_text)
+#     correct_a = is_answer_correct(question, context, answer_text)
+
+#     results.append(
+#         {
+#             "context": context,
+#             "question": question,
+#             "answer": answer_text,
+#             "question_valid": valid_q,
+#             "answer_correct": correct_a,
+#         }
+#     )
+
+# print("Evaluation completed:", len(results))
+
+# with open("/content/avaliacoes.json", "w", encoding="utf-8") as f:
+#     json.dump(results, f, ensure_ascii=False, indent=4)
+
+# print("Results saved to /content/evaluations.json")
