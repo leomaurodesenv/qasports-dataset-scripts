@@ -10,14 +10,10 @@ jobs:
   gathering_links:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-          cache: "pip" # caching pip dependencies
-      - name: pip install
-        run: pip install -r requirements.txt
-      - run: python -m src.gathering.run
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: uv run -m src.gathering.run
       - name: git config user
         run: |
           git config user.name "${{ github.actor }}"

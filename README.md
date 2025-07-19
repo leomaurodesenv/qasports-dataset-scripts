@@ -30,27 +30,26 @@ We have sorted the resources into five separate folders.
 - 🔧 [src/sampling/](src/sampling/) - Sample representative questions and answers.
 
 ```sh
-# Creating a virtual environment
-$ python -m venv .venv
-$ source .venv/bin/activate
+# Setup `uv` in your machine
+# https://github.com/astral-sh/uv
 # Installing packages
-$ pip install -r requirements.txt
-# Setup pre-commit
-$ pre-commit install
+$ uv sync
+# Testing pre-commit
+$ uv run pre-commit run --all-files
 
 # 1. Gathering links (run: ~35 seconds)
-$ python -m src.gathering.run
+$ uv run -m src.gathering.run
 # 2. Fetching wiki pages (run: ~40h)
-$ python -m src.fetching.run
+$ uv run -m src.fetching.run
 # 3. Processing, clean text (run: ~50 minutes)
-$ python -m src.processing.run
+$ uv run -m src.processing.run
 # 4. Extracting context (run: ~35 seconds)
-$ python -m src.extracting_context.run
+$ uv run -m src.extracting_context.run
 # 5. Questions and answers generation (run: ~36 days)
-$ python -m src.question_answer.run
-$ python -m src.question_answer.run_huggingface # optional
+$ uv run -m src.question_answer.run
+$ uv run -m src.question_answer.run_huggingface # optional
 # 6. Sampling representative questions (run: )
-$ python -m src.sampling.run
+$ uv run -m src.sampling.run
 ```
 
 ---
