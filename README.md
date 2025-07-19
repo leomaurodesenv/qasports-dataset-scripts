@@ -22,7 +22,7 @@ This repository presents a collection of codes to elaborate the dataset named "Q
 ## Dataset Elaboration
 
 We have sorted the resources into five separate folders.
-- 🔧 [src/gathering/](src/gathering/) - Gather wiki links.
+- 🔧 [src/crawler/](src/crawler/) - Gather wiki links.
 - 🔧 [src/fetching/](src/fetching/) - Fetch raw HTML from links.
 - 🔧 [src/processing/](src/processing/) - Process and clean textual data.
 - 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
@@ -37,8 +37,8 @@ $ uv sync
 # Testing pre-commit
 $ uv run pre-commit run --all-files
 
-# 1. Gathering links (run: ~35 seconds)
-$ uv run -m src.gathering.run
+# 1. Crawler links (run: ~35 seconds)
+$ uv run -m src.crawler.run
 # 2. Fetching wiki pages (run: ~40h)
 $ uv run -m src.fetching.run
 # 3. Processing, clean text (run: ~50 minutes)
