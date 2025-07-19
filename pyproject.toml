@@ -16,6 +16,7 @@ dependencies = [
     "requests~=2.31",
     "scikit-learn~=1.6.0",
     "sentence-transformers~=2.2.2",
+    "torch~=2.2.2",
     "tqdm==4.65.0",
     "transformers==4.39.3",
     "unidecode~=1.3",
