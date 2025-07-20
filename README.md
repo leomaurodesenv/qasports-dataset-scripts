@@ -37,15 +37,15 @@ $ uv sync
 # Testing pre-commit
 $ uv run pre-commit run --all-files
 
-# 1. Crawler links (run: ~35 seconds)
+# 1. Crawler links (run: ~2 minutes)
 $ uv run -m src.crawler.run
-# 2. Fetching wiki pages (run: ~40h)
+# 2. Fetching wiki pages (run: ~20h)
 $ uv run -m src.fetching.run
 # 3. Processing, clean text (run: ~50 minutes)
 $ uv run -m src.processing.run
 # 4. Extracting context (run: ~35 seconds)
 $ uv run -m src.extracting_context.run
-# 5. Questions and answers generation (run: ~36 days)
+# 5. Questions and answers generation (run: ~5 days)
 $ uv run -m src.question_answer.run
 $ uv run -m src.question_answer.run_huggingface # optional
 # 6. Sampling representative questions (run: )
