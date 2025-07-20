@@ -44,14 +44,15 @@ Does the question make sense based on the context?
 1 - Yes
 2 - No, the subject is not in the context
 
-Respond with only the number (1 or 2). Do not include explanations.
+Respond with only the number (1 or 2). Do not include any explanation.
 """
 
     inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    return re.search("\d+|$", answer).group()
+    generated_answer = answer.split("Do not include any explanation.")[-1].strip()
+    return re.search("\d+|$", generated_answer).group()
 
 
 def is_answer_correct(question: str, context: str, answer: str) -> str:
@@ -82,8 +83,8 @@ Return only the number (1 or 2). Do not include any explanation.
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    # return re.search("\d+|$", answer).group()
-    return answer
+    generated_answer = answer.split("Do not include any explanation.")[-1].strip()
+    return re.search("\d+|$", generated_answer).group()
 
 
 def labeling(df: pd.DataFrame) -> pd.DataFrame:
