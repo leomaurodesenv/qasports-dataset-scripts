@@ -1,5 +1,6 @@
 """Module to labeling the question-answering dataset"""
 
+import re
 import ast
 import torch
 import pandas as pd
@@ -50,7 +51,7 @@ Respond with only the number (1 or 2). Do not include explanations.
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    return answer.split("explanations.")[-1].strip()
+    return re.search("\d+|$", answer).group()
 
 
 def is_answer_correct(question: str, context: str, answer: str) -> str:
@@ -81,7 +82,8 @@ Return only the number (1 or 2). Do not include any explanation.
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    return answer.split("any explanation.")[-1].strip()
+    # return re.search("\d+|$", answer).group()
+    return answer
 
 
 def labeling(df: pd.DataFrame) -> pd.DataFrame:
