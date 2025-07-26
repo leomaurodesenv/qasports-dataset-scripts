@@ -47,7 +47,7 @@ Does the question make sense based on the context?
 Respond with only the number (1 or 2). Do not include any explanation.
 """
 
-    inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
+    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
@@ -79,7 +79,7 @@ Is the answer correct?
 Return only the number (1 or 2). Do not include any explanation.
 """
 
-    inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
+    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
     outputs = model.generate(**inputs, max_new_tokens=10)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
@@ -137,4 +137,6 @@ def labeling_from_file(input_file: str, output_file: str, test: bool = False):
     if test:
         df = df.head(5)
     df = labeling(df)
+    df.to_csv(output_file, index=False)
     print(df)
+    print(f"Saved {len(df)} samples to {output_file}")
