@@ -24,7 +24,7 @@ class Dataset(enum.Enum):
     QASports = 4
 
 
-class DocReader:
+class DocReader(str, enum.Enum):
     """Document Reader options"""
 
     BERT = "deepset/bert-base-uncased-squad2"
@@ -34,7 +34,7 @@ class DocReader:
     ELECTRA = "deepset/electra-base-squad2"
 
 
-class Sports:
+class Sports(str, enum.Enum):
     BASKETBALL = "basketball"
     FOOTBALL = "football"
     AMERICANFOOTBALL = "americanfootball"
