@@ -41,42 +41,37 @@ class DocReader:
     RoBERTa = "deepset/roberta-base-squad2"
     MiniLM = "deepset/minilm-uncased-squad2"
     DistilBERT = "distilbert-base-uncased-distilled-squad"
-    FineDistilBERT = "laurafcamargos/distilbert-qasports-basket-small"
     ELECTRA = "deepset/electra-base-squad2"
 
 
 class Sports:
     BASKETBALL = "basketball"
     FOOTBALL = "football"
-    SOCCER = "soccer"
+    AMERICANFOOTBALL = "americanfootball"
+    HOCKEY = "hockey"
+    CRICKET = "cricket"
+    GOLF = "golf"
+    RUGBYUNION = "rugbyunion"
+    RUGBY = "rugby"
+    BASEBALL = "baseball"
+    MARTIALARTS = "martialarts"
+    BOXING = "boxing"
+    MIXEDMARTIALARTS = "mixedmartialarts"
+    FITNESS = "fitness"
+    CYCLING = "cycling"
+    BADMINTON = "badminton"
+    GYMNASTICS = "gymnastics"
+    HANDBALL = "handball"
+    SKIING = "skiing"
+    HORSE_RACING = "horse_racing"
+    F1 = "f1"
     ALL = "all"
 
 
-# basketball
-# football
-# americanfootball
-# cricket
-# hockey
-# golf
-# rugbyunion
-# rugby
-# baseball
-# martialarts
-# boxing
-# mixedmartialarts
-# fitness
-# cycling
-# badminton
-# gymnastics
-# handball
-# skiing
-# horse_racing
-# f1
-
 # run configuration
 NUM_K = 1  # always = 1
-DATASET = Dataset.QASports
-DOC_READER = DocReader.DistilBERT
+DATASET = Dataset.DuoRC
+DOC_READER = DocReader.RoBERTa
 SPORT = Sports.ALL
 
 """### Package Installation
@@ -88,17 +83,6 @@ Install Haystack and HuggingFace packages.
 # The code runs in CPU as well
 # !nvidia-smi
 
-
-"""### Logging
-
-We configure how logging messages should be displayed and which log level should be used before importing Haystack.
-"""
-
-import logging
-
-# Setup Haystack logging format
-logging.basicConfig(format="%(levelname)s - %(message)s", level=logging.WARNING)
-logging.getLogger("haystack").setLevel(logging.INFO)
 
 """---
 ## Dataset
@@ -243,7 +227,9 @@ class AdversarialQADataset(SQuadDataset):
     name = "AdversarialQA Dataset"
 
     def download(self):
-        dataset = load_dataset("adversarial_qa", "adversarialQA", split="validation")
+        dataset = load_dataset(
+            "UCLNLP/adversarial_qa", "adversarialQA", split="validation"
+        )
         return dataset
 
 
@@ -389,7 +375,7 @@ About the metrics, you can read the [evaluation](https://docs.haystack.deepset.a
 eval_labels = dataset.get_validation()
 eval_docs = [
     [label.document for label in multi_label.labels] for multi_label in eval_labels
-]
+][0:10]
 
 eval_result = pipe.eval(
     labels=eval_labels, documents=eval_docs, params={"Reader": {"top_k": NUM_K}}

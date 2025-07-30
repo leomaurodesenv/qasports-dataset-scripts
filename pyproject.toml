@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "beautifulsoup4~=4.12",
-    "datasets~=2.4.0",
+    "datasets~=2.15.0",
     "farm-haystack[colab,inference,metrics]==1.26.2",
     "huggingface-hub~=0.21.0",
     "mmh3==4.1.0",
