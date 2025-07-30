@@ -1,4 +1,10 @@
-"""Module to support model experiments"""
+"""Module to support model experiments.
+
+This module provides classes and functionalities for conducting experiments
+related to document reading and question answering using various datasets
+and models. It integrates with the Haystack framework for building and
+evaluating NLP pipelines.
+"""
 
 import enum
 import mmh3
@@ -97,8 +103,11 @@ class AbstactDataset(metaclass=ABCMeta):
 
 
 class SQuadDataset(AbstactDataset):
-    """SQuaD Dataset
-    https://huggingface.co/datasets/rajpurkar/squad"""
+    """
+    SQuaD Dataset
+    A dataset for question answering from open-domain Wikipedia articles.
+    Source: https://huggingface.co/datasets/rajpurkar/squad
+    """
 
     name = "SQuaD Dataset"
     _columns = {
@@ -172,7 +181,8 @@ class SQuadDataset(AbstactDataset):
 
 class AdversarialQADataset(SQuadDataset):
     """AdversarialQA Dataset
-    https://huggingface.co/datasets/UCLNLP/adversarial_qa
+    A dataset for complex and adversarial questions.
+    Source: https://huggingface.co/datasets/UCLNLP/adversarial_qa
     """
 
     name = "AdversarialQA Dataset"
@@ -186,7 +196,8 @@ class AdversarialQADataset(SQuadDataset):
 
 class DuoRCDataset(SQuadDataset):
     """DuoRC  Dataset
-    https://huggingface.co/datasets/ibm-research/duorc
+    A dataset for question answering from movie plots.
+    Source: https://huggingface.co/datasets/ibm-research/duorc
     """
 
     name = "DuoRC Dataset"
@@ -213,8 +224,9 @@ class DuoRCDataset(SQuadDataset):
 
 
 class QASportsDataset(SQuadDataset):
-    """QASports  Dataset
-    https://huggingface.co/datasets/leomaurodesenv/QASports2
+    """QASports2  Dataset
+    A dataset for sports-related Question Answering, available on Hugging Face.
+    Source: https://huggingface.co/datasets/leomaurodesenv/QASports2
     """
 
     name = "QASports Dataset"
