@@ -110,7 +110,7 @@ About the metrics, you can read the [evaluation](https://docs.haystack.deepset.a
 eval_labels = dataset.get_validation()
 eval_docs = [
     [label.document for label in multi_label.labels] for multi_label in eval_labels
-][0:10]
+]
 
 eval_result = pipe.eval(
     labels=eval_labels, documents=eval_docs, params={"Reader": {"top_k": 1}}
