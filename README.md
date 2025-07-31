@@ -52,7 +52,7 @@ $ uv run -m src.question_answer.run
 $ uv run -m src.question_answer.run_huggingface # optional
 # 6. Sampling representative questions (run: )
 $ uv run -m src.sampling.run
-# 7. Labeling the samples using LLMs (run: )
+# 7. Labeling the samples using LLMs (run: ~1h 30 minutes)
 $ uv run -m src.labeling_llm.run
 ```
 
