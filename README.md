@@ -28,6 +28,8 @@ We have sorted the resources into five separate folders.
 - 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
 - 🔧 [src/question_answer/](src/question_answer/) - Generate questions and answers.
 - 🔧 [src/sampling/](src/sampling/) - Sample representative questions and answers.
+- 🔧 [src/labeling_llm/](src/labeling_llm/) - Label the samples using LLMs.
+
 
 ```sh
 # Setup `uv` in your machine
@@ -50,6 +52,25 @@ $ uv run -m src.question_answer.run
 $ uv run -m src.question_answer.run_huggingface # optional
 # 6. Sampling representative questions (run: )
 $ uv run -m src.sampling.run
+# 7. Labeling the samples using LLMs (run: )
+$ uv run -m src.labeling_llm.run
+```
+
+---
+## Performing Experiments
+
+This section outlines how to run experiments using the QASports dataset, focusing on document retrieval and document reader tasks.
+
+```sh
+# Setup `uv` in your machine
+# https://github.com/astral-sh/uv
+# Installing packages
+$ uv sync
+
+# 1. Document Retriever Experiments
+$ uv run -m experiments.doc_retriever --help
+# 2. Document Reader Experiments
+$ uv run -m experiments.doc_reader --help
 ```
 
 ---

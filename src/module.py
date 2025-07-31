@@ -125,6 +125,7 @@ def generate_wiki_pages() -> list:
                 "context_name": f"{page['sport_name']}-contexts.csv",
                 "qa_name": f"{page['sport_name']}-qa.csv",
                 "sampling_name": f"{page['sport_name']}-qa-sampling.csv",
+                "labeling_name": f"{page['sport_name']}-qa-labeling.csv",
             }
         )
 
