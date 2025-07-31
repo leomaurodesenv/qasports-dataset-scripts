@@ -5,13 +5,7 @@ from haystack import Pipeline
 from haystack.nodes import FARMReader
 # from haystack.utils import print_answers
 
-from .module import Dataset, DocReader, Sports
-from .module import (
-    SQuadDataset,
-    AdversarialQADataset,
-    DuoRCDataset,
-    QASportsDataset,
-)
+from .module import Dataset, DocReader, Sports, dataset_switch
 
 
 # Model setup
@@ -23,7 +17,7 @@ parser.add_argument(
     "--dataset",
     type=str,
     default="QASports",
-    choices=[d.name for d in Dataset],
+    choices=[attr.name for attr in Dataset],
     help="Dataset to use for the experiment.",
 )
 parser.add_argument(
@@ -50,24 +44,8 @@ print(f"Dataset: {DATASET} // Sport: {SPORT}")
 print(f"Model: {DOC_READER}")
 
 
-# Download the dataset
-def dataset_switch(choice):
-    """Get dataset class"""
-
-    if choice == Dataset.SQuAD:
-        return SQuadDataset()
-    elif choice == Dataset.AdvQA:
-        return AdversarialQADataset()
-    elif choice == Dataset.DuoRC:
-        return DuoRCDataset()
-    elif choice == Dataset.QASports:
-        return QASportsDataset(SPORT)
-    else:
-        return "Invalid dataset"
-
-
 # Get the dataset
-dataset = dataset_switch(DATASET)
+dataset = dataset_switch(DATASET, SPORT)
 docs = dataset.get_documents()
 
 """---

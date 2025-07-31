@@ -24,6 +24,14 @@ class Dataset(enum.Enum):
     QASports = 4
 
 
+class DocRetriever(enum.Enum):
+    """Document Retriever options"""
+
+    BM25 = 1
+    TFIDF = 2
+    DPR = 3
+
+
 class DocReader(str, enum.Enum):
     """Document Reader options"""
 
@@ -258,3 +266,18 @@ class QASportsDataset(SQuadDataset):
     def _get_answers(self, data):
         # Get question answer
         return [data["answer"]["text"]]
+
+
+def dataset_switch(choice, sport):
+    """Get dataset class"""
+
+    if choice == Dataset.SQuAD:
+        return SQuadDataset()
+    elif choice == Dataset.AdvQA:
+        return AdversarialQADataset()
+    elif choice == Dataset.DuoRC:
+        return DuoRCDataset()
+    elif choice == Dataset.QASports:
+        return QASportsDataset(sport)
+    else:
+        return "Invalid dataset"
