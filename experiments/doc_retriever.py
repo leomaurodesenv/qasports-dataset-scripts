@@ -3,7 +3,8 @@
 import argparse
 from haystack.utils import print_documents
 from haystack.pipelines import DocumentSearchPipeline
-from haystack.document_stores import ElasticsearchDocumentStore
+
+# from haystack.document_stores import ElasticsearchDocumentStore
 from haystack.document_stores import InMemoryDocumentStore
 from haystack.nodes import BM25Retriever, TfidfRetriever, DensePassageRetriever
 
@@ -11,10 +12,47 @@ from .module import Dataset, DocRetriever, Sports, dataset_switch
 
 
 # Model setup
-NUM_K = 1  # 1, 3, 5, 10, 20
-DATASET = Dataset.SQuAD
-DOC_RETRIEVER = DocRetriever.BM25
-SPORT = Sports.ALL
+# NUM_K = 1  # 1, 3, 5, 10, 20
+# DATASET = Dataset.SQuAD
+# DOC_RETRIEVER = DocRetriever.BM25
+# SPORT = Sports.ALL
+parser = argparse.ArgumentParser(description="Run document retriever experiments.")
+parser.add_argument(
+    "--num_k",
+    type=int,
+    default=1,
+    help="Number of top-k documents to retrieve.",
+)
+parser.add_argument(
+    "--dataset",
+    type=str,
+    default="QASports",
+    choices=[attr.name for attr in Dataset],
+    help="Dataset to use for the experiment.",
+)
+parser.add_argument(
+    "--model",
+    type=str,
+    default="BM25",
+    choices=[attr.name for attr in DocRetriever],
+    help="Document retriever model to use.",
+)
+parser.add_argument(
+    "--sport",
+    type=str,
+    default="ALL",
+    choices=[attr.name for attr in Sports],
+    help="Sport to filter for QASports dataset.",
+)
+
+args = parser.parse_args()
+
+NUM_K = args.num_k
+DATASET = Dataset[args.dataset]
+DOC_RETRIEVER = DocRetriever[args.model]
+SPORT = Sports[args.sport].value
+print(f"Dataset: {DATASET} // Sport: {SPORT}")
+print(f"Model: {DOC_RETRIEVER} // Top-K: {NUM_K}")
 
 
 # Document Store
@@ -86,7 +124,7 @@ About the metrics, you can read the [evaluation](https://docs.haystack.deepset.a
 
 # For testing purposes, running on the first 100 labels
 # For real evaluation, you must remove the [0:100]
-eval_labels = dataset.get_validation()[0:10]
+eval_labels = dataset.get_validation()
 eval_result = pipe.eval(labels=eval_labels, params={"Retriever": {"top_k": NUM_K}})
 
 # Get and print the metrics

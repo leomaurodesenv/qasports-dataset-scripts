@@ -17,7 +17,7 @@ parser.add_argument(
     "--dataset",
     type=str,
     default="QASports",
-    choices=[d.name for d in Dataset],
+    choices=[attr.name for attr in Dataset],
     help="Dataset to use for the experiment.",
 )
 parser.add_argument(
