@@ -266,3 +266,18 @@ class QASportsDataset(SQuadDataset):
     def _get_answers(self, data):
         # Get question answer
         return [data["answer"]["text"]]
+
+
+def dataset_switch(choice, sport):
+    """Get dataset class"""
+
+    if choice == Dataset.SQuAD:
+        return SQuadDataset()
+    elif choice == Dataset.AdvQA:
+        return AdversarialQADataset()
+    elif choice == Dataset.DuoRC:
+        return DuoRCDataset()
+    elif choice == Dataset.QASports:
+        return QASportsDataset(sport)
+    else:
+        return "Invalid dataset"

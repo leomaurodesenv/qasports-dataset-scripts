@@ -7,16 +7,10 @@ from haystack.document_stores import ElasticsearchDocumentStore
 from haystack.document_stores import InMemoryDocumentStore
 from haystack.nodes import BM25Retriever, TfidfRetriever, DensePassageRetriever
 
+from .module import Dataset, DocRetriever, Sports, dataset_switch
 
-from .module import Dataset, DocRetriever, Sports
-from .module import (
-    SQuadDataset,
-    AdversarialQADataset,
-    DuoRCDataset,
-    QASportsDataset,
-)
 
-# run configuration
+# Model setup
 NUM_K = 1  # 1, 3, 5, 10, 20
 DATASET = Dataset.SQuAD
 DOC_RETRIEVER = DocRetriever.BM25
@@ -25,27 +19,10 @@ SPORT = Sports.ALL
 
 # Document Store
 # document_store = ElasticsearchDocumentStore(host="localhost", username="", password="", index="document")
-document_store = InMemoryDocumentStore()
-
-
-# Download the dataset
-def dataset_switch(choice):
-    """Get dataset class"""
-
-    if choice == Dataset.SQuAD:
-        return SQuadDataset()
-    elif choice == Dataset.AdvQA:
-        return AdversarialQADataset()
-    elif choice == Dataset.DuoRC:
-        return DuoRCDataset()
-    elif choice == Dataset.QASports:
-        return QASportsDataset()
-    else:
-        return "Invalid dataset"
-
+document_store = InMemoryDocumentStore(use_bm25=True)
 
 # Get the dataset
-dataset = dataset_switch(DATASET)
+dataset = dataset_switch(DATASET, SPORT)
 
 # Store documents in the Document Store
 docs = dataset.get_documents()
@@ -94,12 +71,12 @@ print(f"Retriever: {retriever}")
 """### Build the Pipeline"""
 pipe = DocumentSearchPipeline(retriever=retriever)
 
-# Querying documents
-question = "What is your name?"
-prediction = pipe.run(query=question, params={"Retriever": {"top_k": 1}})
+# # Querying documents
+# question = "What is your name?"
+# prediction = pipe.run(query=question, params={"Retriever": {"top_k": 1}})
 
-# Print answer
-print_documents(prediction)
+# # Print answer
+# print_documents(prediction)
 
 """---
 ## Evaluation
@@ -115,6 +92,3 @@ eval_result = pipe.eval(labels=eval_labels, params={"Retriever": {"top_k": NUM_K
 # Get and print the metrics
 metrics = eval_result.calculate_metrics()
 print(metrics)
-
-# Print a detailed report
-pipe.print_eval_report(eval_result)
