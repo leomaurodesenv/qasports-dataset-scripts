@@ -24,6 +24,14 @@ class Dataset(enum.Enum):
     QASports = 4
 
 
+class DocRetriever(enum.Enum):
+    """Document Retriever options"""
+
+    BM25 = 1
+    TFIDF = 2
+    DPR = 3
+
+
 class DocReader(str, enum.Enum):
     """Document Reader options"""
 
