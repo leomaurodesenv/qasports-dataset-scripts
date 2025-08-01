@@ -1,83 +1,144 @@
-# 📄 QASports: Question Answering Dataset about Sports
+# 📄 QASports2: Question Answering Dataset about Sports
 
 [![GitHub](https://img.shields.io/static/v1?label=Code&message=GitHub&color=blue&style=flat-square)](https://github.com/leomaurodesenv/qasports-dataset-scripts)
 [![MIT license](https://img.shields.io/static/v1?label=License&message=MIT&color=blue&style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/static/v1?label=Python&message=3.9&color=blue&style=flat-square)](https://www.python.org/downloads/)
+[![uv](https://img.shields.io/static/v1?label=Package&message=uv&color=orange&style=flat-square)](https://github.com/astral-sh/uv)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/leomaurodesenv/qasports-dataset-scripts/continuous-integration.yml?label=Build&style=flat-square)](https://github.com/leomaurodesenv/qasports-dataset-scripts/actions/workflows/continuous-integration.yml)
 
+> **The first large-scale, open-domain sports question answering dataset**
 
-This repository presents a collection of codes to elaborate the dataset named "QASports", the first large sports question answering dataset for open questions. QASports contains real data of players, teams and matches from the sports soccer, basketball and American football. It counts over 1.5 million questions and answers about 54k preprocessed, cleaned and organized documents from Wikipedia-like sources.
+QASports is a comprehensive dataset featuring over **1 million question-answer-context tuples** derived from more than **400,000 thoroughly preprocessed, cleaned, and organized documents** about players, teams, and matches from multiple sports. The data is sourced from Wikipedia-like resources to ensure quality and relevance.
 
-- **Paper**: Pedro Calciolari Jardim, Leonardo Mauro Pereira Moraes, and Cristina Dutra Aguiar. [QASports: A Question Answering Dataset about Sports](https://doi.org/10.5753/dsw.2023.233602). In Proceedings of the Brazilian Symposium on Databases: Dataset Showcase Workshop, pages 1-12, Belo Horizonte, Minas Gerais, Brazil, 2023.
+## 📚 Research Paper
 
-> **Abstract**: Sport is one of the most popular and revenue-generating forms of entertainment. Therefore, analyzing data related to this domain introduces several opportunities for Question Answering (QA) systems, such as supporting tactical decision-making. But, to develop and evaluate QA systems, researchers and developers need datasets that contain questions and their corresponding answers. In this paper, we focus on this issue. We propose QASports, the first large sports question answering dataset for extractive answer questions. QASports contains more than 1.5 million triples of questions, answers, and context about three popular sports: soccer, American football, and basketball. We describe the QASports processes of data collection and questions and answers generation. We also describe the characteristics of the QASports data. Furthermore, we analyze the sources used to obtain raw data and investigate the usability of QASports by issuing "wh-queries". Moreover, we describe scenarios for using QASports, highlighting its importance for training and evaluating QA systems.
+**Pedro Calciolari Jardim, Leonardo Mauro Pereira Moraes, and Cristina Dutra Aguiar.** [QASports: A Question Answering Dataset about Sports](https://doi.org/10.5753/dsw.2023.233602). In Proceedings of the Brazilian Symposium on Databases: Dataset Showcase Workshop, pages 1-12, Belo Horizonte, Minas Gerais, Brazil, 2023.
 
----
-## Download
+### Abstract
 
-- 🎲 Full Dataset: https://osf.io/n7r23/
-- 🎲 Preprocessed Dataset v1: https://huggingface.co/datasets/PedroCJardim/QASports
-- 🎲 Preprocessed Dataset v2: https://huggingface.co/datasets/leomaurodesenv/QASports2
+Sport is one of the most popular and revenue-generating forms of entertainment. Therefore, analyzing data related to this domain introduces several opportunities for Question Answering (QA) systems, such as supporting tactical decision-making. But, to develop and evaluate QA systems, researchers and developers need datasets that contain questions and their corresponding answers. In this paper, we focus on this issue. We propose QASports, the first large sports question answering dataset for extractive answer questions. QASports contains more than 1.5 million triples of questions, answers, and context about three popular sports: soccer, American football, and basketball. We describe the QASports processes of data collection and questions and answers generation. We also describe the characteristics of the QASports data. Furthermore, we analyze the sources used to obtain raw data and investigate the usability of QASports by issuing "wh-queries". Moreover, we describe scenarios for using QASports, highlighting its importance for training and evaluating QA systems.
 
----
-## Dataset Elaboration
+## 🚀 Quick Start
 
-We have sorted the resources into five separate folders.
-- 🔧 [src/crawler/](src/crawler/) - Gather wiki links.
-- 🔧 [src/fetching/](src/fetching/) - Fetch raw HTML from links.
-- 🔧 [src/processing/](src/processing/) - Process and clean textual data.
-- 🔧 [src/extracting_context/](src/extracting_context/) - Extract contexts from data.
-- 🔧 [src/question_answer/](src/question_answer/) - Generate questions and answers.
-- 🔧 [src/sampling/](src/sampling/) - Sample representative questions and answers.
-- 🔧 [src/labeling_llm/](src/labeling_llm/) - Label the samples using LLMs.
+### Prerequisites
 
+- **Python 3.9+**
+- **uv** package manager ([Installation Guide](https://github.com/astral-sh/uv))
 
-```sh
-# Setup `uv` in your machine
-# https://github.com/astral-sh/uv
-# Installing packages
-$ uv sync
-# Testing pre-commit
-$ uv run pre-commit run --all-files
+### Installation
 
-# 1. Crawler links (run: ~2 minutes)
-$ uv run -m src.crawler.run
-# 2. Fetching wiki pages (run: ~20h)
-$ uv run -m src.fetching.run
-# 3. Processing, clean text (run: ~50 minutes)
-$ uv run -m src.processing.run
-# 4. Extracting context (run: ~35 seconds)
-$ uv run -m src.extracting_context.run
-# 5. Questions and answers generation (run: ~5 days)
-$ uv run -m src.question_answer.run
-$ uv run -m src.question_answer.run_huggingface # optional
-# 6. Sampling representative questions (run: )
-$ uv run -m src.sampling.run
-# 7. Labeling the samples using LLMs (run: ~1h 30 minutes)
-$ uv run -m src.labeling_llm.run
+```bash
+# Clone the repository
+git clone https://github.com/leomaurodesenv/qasports-dataset-scripts.git
+cd qasports-dataset-scripts
+
+# Install dependencies
+uv sync
+
+# Verify installation
+uv run pre-commit run --all-files
 ```
 
----
-## Performing Experiments
+## 📥 Download the Dataset
 
-This section outlines how to run experiments using the QASports dataset, focusing on document retrieval and document reader tasks.
+- **🎲 Full Dataset**: [OSF Repository](https://osf.io/n7r23/)
+- **🎲 Formatted Dataset**: [Hugging Face Hub](https://huggingface.co/datasets/leomaurodesenv/QASports2)
+- **🛠 Dataset v1**: [GitHub Release v1.1.0](https://github.com/leomaurodesenv/qasports-dataset-scripts/tree/v1.1.0)
 
-```sh
-# Setup `uv` in your machine
-# https://github.com/astral-sh/uv
-# Installing packages
-$ uv sync
+## 🏗️ Dataset Generation Pipeline
 
-# 1. Document Retriever Experiments
-$ uv run -m experiments.doc_retriever --help
-# 2. Document Reader Experiments
-$ uv run -m experiments.doc_reader --help
+The dataset generation process is organized into seven main stages, each contained in separate modules:
+
+### 📁 Project Structure
+
+```
+src/
+├── crawler/            # 🔍 Gather wiki links
+├── fetching/           # 📥 Fetch raw HTML from links
+├── processing/         # 🧹 Process and clean textual data
+├── extracting_context/ # 📄 Extract contexts from data
+├── question_answer/    # ❓ Generate questions and answers
+├── sampling/           # 🎯 Sample representative questions
+└── labeling_llm/       # 🏷️ Label samples using LLMs
 ```
 
----
-## Citation
+### 🔄 Generation Steps
 
-```tex
-# QASports: A Question Answering Dataset about Sports
+```bash
+# 1. Crawler: Gather wiki links (~2 minutes)
+uv run -m src.crawler.run
+
+# 2. Fetching: Download wiki pages (~20 hours)
+uv run -m src.fetching.run
+
+# 3. Processing: Clean and process text (~50 minutes)
+uv run -m src.processing.run
+
+# 4. Context Extraction: Extract relevant contexts (~35 seconds)
+uv run -m src.extracting_context.run
+
+# 5. Q&A Generation: Create questions and answers (~5 days)
+uv run -m src.question_answer.run
+uv run -m src.question_answer.run_huggingface  # Optional
+
+# 6. Sampling: Select representative questions
+uv run -m src.sampling.run
+
+# 7. LLM Labeling: Label samples using LLMs (~1h 30 minutes)
+uv run -m src.labeling_llm.run
+```
+
+## 🧪 Experiments
+
+This repository includes experimental frameworks for evaluating QA systems using the QASports dataset.
+
+### Document Retriever Experiments
+
+```bash
+# Run document retriever experiments
+uv run -m experiments.doc_retriever --help
+
+# Example usage
+uv run -m experiments.doc_retriever --model BM25 --num_k 3
+```
+
+### Document Reader Experiments
+
+```bash
+# Run document reader experiments
+uv run -m experiments.doc_reader --help
+
+# Example usage
+uv run -m experiments.doc_reader --model RoBERTa --dataset SQuAD
+```
+
+## 📊 Dataset Statistics
+
+- **Total Questions**: 1,000,000+
+- **Source Documents**: 400,000+ preprocessed documents
+- **Data Sources**: Wikipedia-like resources
+- **Question Types**: Extractive QA, Wh-questions
+- **Sports Covered**: Football, American Football, Basketball, Cricket, +15 Sports
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Brazilian Computer Society for hosting the Dataset Showcase Workshop
+- The research community for feedback and contributions
+- All contributors to the QASports dataset
+
+## 📖 Citation
+
+If you use QASports in your research, please cite our paper:
+
+```bibtex
 @inproceedings{jardim:2023:qasports-dataset,
     author={Pedro Calciolari Jardim and Leonardo Mauro Pereira Moraes and Cristina Dutra Aguiar},
     title = {{QASports}: A Question Answering Dataset about Sports},
