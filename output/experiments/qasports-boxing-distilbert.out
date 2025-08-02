@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: boxing
+Model: distilbert-base-uncased-distilled-squad
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 735
+})
+{'Reader': {'exact_match': 0.8336713995943205, 'f1': 0.9084593062496046, 'num_examples_for_eval': 493.0}}

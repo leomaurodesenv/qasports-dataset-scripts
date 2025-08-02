@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: rugby
+Model: distilbert-base-uncased-distilled-squad
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 117
+})
+{'Reader': {'exact_match': 0.8571428571428571, 'f1': 0.9276575276575277, 'num_examples_for_eval': 84.0}}

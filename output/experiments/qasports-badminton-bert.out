@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: badminton
+Model: deepset/bert-base-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 42
+})
+{'Reader': {'exact_match': 0.8461538461538461, 'f1': 0.8974358974358974, 'num_examples_for_eval': 26.0}}

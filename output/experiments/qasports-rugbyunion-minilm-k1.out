@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: rugbyunion
+Model: deepset/minilm-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 484
+})
+{'Reader': {'exact_match': 0.9346153846153846, 'f1': 0.9590203813280737, 'num_examples_for_eval': 260.0}}

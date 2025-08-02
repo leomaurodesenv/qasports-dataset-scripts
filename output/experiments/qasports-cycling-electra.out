@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: cycling
+Model: deepset/electra-base-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 262
+})
+{'Reader': {'exact_match': 0.7471264367816092, 'f1': 0.8693387752845156, 'num_examples_for_eval': 174.0}}

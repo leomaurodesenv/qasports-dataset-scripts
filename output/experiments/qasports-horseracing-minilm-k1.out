@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: horse_racing
+Model: deepset/minilm-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 193
+})
+{'Reader': {'exact_match': 0.8623188405797102, 'f1': 0.9243396699918438, 'num_examples_for_eval': 138.0}}

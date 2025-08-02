@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: boxing
+Model: deepset/bert-base-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 735
+})
+{'Reader': {'exact_match': 0.8722109533468559, 'f1': 0.9312022288785206, 'num_examples_for_eval': 493.0}}

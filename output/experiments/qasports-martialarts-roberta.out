@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: martialarts
+Model: deepset/roberta-base-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 321
+})
+{'Reader': {'exact_match': 1.0, 'f1': 1.0, 'num_examples_for_eval': 194.0}}

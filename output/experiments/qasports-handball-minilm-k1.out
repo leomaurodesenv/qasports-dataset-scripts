@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: handball
+Model: deepset/minilm-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 62
+})
+{'Reader': {'exact_match': 0.8888888888888888, 'f1': 0.9469135802469134, 'num_examples_for_eval': 27.0}}

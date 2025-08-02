@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: badminton
+Model: deepset/electra-base-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 42
+})
+{'Reader': {'exact_match': 0.8076923076923077, 'f1': 0.8621794871794872, 'num_examples_for_eval': 26.0}}

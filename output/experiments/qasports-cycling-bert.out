@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: cycling
+Model: deepset/bert-base-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 262
+})
+{'Reader': {'exact_match': 0.8103448275862069, 'f1': 0.9231133170788345, 'num_examples_for_eval': 174.0}}

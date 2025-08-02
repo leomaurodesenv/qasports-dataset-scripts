@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: fitness
+Model: deepset/minilm-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 214
+})
+{'Reader': {'exact_match': 0.773109243697479, 'f1': 0.9012605645576479, 'num_examples_for_eval': 119.0}}

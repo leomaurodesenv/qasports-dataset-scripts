@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: mixedmartialarts
+Model: deepset/minilm-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 1925
+})
+{'Reader': {'exact_match': 0.8717105263157895, 'f1': 0.931414794248579, 'num_examples_for_eval': 1216.0}}

@@ -1,0 +1,8 @@
+Dataset: Dataset.QASports // Sport: americanfootball
+Model: deepset/bert-base-uncased-squad2
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 22147
+})
+{'Reader': {'exact_match': 0.8931020008395131, 'f1': 0.9319148424375722, 'num_examples_for_eval': 14294.0}}
