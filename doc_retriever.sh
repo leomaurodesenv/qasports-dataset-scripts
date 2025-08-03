@@ -127,11 +127,11 @@ uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM
 uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k20.out
 
 # HORSE_RACING
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HORSE_RACING-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HORSE_RACING-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HORSE_RACING-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HORSE_RACING-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HORSE_RACING-BM25-k20.out
+uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k1.out
+uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k5.out
+uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k10.out
+uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k15.out
+uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k20.out
 
 # F1
 uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-F1-BM25-k1.out
