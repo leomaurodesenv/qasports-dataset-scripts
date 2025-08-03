@@ -7,6 +7,7 @@ Extracts sport subset, model name, and results from the last line of each file.
 import os
 import re
 import json
+import pandas as pd
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -127,23 +128,6 @@ def print_results_summary(results: List[Dict]):
     print("-" * 80)
 
 
-def print_detailed_results(results: List[Dict]):
-    """Print detailed results for each experiment."""
-    print("\n" + "=" * 80)
-    print("DETAILED RESULTS")
-    print("=" * 80)
-
-    for result in results:
-        if "error" in result:
-            print(f"\nError reading {result['filename']}: {result['error']}")
-            continue
-
-        print(f"\nFile: {result['filename']}")
-        print(f"Sport: {result['sport']}")
-        print(f"Model: {result['model']}")
-        print(f"Results: {result['results']}")
-
-
 def main():
     """Main function to read and display experiment results."""
     print("Reading doc_reader experiment results...")
@@ -156,14 +140,12 @@ def main():
         return
 
     # Sort results by sport and model for better readability
-    results.sort(key=lambda x: (x.get("sport", ""), x.get("model", "")))
+    results.sort(key=lambda x: (x.get("model", ""), x.get("sport", "")))
 
     # Print summary
     print_results_summary(results)
 
     # Print detailed results
-    print_detailed_results(results)
-
     # Print statistics
     print(f"\nTotal experiments processed: {len(results)}")
     successful = len([r for r in results if "error" not in r])
