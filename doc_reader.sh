@@ -45,27 +45,27 @@ uv run -m experiments.doc_reader --dataset QASports --sport F1 --model RoBERTa >
 uv run -m experiments.doc_reader --dataset QASports --sport ALL --model RoBERTa >> output/experiments/doc_reader/qasports-all-roberta.out
 
 # MiniLM Model - All Sports
-uv run -m experiments.doc_reader --dataset QASports --sport BASKETBALL --model MiniLM >> output/experiments/doc_reader/qasports-basketball-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport FOOTBALL --model MiniLM >> output/experiments/doc_reader/qasports-football-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport AMERICANFOOTBALL --model MiniLM >> output/experiments/doc_reader/qasports-americanfootball-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport HOCKEY --model MiniLM >> output/experiments/doc_reader/qasports-hockey-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport CRICKET --model MiniLM >> output/experiments/doc_reader/qasports-cricket-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport GOLF --model MiniLM >> output/experiments/doc_reader/qasports-golf-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport RUGBYUNION --model MiniLM >> output/experiments/doc_reader/qasports-rugbyunion-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport RUGBY --model MiniLM >> output/experiments/doc_reader/qasports-rugby-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport BASEBALL --model MiniLM >> output/experiments/doc_reader/qasports-baseball-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport MARTIALARTS --model MiniLM >> output/experiments/doc_reader/qasports-martialarts-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport BOXING --model MiniLM >> output/experiments/doc_reader/qasports-boxing-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport MIXEDMARTIALARTS --model MiniLM >> output/experiments/doc_reader/qasports-mixedmartialarts-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport FITNESS --model MiniLM >> output/experiments/doc_reader/qasports-fitness-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport CYCLING --model MiniLM >> output/experiments/doc_reader/qasports-cycling-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport BADMINTON --model MiniLM >> output/experiments/doc_reader/qasports-badminton-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport GYMNASTICS --model MiniLM >> output/experiments/doc_reader/qasports-gymnastics-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport HANDBALL --model MiniLM >> output/experiments/doc_reader/qasports-handball-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport SKIING --model MiniLM >> output/experiments/doc_reader/qasports-skiing-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport HORSE_RACING --model MiniLM >> output/experiments/doc_reader/qasports-horseracing-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport F1 --model MiniLM >> output/experiments/doc_reader/qasports-f1-minilm-k1.out
-uv run -m experiments.doc_reader --dataset QASports --sport ALL --model MiniLM >> output/experiments/doc_reader/qasports-all-minilm-k1.out
+uv run -m experiments.doc_reader --dataset QASports --sport BASKETBALL --model MiniLM >> output/experiments/doc_reader/qasports-basketball-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport FOOTBALL --model MiniLM >> output/experiments/doc_reader/qasports-football-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport AMERICANFOOTBALL --model MiniLM >> output/experiments/doc_reader/qasports-americanfootball-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport HOCKEY --model MiniLM >> output/experiments/doc_reader/qasports-hockey-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport CRICKET --model MiniLM >> output/experiments/doc_reader/qasports-cricket-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport GOLF --model MiniLM >> output/experiments/doc_reader/qasports-golf-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport RUGBYUNION --model MiniLM >> output/experiments/doc_reader/qasports-rugbyunion-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport RUGBY --model MiniLM >> output/experiments/doc_reader/qasports-rugby-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport BASEBALL --model MiniLM >> output/experiments/doc_reader/qasports-baseball-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport MARTIALARTS --model MiniLM >> output/experiments/doc_reader/qasports-martialarts-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport BOXING --model MiniLM >> output/experiments/doc_reader/qasports-boxing-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport MIXEDMARTIALARTS --model MiniLM >> output/experiments/doc_reader/qasports-mixedmartialarts-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport FITNESS --model MiniLM >> output/experiments/doc_reader/qasports-fitness-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport CYCLING --model MiniLM >> output/experiments/doc_reader/qasports-cycling-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport BADMINTON --model MiniLM >> output/experiments/doc_reader/qasports-badminton-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport GYMNASTICS --model MiniLM >> output/experiments/doc_reader/qasports-gymnastics-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport HANDBALL --model MiniLM >> output/experiments/doc_reader/qasports-handball-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport SKIING --model MiniLM >> output/experiments/doc_reader/qasports-skiing-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport HORSE_RACING --model MiniLM >> output/experiments/doc_reader/qasports-horseracing-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport F1 --model MiniLM >> output/experiments/doc_reader/qasports-f1-minilm.out
+uv run -m experiments.doc_reader --dataset QASports --sport ALL --model MiniLM >> output/experiments/doc_reader/qasports-all-minilm.out
 
 # DistilBERT Model - All Sports
 uv run -m experiments.doc_reader --dataset QASports --sport BASKETBALL --model DistilBERT >> output/experiments/doc_reader/qasports-basketball-distilbert.out
