@@ -14,7 +14,7 @@ from typing import Dict, List, Tuple
 
 def extract_sport_and_model_from_filename(filename: str) -> str:
     """Extract sport name from filename pattern qasports-{sport}-{model}.out"""
-    return filename.split("-")[1], filename.split("-")[2]
+    return filename.split("-")[1], filename.split("-")[2][:-4]
 
 
 def extract_model_from_content(content: str) -> str:
@@ -128,6 +128,95 @@ def print_results_summary(results: List[Dict]):
     print("-" * 80)
 
 
+def print_latex_table(results: List[Dict]):
+    """Print results in LaTeX table format."""
+    print("\n" + "=" * 80)
+    print("LATEX TABLE FORMAT")
+    print("=" * 80)
+
+    # Group results by sport
+    sport_results = {}
+    for result in results:
+        if "error" in result:
+            continue
+
+        sport = result["sport"]
+        model = result["model"]
+        f1_score = result["results"]["Reader"]["f1"]
+
+        if sport not in sport_results:
+            sport_results[sport] = {}
+        sport_results[sport][model] = f1_score
+
+    # Print LaTeX table header
+    print("\\begin{table}[h]")
+    print("\\centering")
+    print("\\begin{tabular}{lccccc}")
+    print("\\toprule")
+    print(
+        "& \\textbf{Sport Subset} & \\textbf{BERT} & \\textbf{DistilBERT} & \\textbf{MiniLM} & \\textbf{ELECTRA} \\\\"
+    )
+    print("\\midrule")
+
+    # Print table rows
+    row_num = 0
+    for sport in sorted(sport_results.keys()):
+        sport_data = sport_results[sport]
+
+        # Format F1 scores and highlight the highest with \hcell
+        bert_val = sport_data.get("bert")
+        distilbert_val = sport_data.get("distilbert")
+        minilm_val = sport_data.get("minilm")
+        electra_val = sport_data.get("electra")
+
+        # Collect values and find the max (ignore non-numeric)
+        values = {
+            "bert": bert_val if isinstance(bert_val, (int, float)) else float("-inf"),
+            "distilbert": distilbert_val
+            if isinstance(distilbert_val, (int, float))
+            else float("-inf"),
+            "minilm": minilm_val
+            if isinstance(minilm_val, (int, float))
+            else float("-inf"),
+            "electra": electra_val
+            if isinstance(electra_val, (int, float))
+            else float("-inf"),
+        }
+        max_key = max(values, key=lambda k: values[k])
+        max_val = values[max_key]
+
+        def format_score(val, is_max):
+            if isinstance(val, (int, float)):
+                score_str = f"{val * 100:.2f}\%"
+                return f"\\hcell {score_str}" if is_max else score_str
+            else:
+                return str(val) if val is not None else "N/A"
+
+        bert_score = format_score(
+            bert_val, max_key == "bert" and values["bert"] != float("-inf")
+        )
+        distilbert_score = format_score(
+            distilbert_val,
+            max_key == "distilbert" and values["distilbert"] != float("-inf"),
+        )
+        minilm_score = format_score(
+            minilm_val, max_key == "minilm" and values["minilm"] != float("-inf")
+        )
+        electra_score = format_score(
+            electra_val, max_key == "electra" and values["electra"] != float("-inf")
+        )
+        print(
+            f"{row_num} & {sport} & {bert_score} & {distilbert_score} & {minilm_score} & {electra_score} \\\\"
+        )
+        row_num += 1
+
+    print("\\bottomrule")
+    print("\\end{tabular}")
+    print("\\caption{Doc Reader F1 Scores by Sport Subset and Model}")
+    print("\\label{tab:doc_reader_results}")
+    print("\\end{table}")
+
+
 def main():
     """Main function to read and display experiment results."""
     print("Reading doc_reader experiment results...")
@@ -145,7 +234,9 @@ def main():
     # Print summary
     print_results_summary(results)
 
-    # Print detailed results
+    # Print LaTeX table
+    print_latex_table(results)
+
     # Print statistics
     print(f"\nTotal experiments processed: {len(results)}")
     successful = len([r for r in results if "error" not in r])
