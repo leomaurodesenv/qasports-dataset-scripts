@@ -5,6 +5,7 @@ import ast
 import torch
 import pandas as pd
 from tqdm import tqdm
+from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Constants
@@ -137,6 +138,7 @@ def labeling_from_file(input_file: str, output_file: str, test: bool = False):
     if test:
         df = df.head(5)
     df = labeling(df)
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_file, index=False)
     print(df)
     print(f"Saved {len(df)} samples to {output_file}")
