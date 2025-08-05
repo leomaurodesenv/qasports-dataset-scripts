@@ -10,12 +10,11 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Constants
 MODEL_SHORT_NAME = "qwen"
-MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
+MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 # Sample of models
-#   "Qwen/Qwen2.5-3B-Instruct"
 #   "Qwen/Qwen2.5-7B-Instruct"
-#   "Qwen/Qwen2.5-14B-Instruct"
-#   "Qwen/Qwen2.5-72B-Instruct"
+#   "mistralai/Mistral-7B-Instruct-v0.3"
+#   "meta-llama/Llama-3.1-8B-Instruct"
 
 # Loading LLM
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
