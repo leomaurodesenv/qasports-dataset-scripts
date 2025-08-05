@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: fitness
+Model: DocRetriever.BM25 // Top-K: 1
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 214
+})
+Retriever: <haystack.nodes.retriever.sparse.BM25Retriever object at 0x757fadf04e50>
+{'Retriever': {'recall_multi_hit': 0.957983193277311, 'recall_single_hit': 0.957983193277311, 'precision': 0.957983193277311, 'map': 0.957983193277311, 'mrr': 0.957983193277311, 'ndcg': 0.957983193277311}}

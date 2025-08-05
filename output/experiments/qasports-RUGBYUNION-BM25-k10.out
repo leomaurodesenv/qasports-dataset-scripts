@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: rugbyunion
+Model: DocRetriever.BM25 // Top-K: 10
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 484
+})
+Retriever: <haystack.nodes.retriever.sparse.BM25Retriever object at 0x74621daf8e50>
+{'Retriever': {'recall_multi_hit': 0.9807692307692307, 'recall_single_hit': 0.9807692307692307, 'precision': 0.14769230769230768, 'map': 0.82292739887978, 'mrr': 0.8681181318681319, 'ndcg': 0.8752042584691966}}

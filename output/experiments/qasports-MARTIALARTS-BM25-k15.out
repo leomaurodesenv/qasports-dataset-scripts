@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: martialarts
+Model: DocRetriever.BM25 // Top-K: 15
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 321
+})
+Retriever: <haystack.nodes.retriever.sparse.BM25Retriever object at 0x776b04828e50>
+{'Retriever': {'recall_multi_hit': 0.9896907216494846, 'recall_single_hit': 0.9896907216494846, 'precision': 0.07835051546391752, 'map': 0.9153830084168817, 'mrr': 0.9344501718213059, 'ndcg': 0.9362596841362264}}

@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: hockey
+Model: DocRetriever.BM25 // Top-K: 15
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 8753
+})
+Retriever: <haystack.nodes.retriever.sparse.BM25Retriever object at 0x7efcbb8f8e50>
+{'Retriever': {'recall_multi_hit': 0.9149280939842009, 'recall_single_hit': 0.9149280939842009, 'precision': 0.10865167780703529, 'map': 0.7607756160143303, 'mrr': 0.7857005613386006, 'ndcg': 0.7997928188855379}}
