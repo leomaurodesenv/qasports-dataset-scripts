@@ -1,151 +1,151 @@
 ### -------------------------------------------------------------------
 ### BM25 Model Commands
 # BASKETBALL
-uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASKETBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BASKETBALL-BM25-k20.out
 
 # FOOTBALL
-uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FOOTBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-FOOTBALL-BM25-k20.out
 
 # AMERICANFOOTBALL
-uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport AMERICANFOOTBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-AMERICANFOOTBALL-BM25-k20.out
 
 # HOCKEY
-uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HOCKEY --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HOCKEY-BM25-k20.out
 
 # CRICKET
-uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CRICKET --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-CRICKET-BM25-k20.out
 
 # GOLF
-uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GOLF --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-GOLF-BM25-k20.out
 
 # RUGBYUNION
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBYUNION --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-RUGBYUNION-BM25-k20.out
 
 # RUGBY
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport RUGBY --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-RUGBY-BM25-k20.out
 
 # BASEBALL
-uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BASEBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BASEBALL-BM25-k20.out
 
 # MARTIALARTS
-uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MARTIALARTS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-MARTIALARTS-BM25-k20.out
 
 # BOXING
-uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BOXING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BOXING-BM25-k20.out
 
 # MIXEDMARTIALARTS
-uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport MIXEDMARTIALARTS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-MIXEDMARTIALARTS-BM25-k20.out
 
 # FITNESS
-uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport FITNESS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-FITNESS-BM25-k20.out
 
 # CYCLING
-uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport CYCLING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-CYCLING-BM25-k20.out
 
 # BADMINTON
-uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport BADMINTON --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-BADMINTON-BM25-k20.out
 
 # GYMNASTICS
-uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport GYMNASTICS --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-GYMNASTICS-BM25-k20.out
 
 # HANDBALL
-uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HANDBALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HANDBALL-BM25-k20.out
 
 # SKIING
-uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport SKIING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-SKIING-BM25-k20.out
 
 # HORSE_RACING
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport HORSE_RACING --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-HORSERACING-BM25-k20.out
 
 # F1
-uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-F1-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-F1-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-F1-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-F1-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-F1-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-F1-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-F1-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-F1-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-F1-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport F1 --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-F1-BM25-k20.out
 
 # ALL
-uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-ALL-BM25-k1.out
-uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-ALL-BM25-k5.out
-uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-ALL-BM25-k10.out
-uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-ALL-BM25-k15.out
-uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-ALL-BM25-k20.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 1 >> output/experiments/doc_retriever/qasports-ALL-BM25-k1.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 5 >> output/experiments/doc_retriever/qasports-ALL-BM25-k5.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 10 >> output/experiments/doc_retriever/qasports-ALL-BM25-k10.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 15 >> output/experiments/doc_retriever/qasports-ALL-BM25-k15.out
+# uv run -m experiments.doc_retriever --dataset QASports --sport ALL --model BM25 --num_k 20 >> output/experiments/doc_retriever/qasports-ALL-BM25-k20.out
 
 ### -------------------------------------------------------------------
 ### TFIDF Model Commands
