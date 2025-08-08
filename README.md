@@ -81,10 +81,10 @@ uv run -m src.extracting_context.run
 uv run -m src.question_answer.run
 uv run -m src.question_answer.run_huggingface  # Optional
 
-# 6. Sampling: Select representative questions
+# 6. Sampling: Select representative questions (~1h 30 minutes)
 uv run -m src.sampling.run
 
-# 7. LLM Labeling: Label samples using LLMs (~1h 30 minutes)
+# 7. LLM Labeling: Label samples using LLMs
 uv run -m src.labeling_llm.run
 ```
 
