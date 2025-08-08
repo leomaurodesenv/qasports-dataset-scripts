@@ -22,7 +22,7 @@ Sport is one of the most popular and revenue-generating forms of entertainment. 
 
 ### Prerequisites
 
-- **Python 3.9+**
+- **Python 3.10+**
 - **uv** package manager ([Installation Guide](https://github.com/astral-sh/uv))
 
 ### Installation
