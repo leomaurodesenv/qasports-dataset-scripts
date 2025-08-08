@@ -95,7 +95,7 @@ This repository includes experimental frameworks for evaluating QA systems using
 ### Document Retriever Experiments
 
 ```bash
-# Run document retriever experiments (~14 hours)
+# Run document retriever experiments
 uv run -m experiments.doc_retriever --help
 
 # Example usage
@@ -105,7 +105,7 @@ uv run -m experiments.doc_retriever --model BM25 --num_k 3
 ### Document Reader Experiments
 
 ```bash
-# Run document reader experiments
+# Run document reader experiments (~14 hours)
 uv run -m experiments.doc_reader --help
 
 # Example usage
