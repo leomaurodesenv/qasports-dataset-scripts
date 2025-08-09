@@ -9,8 +9,8 @@ from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Constants
-MODEL_SHORT_NAME = "qwen"
-MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
+MODEL_SHORT_NAME = "llma"
+MODEL_NAME = "meta-llama/Llama-3.1-8B"
 # Sample of models
 #   "Qwen/Qwen2.5-7B-Instruct"
 #   "mistralai/Mistral-7B-Instruct-v0.3"
