@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: handball
+Model: DocRetriever.TFIDF // Top-K: 10
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 62
+})
+Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x724173b9df90>
+{'Retriever': {'recall_multi_hit': 0.9629629629629629, 'recall_single_hit': 0.9629629629629629, 'precision': 0.18888888888888888, 'map': 0.8291993271931544, 'mrr': 0.9259259259259259, 'ndcg': 0.8894978908730808}}

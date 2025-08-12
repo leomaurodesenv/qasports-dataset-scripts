@@ -7,3 +7,21 @@ Dataset({
 })
 Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x79d490e14e50>
 {'Retriever': {'recall_multi_hit': 0.6605089781681953, 'recall_single_hit': 0.6605089781681953, 'precision': 0.6600353098221591, 'map': 0.662834259139646, 'mrr': 0.6605089781681953, 'ndcg': 0.6612840718253455}}
+Dataset: Dataset.QASports // Sport: basketball
+Model: DocRetriever.TFIDF // Top-K: 1
+Dataset: Dataset.QASports // Sport: basketball
+Model: DocRetriever.TFIDF // Top-K: 1
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 11348
+})
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 11348
+})
+Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x7affb5f30e50>
+{'Retriever': {'recall_multi_hit': 0.6605089781681953, 'recall_single_hit': 0.6605089781681953, 'precision': 0.6600353098221591, 'map': 0.662834259139646, 'mrr': 0.6605089781681953, 'ndcg': 0.6612840718253455}}
+Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x7fb67e638100>
+{'Retriever': {'recall_multi_hit': 0.6605089781681953, 'recall_single_hit': 0.6605089781681953, 'precision': 0.6600353098221591, 'map': 0.662834259139646, 'mrr': 0.6605089781681953, 'ndcg': 0.6612840718253455}}

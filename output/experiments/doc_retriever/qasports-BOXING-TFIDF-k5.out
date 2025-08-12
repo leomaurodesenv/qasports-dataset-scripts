@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: boxing
+Model: DocRetriever.TFIDF // Top-K: 5
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 735
+})
+Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x79fd130bce50>
+{'Retriever': {'recall_multi_hit': 0.920892494929006, 'recall_single_hit': 0.920892494929006, 'precision': 0.2288032454361055, 'map': 0.8449261888663511, 'mrr': 0.8399594320486816, 'ndcg': 0.858733016725825}}

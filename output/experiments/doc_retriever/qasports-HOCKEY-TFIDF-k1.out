@@ -7,3 +7,12 @@ Dataset({
 })
 Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x7d18f682ce50>
 {'Retriever': {'recall_multi_hit': 0.6283167915738302, 'recall_single_hit': 0.6283167915738302, 'precision': 0.6259705624198232, 'map': 0.6530281547498481, 'mrr': 0.6283167915738302, 'ndcg': 0.6347984606036055}}
+Dataset: Dataset.QASports // Sport: hockey
+Model: DocRetriever.TFIDF // Top-K: 1
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 8753
+})
+Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x74ee77d40e50>
+{'Retriever': {'recall_multi_hit': 0.6283167915738302, 'recall_single_hit': 0.6283167915738302, 'precision': 0.6259705624198232, 'map': 0.6530281547498481, 'mrr': 0.6283167915738302, 'ndcg': 0.6347984606036055}}

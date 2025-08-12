@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: rugbyunion
+Model: DocRetriever.TFIDF // Top-K: 15
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 484
+})
+Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x75de4f340e50>
+{'Retriever': {'recall_multi_hit': 0.9730769230769231, 'recall_single_hit': 0.9730769230769231, 'precision': 0.11230769230769229, 'map': 0.7950164557452789, 'mrr': 0.8638386613386613, 'ndcg': 0.8581959936442636}}

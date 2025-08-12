@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: baseball
+Model: DocRetriever.TFIDF // Top-K: 5
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 17044
+})
+Retriever: <haystack.nodes.retriever.sparse.TfidfRetriever object at 0x759e60763670>
+{'Retriever': {'recall_multi_hit': 0.7847647182949989, 'recall_single_hit': 0.7847647182949989, 'precision': 0.1947119896703142, 'map': 0.6736937293381163, 'mrr': 0.66913905887318, 'ndcg': 0.6961962046980629}}
