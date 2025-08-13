@@ -138,8 +138,8 @@ def print_results(
 
         print(f"📋 SPORT SUMMARY:")
         print(f"   Total Questions: {sum_total_questions:,}")
-        print(f"   Question Accuracy: {avg_question_accuracy:.2%}")
-        print(f"   Answer Accuracy: {avg_answer_accuracy:.2%}")
+        print(f"   Question Accuracy: {avg_question_accuracy:.3%}")
+        print(f"   Answer Accuracy: {avg_answer_accuracy:.3%}")
 
         # Print summary table
         print(f"{'Sport':<20} {'Questions':<12} {'Q Acc':<8} {'A Acc':<8}")
@@ -150,6 +150,70 @@ def print_results(
                 f"{metrics['question_accuracy']:<8.2%} "
                 f"{metrics['answer_accuracy']:<8.2%}"
             )
+
+
+def print_latex_table(results: Dict[str, Dict[str, Dict[str, float]]]):
+    """
+    Print the analysis results as a LaTeX table.
+
+    Args:
+        results: Results dictionary from analyze_labeling_folder
+    """
+    print("\n" + "=" * 80)
+    print("LATEX TABLE OUTPUT")
+    print("=" * 80)
+
+    # Get all unique sports across all folders
+    all_sports = set()
+    for folder_data in results.values():
+        all_sports.update(folder_data.keys())
+
+    # Get all folders (models)
+    folders = list(results.keys())
+
+    # Print table header
+    print("\\begin{tabular}{rlr|" + "cc|" * len(folders) + "}")
+    print("\\toprule")
+
+    # Print column headers
+    header_parts = ["\\multicolumn{3}{c}{\\textbf{Sport}}"]
+    for folder in folders:
+        header_parts.append(f"\\multicolumn{{2}}{{c}}{{\\textbf{{{folder.title()}}}}}")
+    print(" & ".join(header_parts) + " \\\\")
+
+    # Print sub-headers
+    sub_header_parts = ["", "Name", "Questions"]
+    for folder in folders:
+        sub_header_parts.extend(["Q Acc", "A Acc"])
+    print(" & ".join(sub_header_parts) + " \\\\")
+    print("\\midrule")
+
+    # Print data rows
+    for i, sport in enumerate(sorted(all_sports)):
+        row_parts = [str(i + 1), sport, ""]  # Sport name, will be filled
+
+        # Get question count from first available folder
+        question_count = 0
+        for folder in folders:
+            if sport in results[folder]:
+                question_count = results[folder][sport]["total_questions"]
+                break
+
+        row_parts[2] = str(question_count)
+
+        # Add accuracy data for each folder
+        for folder in folders:
+            if sport in results[folder]:
+                q_acc = results[folder][sport]["question_accuracy"]
+                a_acc = results[folder][sport]["answer_accuracy"]
+                row_parts.extend([f"{q_acc:.3f}", f"{a_acc:.3f}"])
+            else:
+                row_parts.extend(["", ""])
+
+        print(" & ".join(row_parts) + " \\\\")
+
+    print("\\bottomrule")
+    print("\\end{tabular}")
 
 
 def save_results_to_csv(
@@ -215,6 +279,9 @@ def main():
 
     # Print results
     print_results(results, detailed=args.detailed)
+
+    # Print LaTeX table if requested
+    print_latex_table(results)
 
     # Save results to CSV
     save_results_to_csv(results, args.output)

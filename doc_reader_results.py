@@ -187,7 +187,7 @@ def print_latex_table(results: List[Dict]):
 
         def format_score(val, is_max):
             if isinstance(val, (int, float)):
-                score_str = f"{val * 100:.2f}\%"
+                score_str = f"{val:.3f}"
                 return f"\\hcell {score_str}" if is_max else score_str
             else:
                 return str(val) if val is not None else "N/A"
