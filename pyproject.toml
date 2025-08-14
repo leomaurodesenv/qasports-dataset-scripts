@@ -17,6 +17,7 @@ dependencies = [
     "scikit-learn~=1.6.0",
     "sentence-transformers~=2.2.2",
     "setuptools>=65.0.0",
+    "statsmodels>=0.14.5",
     "torch~=2.2.2",
     "tqdm==4.65.0",
     "transformers==4.44.2",
