@@ -487,7 +487,7 @@ def print_latex_table(results: Dict[str, Dict[str, Dict[str, float]]]):
                 question_count = results[folder][sport]["total_questions"]
                 break
 
-        row_parts[2] = str(question_count)
+        row_parts[2] = f"{question_count:,}"
 
         # Add accuracy data for each folder
         for folder in folders:
@@ -502,10 +502,11 @@ def print_latex_table(results: Dict[str, Dict[str, Dict[str, float]]]):
 
     # Print overall row
     print("\\midrule")
+    overall_question_count = overall_metrics[folders[0]]["total_questions"]
     overall_row_parts = [
-        "0",
-        "all",
-        str(overall_metrics[folders[0]]["total_questions"]),
+        "",
+        "\\textbf{Overall}",
+        f"{overall_question_count:,}",
     ]
 
     for folder in folders:
@@ -517,38 +518,6 @@ def print_latex_table(results: Dict[str, Dict[str, Dict[str, float]]]):
 
     print("\\bottomrule")
     print("\\end{tabular}")
-
-
-def save_results_to_csv(
-    results: Dict[str, Dict[str, Dict[str, float]]],
-    output_file: str = "llm_accuracy_results.csv",
-):
-    """
-    Save results to a CSV file for further analysis.
-
-    Args:
-        results: Results dictionary from analyze_labeling_folder
-        output_file: Output CSV filename
-    """
-    rows = []
-
-    for folder_name, sports_data in results.items():
-        for sport_name, metrics in sports_data.items():
-            rows.append(
-                {
-                    "folder": folder_name,
-                    "sport": sport_name,
-                    "total_questions": metrics["total_questions"],
-                    "valid_questions": metrics["valid_questions"],
-                    "correct_answers": metrics["correct_answers"],
-                    "question_accuracy": metrics["question_accuracy"],
-                    "answer_accuracy": metrics["answer_accuracy"],
-                }
-            )
-
-    df = pd.DataFrame(rows)
-    df.to_csv(output_file, index=False)
-    print(f"\n💾 Results saved to: {output_file}")
 
 
 def main():
@@ -564,11 +533,6 @@ def main():
     parser.add_argument(
         "--detailed", action="store_true", help="Print detailed results for each sport"
     )
-    parser.add_argument(
-        "--output",
-        default="llm_accuracy_results.csv",
-        help="Output CSV file for results (default: llm_accuracy_results.csv)",
-    )
 
     args = parser.parse_args()
 
@@ -581,13 +545,10 @@ def main():
         return
 
     # Print results
-    # print_results(results, detailed=args.detailed)
+    print_results(results, detailed=args.detailed)
 
     # Print LaTeX table if requested
-    # print_latex_table(results)
-
-    # Save results to CSV
-    # save_results_to_csv(results, args.output)
+    print_latex_table(results)
 
     # Analyze the Inter Agreement
     print("\n" + "=" * 80)
