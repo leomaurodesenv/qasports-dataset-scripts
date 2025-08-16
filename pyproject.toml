@@ -5,22 +5,21 @@ description = "Scripts used to generate the (Question-Answering) QASports Datase
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-    "accelerate>=1.10.0",
     "beautifulsoup4~=4.12",
     "datasets~=2.15.0",
-    "huggingface-hub>=0.34.4",
+    "farm-haystack[colab,inference,metrics]==1.26.2",
+    "huggingface-hub~=0.21.0",
     "mmh3==4.1.0",
     "numpy~=1.0",
     "pandas~=2.0",
     "protobuf~=3.20.0",
     "requests~=2.31",
     "scikit-learn~=1.6.0",
-    "sentence-transformers~=2.2.2",
     "setuptools>=65.0.0",
     "statsmodels>=0.14.5",
     "torch~=2.2.2",
     "tqdm==4.65.0",
-    "transformers==4.44.2",
+    "transformers==4.39.3",
     "unidecode~=1.3",
 ]
 
