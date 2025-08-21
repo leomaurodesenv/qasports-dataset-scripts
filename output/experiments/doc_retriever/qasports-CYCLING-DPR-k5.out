@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: cycling
+Model: DocRetriever.DPR // Top-K: 5
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 262
+})
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x7933b7c85b70>
+{'Retriever': {'recall_multi_hit': 0.867816091954023, 'recall_single_hit': 0.867816091954023, 'precision': 0.1908045977011494, 'map': 0.684514687100894, 'mrr': 0.689080459770115, 'ndcg': 0.7313895670449004}}

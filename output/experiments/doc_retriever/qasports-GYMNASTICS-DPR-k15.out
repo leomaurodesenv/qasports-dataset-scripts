@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: gymnastics
+Model: DocRetriever.DPR // Top-K: 15
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 4498
+})
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x7c0641c079d0>
+{'Retriever': {'recall_multi_hit': 0.6602056962025317, 'recall_single_hit': 0.6602056962025317, 'precision': 0.09204544430019114, 'map': 0.4214339830420807, 'mrr': 0.41153867120045917, 'ndcg': 0.46991403034331664}}

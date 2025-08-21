@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: f1
+Model: DocRetriever.DPR // Top-K: 15
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 12742
+})
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x7c187647f5e0>
+{'Retriever': {'recall_multi_hit': 0.5829787234042553, 'recall_single_hit': 0.5829787234042553, 'precision': 0.07309770450195982, 'map': 0.5451376977795044, 'mrr': 0.32884661115802316, 'ndcg': 0.3868927099132724}}

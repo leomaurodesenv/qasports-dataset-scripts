@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: badminton
+Model: DocRetriever.DPR // Top-K: 10
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 42
+})
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x73211238ff40>
+{'Retriever': {'recall_multi_hit': 1.0, 'recall_single_hit': 1.0, 'precision': 0.13461538461538464, 'map': 0.8720085470085469, 'mrr': 0.9166666666666666, 'ndcg': 0.9179421211199723}}

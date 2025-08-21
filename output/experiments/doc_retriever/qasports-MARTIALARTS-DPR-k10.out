@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: martialarts
+Model: DocRetriever.DPR // Top-K: 10
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 321
+})
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x7322e2fe2620>
+{'Retriever': {'recall_multi_hit': 0.9123711340206185, 'recall_single_hit': 0.9123711340206185, 'precision': 0.10618556701030929, 'map': 0.6724376806851033, 'mrr': 0.6812101129111438, 'ndcg': 0.7343005029181341}}

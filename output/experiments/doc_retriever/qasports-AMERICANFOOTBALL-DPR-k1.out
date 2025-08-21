@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: americanfootball
+Model: DocRetriever.DPR // Top-K: 1
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 22147
+})
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x75055bbd7d00>
+{'Retriever': {'recall_multi_hit': 0.3428711347418497, 'recall_single_hit': 0.3428711347418497, 'precision': 0.3423580989692645, 'map': 0.40520498111095565, 'mrr': 0.3428711347418497, 'ndcg': 0.34573947110675807}}

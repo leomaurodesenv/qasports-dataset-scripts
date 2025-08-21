@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: boxing
+Model: DocRetriever.DPR // Top-K: 15
+## QASports Dataset ##
+Dataset({
+    features: ['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url', 'context_title', 'context_categories'],
+    num_rows: 735
+})
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x7dbffd4d4550>
+{'Retriever': {'recall_multi_hit': 0.8275862068965517, 'recall_single_hit': 0.8275862068965517, 'precision': 0.08627450980392157, 'map': 0.5688528936557998, 'mrr': 0.5928317006410313, 'ndcg': 0.638932786359515}}
