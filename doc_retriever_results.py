@@ -48,7 +48,7 @@ def read_experiment_file(file_path: Path) -> Dict:
         results = extract_results_from_last_line(content)
         return {
             "filename": file_path.name,
-            "sport": sport,
+            "sport": sport.lower(),
             "model": model,
             "results": results,
         }
@@ -143,6 +143,111 @@ def print_latex_table(results: List[Dict]):
     print("\\end{table}")
 
 
+def print_latex_table_advanced(results: List[Dict]):
+    """Print results in advanced LaTeX table format with proper column structure."""
+    print("\n" + "=" * 80)
+    print("ADVANCED LATEX TABLE FORMAT")
+    print("=" * 80)
+
+    # Group results by sport and model
+    sport_results = {}
+    base_models = set()  # BM25, TFIDF, DPR
+    k_values = [1, 10, 20]  # Define the K values we want to display
+
+    for result in results:
+        if "error" in result:
+            continue
+        sport = result["sport"]
+        model = result["model"]
+
+        # Extract base model name (BM25, TFIDF, DPR) and K value
+        if "-k" in model:
+            base_model, k_part = model.split("-k", 1)
+            try:
+                k_value = int(k_part)
+                if k_value in k_values:
+                    base_models.add(base_model)
+                    if sport not in sport_results:
+                        sport_results[sport] = {}
+                    if base_model not in sport_results[sport]:
+                        sport_results[sport][base_model] = {}
+
+                    # Extract recall value
+                    retriever_results = result["results"].get("Retriever", {})
+                    recall_value = retriever_results.get("recall_multi_hit", 0.0)
+                    sport_results[sport][base_model][k_value] = recall_value
+            except ValueError:
+                continue
+
+    # Sort base models and sports for consistent ordering
+    sorted_base_models = ["BM25", "TFIDF", "DPR"]  # sorted(list(base_models))
+    sorted_sports = sorted(list(sport_results.keys()))
+
+    # Print LaTeX table
+    print("\\begin{table}[htb]")
+    print("\\centering\\footnotesize")
+    print("\\caption{Document Retriever Recall@K by Sport and Model.}")
+    print("\\label{tab:experiment:document-retriever}")
+    print("\\begin{tabular}{r l *{9}{c}}")
+    print("\\toprule")
+
+    # Print model headers
+    model_header = "& \\multicolumn{1}{c}{\\textbf{Sport Subset}}"
+    for base_model in sorted_base_models:
+        model_header += f" & \\multicolumn{{3}}{{c}}{{\\textbf{{{base_model}}}}}"
+    print(model_header + " \\\\")
+
+    # Print cmidrule lines
+    cmidrule_line = "\\cmidrule(lr){3-5}"
+    col_start = 6
+    for i in range(1, len(sorted_base_models)):
+        cmidrule_line += f" \\cmidrule(lr){{{col_start}-{col_start + 2}}}"
+        col_start += 3
+    print(cmidrule_line)
+
+    # Print K value headers
+    k_header = "& "
+    for base_model in sorted_base_models:
+        for k in k_values:
+            k_header += f" & \\textbf{{K={k}}}"
+    print(k_header + " \\\\")
+    print("\\midrule")
+
+    # Print data rows
+    for idx, sport in enumerate(sorted_sports):
+        row = f"{idx} & {sport}"
+
+        # Find the highest value for each K value across all models
+        max_values = {}
+        for k in k_values:
+            max_value = float("-inf")
+            for base_model in sorted_base_models:
+                model_data = sport_results[sport].get(base_model, {})
+                value = model_data.get(k, 0.0)
+                if isinstance(value, (int, float)) and value > max_value:
+                    max_value = value
+            max_values[k] = max_value
+
+        # Build the row with \hcell for highest values
+        for base_model in sorted_base_models:
+            model_data = sport_results[sport].get(base_model, {})
+            for k in k_values:
+                value = model_data.get(k, 0.0)
+                if isinstance(value, (int, float)):
+                    # Check if this is the highest value for this K
+                    if value == max_values[k]:
+                        row += f" & \\hcell{{{value:.3f}}}"
+                    else:
+                        row += f" & {value:.3f}"
+                else:
+                    row += " & N/A"
+        print(row + " \\\\")
+
+    print("\\bottomrule")
+    print("\\end{tabular}")
+    print("\\end{table}")
+
+
 def main():
     """Main function to read and display experiment results."""
     print("Reading doc_retriever experiment results...")
@@ -153,6 +258,7 @@ def main():
     results.sort(key=lambda x: (x.get("model", ""), x.get("sport", "")))
     print_results_summary(results)
     # print_latex_table(results)
+    print_latex_table_advanced(results)
     print(f"\nTotal experiments processed: {len(results)}")
     successful = len([r for r in results if "error" not in r])
     print(f"Successful reads: {successful}")
