@@ -67,6 +67,14 @@ class Sports(str, enum.Enum):
     ALL = "all"
 
 
+class DatasetSplit(str, enum.Enum):
+    """Dataset split options"""
+
+    TRAIN = "train"
+    VALIDATION = "validation"
+    TEST = "test"
+
+
 """---
 ## Dataset
 
@@ -79,7 +87,8 @@ Importing and download the respective dataset.
 class AbstactDataset(metaclass=ABCMeta):
     """Abstract dataset class"""
 
-    def __init__(self):
+    def __init__(self, split: DatasetSplit = DatasetSplit.VALIDATION):
+        self.split = split
         self.raw_dataset = self.download()
         self.df_dataset = self._transform_df()
         print(f"## {self.name} ##")
@@ -127,7 +136,7 @@ class SQuadDataset(AbstactDataset):
     _metadata = {"dataset_id": "id"}
 
     def download(self):
-        dataset = load_dataset("rajpurkar/squad", split="validation")
+        dataset = load_dataset("rajpurkar/squad", split=self.split.value)
         return dataset
 
     def get_documents(self):
@@ -197,7 +206,7 @@ class SQuadDataset2(SQuadDataset):
     name = "SQuad2 Dataset"
 
     def download(self):
-        dataset = load_dataset("rajpurkar/squad_v2", split="validation")
+        dataset = load_dataset("rajpurkar/squad_v2", split=self.split.value)
         return dataset
 
     def _transform_df(self):
@@ -223,7 +232,7 @@ class AdversarialQADataset(SQuadDataset):
 
     def download(self):
         dataset = load_dataset(
-            "UCLNLP/adversarial_qa", "adversarialQA", split="validation"
+            "UCLNLP/adversarial_qa", "adversarialQA", split=self.split.value
         )
         return dataset
 
@@ -243,7 +252,7 @@ class DuoRCDataset(SQuadDataset):
     _metadata = {"dataset_id": "question_id"}
 
     def download(self):
-        dataset = load_dataset("duorc", "SelfRC", split="validation")
+        dataset = load_dataset("duorc", "SelfRC", split=self.split.value)
         return dataset
 
     def _transform_df(self):
@@ -271,13 +280,15 @@ class QASportsDataset(SQuadDataset):
     }
     _metadata = {"dataset_id": "qa_id"}
 
-    def __init__(self, sport=None):
+    def __init__(
+        self, sport: Sports = Sports.ALL, split: DatasetSplit = DatasetSplit.VALIDATION
+    ):
         self.sport = sport
-        super().__init__()
+        super().__init__(split=split)
 
     def download(self):
         dataset = load_dataset(
-            "leomaurodesenv/QASports2", self.sport, split="validation"
+            "leomaurodesenv/QASports2", self.sport.value, split=self.split.value
         )
         return dataset
 
@@ -294,18 +305,20 @@ class QASportsDataset(SQuadDataset):
         return [data["answer"]["text"]]
 
 
-def dataset_switch(choice, sport):
+def dataset_switch(
+    choice: Dataset, sport: Sports, split: DatasetSplit = DatasetSplit.VALIDATION
+):
     """Get dataset class"""
 
     if choice == Dataset.SQuAD:
-        return SQuadDataset()
+        return SQuadDataset(split=split)
     elif choice == Dataset.SQuAD2:
-        return SQuadDataset2()
+        return SQuadDataset2(split=split)
     elif choice == Dataset.AdvQA:
-        return AdversarialQADataset()
+        return AdversarialQADataset(split=split)
     elif choice == Dataset.DuoRC:
-        return DuoRCDataset()
+        return DuoRCDataset(split=split)
     elif choice == Dataset.QASports:
-        return QASportsDataset(sport)
+        return QASportsDataset(sport=sport, split=split)
     else:
         return "Invalid dataset"
