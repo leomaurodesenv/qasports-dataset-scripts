@@ -19,9 +19,10 @@ class Dataset(enum.Enum):
     """Dataset options"""
 
     SQuAD = 1
-    AdvQA = 2
-    DuoRC = 3
-    QASports = 4
+    SQuAD2 = 2
+    AdvQA = 3
+    DuoRC = 4
+    QASports = 5
 
 
 class DocRetriever(enum.Enum):
@@ -126,7 +127,7 @@ class SQuadDataset(AbstactDataset):
     _metadata = {"dataset_id": "id"}
 
     def download(self):
-        dataset = load_dataset("squad", split="validation")
+        dataset = load_dataset("rajpurkar/squad", split="validation")
         return dataset
 
     def get_documents(self):
@@ -185,6 +186,31 @@ class SQuadDataset(AbstactDataset):
             )
             eval_labels.append(doc_label)
         return eval_labels
+
+
+class SQuadDataset2(SQuadDataset):
+    """SQuad2  Dataset
+    A dataset for question answering from open-domain Wikipedia articles.
+    Source: https://huggingface.co/datasets/rajpurkar/squad_v2
+    """
+
+    name = "SQuad2 Dataset"
+
+    def download(self):
+        dataset = load_dataset("rajpurkar/squad_v2", split="validation")
+        return dataset
+
+    def _transform_df(self):
+        """Transform dataset in a pd.DataFrame"""
+        df = pd.DataFrame(self.raw_dataset)
+        # Only keep rows where answers['text'] is not empty
+        df_filtered = df[df["answers"].apply(lambda x: len(x["text"]) > 0)]
+        # Get questions with answers
+        return df_filtered
+
+    def _get_answers(self, data):
+        # Get question answer
+        return data["answers"]
 
 
 class AdversarialQADataset(SQuadDataset):
@@ -273,6 +299,8 @@ def dataset_switch(choice, sport):
 
     if choice == Dataset.SQuAD:
         return SQuadDataset()
+    elif choice == Dataset.SQuAD2:
+        return SQuadDataset2()
     elif choice == Dataset.AdvQA:
         return AdversarialQADataset()
     elif choice == Dataset.DuoRC:
