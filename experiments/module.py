@@ -87,8 +87,13 @@ Importing and download the respective dataset.
 class AbstactDataset(metaclass=ABCMeta):
     """Abstract dataset class"""
 
-    def __init__(self, split: DatasetSplit = DatasetSplit.VALIDATION):
+    def __init__(
+        self,
+        split: DatasetSplit = DatasetSplit.VALIDATION,
+        remove_empty_answers: bool = True,
+    ):
         self.split = split
+        self.remove_empty_answers = remove_empty_answers
         self.raw_dataset = self.download()
         self.df_dataset = self._transform_df()
         print(f"## {self.name} ##")
@@ -96,7 +101,17 @@ class AbstactDataset(metaclass=ABCMeta):
 
     def _transform_df(self):
         """Transform dataset in a pd.DataFrame"""
-        return pd.DataFrame(self.raw_dataset)
+        df = pd.DataFrame(self.raw_dataset)
+
+        # If remove_empty_answers is True, filter out empty answers
+        if self.remove_empty_answers:
+            df = self._remove_empty_answers(df)
+
+        return df
+
+    def _remove_empty_answers(self, df):
+        """Remove rows with empty answers. Override in subclasses for specific logic."""
+        return df
 
     @property
     @abstractmethod
@@ -209,13 +224,11 @@ class SQuadDataset2(SQuadDataset):
         dataset = load_dataset("rajpurkar/squad_v2", split=self.split.value)
         return dataset
 
-    def _transform_df(self):
-        """Transform dataset in a pd.DataFrame"""
-        df = pd.DataFrame(self.raw_dataset)
+    def _remove_empty_answers(self, df):
+        """Remove rows with empty answers"""
         # Only keep rows where answers['text'] is not empty
-        df_filtered = df[df["answers"].apply(lambda x: len(x["text"]) > 0)]
-        # Get questions with answers
-        return df_filtered
+        mask = df["answers"].apply(lambda x: len(x["text"]) > 0)
+        return df[mask]
 
     def _get_answers(self, data):
         # Get question answer
@@ -255,9 +268,8 @@ class DuoRCDataset(SQuadDataset):
         dataset = load_dataset("duorc", "SelfRC", split=self.split.value)
         return dataset
 
-    def _transform_df(self):
-        """Transform dataset in a pd.DataFrame"""
-        df = pd.DataFrame(self.raw_dataset)
+    def _remove_empty_answers(self, df):
+        """Remove rows with empty answers"""
         # Get questions with answer
         return df[~df["no_answer"]]
 
@@ -281,10 +293,13 @@ class QASportsDataset(SQuadDataset):
     _metadata = {"dataset_id": "qa_id"}
 
     def __init__(
-        self, sport: Sports = Sports.ALL, split: DatasetSplit = DatasetSplit.VALIDATION
+        self,
+        sport: Sports = Sports.ALL,
+        split: DatasetSplit = DatasetSplit.VALIDATION,
+        remove_empty_answers: bool = True,
     ):
         self.sport = sport
-        super().__init__(split=split)
+        super().__init__(split=split, remove_empty_answers=remove_empty_answers)
 
     def download(self):
         dataset = load_dataset(
@@ -292,9 +307,8 @@ class QASportsDataset(SQuadDataset):
         )
         return dataset
 
-    def _transform_df(self):
-        """Transform dataset in a pd.DataFrame"""
-        df = pd.DataFrame(self.raw_dataset)
+    def _remove_empty_answers(self, df):
+        """Remove rows with empty answers"""
         # Get questions with answer
         df["answer"] = df["answer"].apply(eval)
         mask = df["answer"].apply(lambda x: True if x["text"] != "" else False)
@@ -306,19 +320,26 @@ class QASportsDataset(SQuadDataset):
 
 
 def dataset_switch(
-    choice: Dataset, sport: Sports, split: DatasetSplit = DatasetSplit.VALIDATION
+    choice: Dataset,
+    sport: Sports,
+    split: DatasetSplit = DatasetSplit.VALIDATION,
+    remove_empty_answers: bool = True,
 ):
     """Get dataset class"""
 
     if choice == Dataset.SQuAD:
-        return SQuadDataset(split=split)
+        return SQuadDataset(split=split, remove_empty_answers=remove_empty_answers)
     elif choice == Dataset.SQuAD2:
-        return SQuadDataset2(split=split)
+        return SQuadDataset2(split=split, remove_empty_answers=remove_empty_answers)
     elif choice == Dataset.AdvQA:
-        return AdversarialQADataset(split=split)
+        return AdversarialQADataset(
+            split=split, remove_empty_answers=remove_empty_answers
+        )
     elif choice == Dataset.DuoRC:
-        return DuoRCDataset(split=split)
+        return DuoRCDataset(split=split, remove_empty_answers=remove_empty_answers)
     elif choice == Dataset.QASports:
-        return QASportsDataset(sport=sport, split=split)
+        return QASportsDataset(
+            sport=sport, split=split, remove_empty_answers=remove_empty_answers
+        )
     else:
         return "Invalid dataset"
