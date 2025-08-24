@@ -39,8 +39,8 @@ args = parser.parse_args()
 
 DATASET = Dataset[args.dataset]
 DOC_READER = DocReader[args.model].value
-SPORT = Sports[args.sport].value
-print(f"Dataset: {DATASET} // Sport: {SPORT}")
+SPORT = Sports[args.sport]
+print(f"Dataset: {DATASET} // Sport: {SPORT.value}")
 print(f"Model: {DOC_READER}")
 
 
