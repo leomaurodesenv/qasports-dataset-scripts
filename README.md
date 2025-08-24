@@ -22,7 +22,7 @@ Sport is one of the most popular and revenue-generating forms of entertainment. 
 
 ### Prerequisites
 
-- **Python 3.9+**
+- **Python 3.10+**
 - **uv** package manager ([Installation Guide](https://github.com/astral-sh/uv))
 
 ### Installation
@@ -119,6 +119,14 @@ uv run -m experiments.doc_reader --model RoBERTa --dataset SQuAD
 - **Data Sources**: Wikipedia-like resources
 - **Question Types**: Extractive QA, Wh-questions
 - **Sports Covered**: Football, American Football, Basketball, Cricket, +15 Sports
+
+```bash
+# Run dataset general analysis
+uv run -m experiments.dataset_analysis --help
+
+# Example usage
+uv run -m experiments.dataset_analysis --dataset QASports --sport RUGBY
+```
 
 ## 🤝 Contributing
 
