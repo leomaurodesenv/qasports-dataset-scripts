@@ -96,8 +96,11 @@ class AbstactDataset(metaclass=ABCMeta):
         self.remove_empty_answers = remove_empty_answers
         self.raw_dataset = self.download()
         self.df_dataset = self._transform_df()
-        print(f"## {self.name} ##")
-        print(self.raw_dataset)
+        print(
+            f"## {self.name} ({self.split.value}, non-empty={self.remove_empty_answers}) ##"
+        )
+        print(f"Columns: {self.df_dataset.columns}")
+        print(f"Rows: {len(self.df_dataset)}")
 
     def _transform_df(self):
         """Transform dataset in a pd.DataFrame"""
@@ -317,7 +320,9 @@ class QASportsDataset(SQuadDataset):
 
     def _get_answers(self, data):
         # Get question answer
-        data_dict = eval(data["answer"])
+        data_dict = (
+            eval(data["answer"]) if isinstance(data["answer"], str) else data["answer"]
+        )
         return [data_dict["text"]]
 
 
