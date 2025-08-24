@@ -67,21 +67,26 @@ def analyze_sport_dataset(sport: Sports, split: DatasetSplit = DatasetSplit.TRAI
 
 
 def generate_comprehensive_analysis(
-    output_file: str = "dataset_analysis_results.json",
+    output_dir: str = "analysis_results",
     split: DatasetSplit = DatasetSplit.TRAIN,
     include_all_sport: bool = True,
 ):
     """
-    Generate comprehensive analysis for all sports and save to JSON file.
+    Generate comprehensive analysis for all sports and save individual JSON files.
 
     Args:
-        output_file: Path to the output JSON file
+        output_dir: Directory to save individual sport analysis files
         split: The dataset split to analyze
         include_all_sport: Whether to include the "ALL" sport category
     """
     print("🚀 Starting comprehensive dataset analysis...")
     print(f"📊 Analyzing split: {split.value}")
-    print(f"📁 Output file: {output_file}")
+    print(f"📁 Output directory: {output_dir}")
+
+    # Create output directory if it doesn't exist
+    import os
+
+    os.makedirs(output_dir, exist_ok=True)
 
     # Get all sports from the enum
     sports_to_analyze = list(Sports)
@@ -94,163 +99,94 @@ def generate_comprehensive_analysis(
 
     print(f"🏃‍♂️ Analyzing {len(sports_to_analyze)} sports...")
 
-    # Analyze each sport
-    all_results = {
+    # Track overall statistics
+    successful_analyses = 0
+    failed_analyses = 0
+
+    for i, sport in enumerate(sports_to_analyze, 1):
+        print(f"\n📈 Progress: {i}/{len(sports_to_analyze)}")
+
+        # Analyze individual sport
+        sport_results = analyze_sport_dataset(sport, split)
+
+        # Save individual sport results
+        sport_filename = f"{sport.value}_{split.value}_analysis.json"
+        sport_filepath = os.path.join(output_dir, sport_filename)
+
+        try:
+            with open(sport_filepath, "w", encoding="utf-8") as f:
+                json.dump(sport_results, f, indent=2, ensure_ascii=False)
+            print(f"💾 Saved {sport.name} results to {sport_filepath}")
+            successful_analyses += 1
+        except Exception as e:
+            print(f"❌ Failed to save {sport.name} results: {str(e)}")
+            failed_analyses += 1
+
+    # Create a summary file with metadata
+    summary_data = {
         "metadata": {
             "generated_at": datetime.now().isoformat(),
             "total_sports": len(sports_to_analyze),
             "split_analyzed": split.value,
             "include_all_sport": include_all_sport,
+            "successful_analyses": successful_analyses,
+            "failed_analyses": failed_analyses,
+            "output_directory": output_dir,
         },
-        "sports": [],
+        "files_generated": [
+            f"{sport.value}_{split.value}_analysis.json" for sport in sports_to_analyze
+        ],
     }
 
-    for i, sport in enumerate(sports_to_analyze, 1):
-        print(f"\n📈 Progress: {i}/{len(sports_to_analyze)}")
-        sport_results = analyze_sport_dataset(sport, split)
-        all_results["sports"].append(sport_results)
+    summary_filepath = os.path.join(output_dir, f"analysis_summary_{split.value}.json")
+    with open(summary_filepath, "w", encoding="utf-8") as f:
+        json.dump(summary_data, f, indent=2, ensure_ascii=False)
 
-    # Calculate summary statistics across all sports
-    print("\n📊 Calculating summary statistics...")
-    all_results["summary"] = calculate_summary_statistics(all_results["sports"])
-
-    # Save results to JSON file
-    print(f"\n💾 Saving results to {output_file}...")
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(all_results, f, indent=2, ensure_ascii=False)
-
-    print(f"✅ Analysis complete! Results saved to {output_file}")
+    print(f"\n✅ Analysis complete!")
+    print(f"📊 Successful analyses: {successful_analyses}")
+    print(f"❌ Failed analyses: {failed_analyses}")
+    print(f"📁 Results saved to: {output_dir}")
+    print(f"📋 Summary saved to: {summary_filepath}")
 
     # Print summary
-    print_summary(all_results)
+    print_analysis_summary(summary_data)
 
 
-def calculate_summary_statistics(sports_results):
-    """
-    Calculate summary statistics across all sports.
-
-    Args:
-        sports_results: List of analysis results for each sport
-
-    Returns:
-        dict: Summary statistics
-    """
-    summary = {
-        "total_examples_across_sports": 0,
-        "total_unique_contexts": 0,
-        "total_unique_questions": 0,
-        "total_questions_without_answers": 0,
-        "sports_with_data": 0,
-        "sports_with_errors": 0,
-        "average_context_length": 0,
-        "average_question_length": 0,
-        "average_answer_length": 0,
-        "most_common_question_types": {},
-    }
-
-    # Aggregate statistics
-    context_lengths = []
-    question_lengths = []
-    answer_lengths = []
-    question_type_counts = {}
-
-    for sport_result in sports_results:
-        if "error" in sport_result:
-            summary["sports_with_errors"] += 1
-            continue
-
-        summary["sports_with_data"] += 1
-
-        # Overview statistics
-        overview = sport_result.get("overview", {})
-        summary["total_examples_across_sports"] += overview.get("total_examples", 0)
-        summary["total_unique_contexts"] += overview.get("unique_contexts", 0)
-        summary["total_unique_questions"] += overview.get("unique_questions", 0)
-        summary["total_questions_without_answers"] += overview.get(
-            "questions_without_answers", 0
-        )
-
-        # Length statistics
-        length_stats = sport_result.get("length_distributions", {})
-        if "context" in length_stats:
-            context_lengths.extend(
-                [length_stats["context"]["mean"]] * overview.get("total_examples", 0)
-            )
-        if "question" in length_stats:
-            question_lengths.extend(
-                [length_stats["question"]["mean"]] * overview.get("total_examples", 0)
-            )
-        if "answer" in length_stats:
-            answer_lengths.extend(
-                [length_stats["answer"]["mean"]] * overview.get("total_examples", 0)
-            )
-
-        # Question type statistics
-        question_types = sport_result.get("question_types", {})
-        for q_type, stats in question_types.items():
-            if q_type not in question_type_counts:
-                question_type_counts[q_type] = 0
-            question_type_counts[q_type] += stats.get("count", 0)
-
-    # Calculate averages
-    if context_lengths:
-        summary["average_context_length"] = sum(context_lengths) / len(context_lengths)
-    if question_lengths:
-        summary["average_question_length"] = sum(question_lengths) / len(
-            question_lengths
-        )
-    if answer_lengths:
-        summary["average_answer_length"] = sum(answer_lengths) / len(answer_lengths)
-
-    # Sort question types by count
-    summary["most_common_question_types"] = dict(
-        sorted(question_type_counts.items(), key=lambda x: x[1], reverse=True)
-    )
-
-    return summary
-
-
-def print_summary(all_results):
+def print_analysis_summary(summary_data):
     """
     Print a summary of the analysis results.
 
     Args:
-        all_results: Complete analysis results
+        summary_data: Summary data with metadata and file information
     """
     print("\n" + "=" * 60)
     print("📊 ANALYSIS SUMMARY")
     print("=" * 60)
 
-    metadata = all_results["metadata"]
-    summary = all_results["summary"]
+    metadata = summary_data["metadata"]
 
     print(f"📅 Generated at: {metadata['generated_at']}")
     print(f"🏃‍♂️ Sports analyzed: {metadata['total_sports']}")
     print(f"📊 Split analyzed: {metadata['split_analyzed']}")
-    print(f"✅ Sports with data: {summary['sports_with_data']}")
-    print(f"❌ Sports with errors: {summary['sports_with_errors']}")
+    print(f"✅ Successful analyses: {metadata['successful_analyses']}")
+    print(f"❌ Failed analyses: {metadata['failed_analyses']}")
+    print(f"📁 Output directory: {metadata['output_directory']}")
 
-    print(f"\n📈 OVERALL STATISTICS:")
-    print(f"   Total examples: {summary['total_examples_across_sports']:,}")
-    print(f"   Unique contexts: {summary['total_unique_contexts']:,}")
-    print(f"   Unique questions: {summary['total_unique_questions']:,}")
-    print(
-        f"   Questions without answers: {summary['total_questions_without_answers']:,}"
-    )
+    print(f"\n📄 FILES GENERATED:")
+    for filename in summary_data["files_generated"][:10]:  # Show first 10 files
+        print(f"   📄 {filename}")
 
-    print(f"\n📏 AVERAGE LENGTHS:")
-    print(f"   Context: {summary['average_context_length']:.1f} words")
-    print(f"   Question: {summary['average_question_length']:.1f} words")
-    print(f"   Answer: {summary['average_answer_length']:.1f} words")
+    if len(summary_data["files_generated"]) > 10:
+        print(f"   ... and {len(summary_data['files_generated']) - 10} more files")
 
-    print(f"\n❓ MOST COMMON QUESTION TYPES:")
-    for q_type, count in list(summary["most_common_question_types"].items())[:5]:
-        print(f"   {q_type}: {count:,}")
+    print("\n💡 Each sport analysis file contains:")
+    print("   - Overview statistics (total examples, unique contexts/questions)")
+    print("   - Length distributions (context, question, answer)")
+    print("   - Question type analysis (WH-words distribution)")
+    print("   - Error information (if any)")
 
     print("=" * 60)
 
 
 # Run the analysis
-generate_comprehensive_analysis(
-    output_file="dataset_analysis_results.json", split=DatasetSplit.TRAIN
-)
+generate_comprehensive_analysis(output_dir="analysis_results", split=DatasetSplit.TRAIN)
