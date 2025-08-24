@@ -236,7 +236,12 @@ class SQuadDataset2(SQuadDataset):
 
     def _get_answers(self, data):
         # Get question answer
-        return data["answers"]
+        data_dict = (
+            eval(data["answers"])
+            if isinstance(data["answers"], str)
+            else data["answers"]
+        )
+        return data_dict["text"]
 
 
 class AdversarialQADataset(SQuadDataset):
