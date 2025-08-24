@@ -6,6 +6,7 @@ from experiments/dataset_analysis.py to generate a comprehensive JSON file with 
 """
 
 import json
+import numpy as np
 from datetime import datetime
 
 from experiments.module import Dataset, Sports, DatasetSplit, dataset_switch
@@ -14,6 +15,19 @@ from experiments.dataset_analysis import (
     analyze_question_types,
     analyze_dataset_overview,
 )
+
+
+class NumpyEncoder(json.JSONEncoder):
+    """Custom JSON encoder to handle NumPy data types."""
+
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super().default(obj)
 
 
 def analyze_sport_dataset(sport: Sports, split: DatasetSplit = DatasetSplit.TRAIN):
@@ -115,7 +129,9 @@ def generate_comprehensive_analysis(
 
         try:
             with open(sport_filepath, "w", encoding="utf-8") as f:
-                json.dump(sport_results, f, indent=2, ensure_ascii=False)
+                json.dump(
+                    sport_results, f, indent=2, ensure_ascii=False, cls=NumpyEncoder
+                )
             print(f"💾 Saved {sport.name} results to {sport_filepath}")
             successful_analyses += 1
         except Exception as e:
@@ -140,7 +156,7 @@ def generate_comprehensive_analysis(
 
     summary_filepath = os.path.join(output_dir, f"analysis_summary_{split.value}.json")
     with open(summary_filepath, "w", encoding="utf-8") as f:
-        json.dump(summary_data, f, indent=2, ensure_ascii=False)
+        json.dump(summary_data, f, indent=2, ensure_ascii=False, cls=NumpyEncoder)
 
     print(f"\n✅ Analysis complete!")
     print(f"📊 Successful analyses: {successful_analyses}")
@@ -189,4 +205,6 @@ def print_analysis_summary(summary_data):
 
 
 # Run the analysis
-generate_comprehensive_analysis(output_dir="analysis_results", split=DatasetSplit.TRAIN)
+generate_comprehensive_analysis(
+    output_dir="output/analysis_results", split=DatasetSplit.TRAIN
+)
