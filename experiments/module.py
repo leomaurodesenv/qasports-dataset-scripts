@@ -227,6 +227,7 @@ class SQuadDataset2(SQuadDataset):
     def _remove_empty_answers(self, df):
         """Remove rows with empty answers"""
         # Only keep rows where answers['text'] is not empty
+        df["answers"] = df["answers"].apply(eval)
         mask = df["answers"].apply(lambda x: len(x["text"]) > 0)
         return df[mask]
 
@@ -316,7 +317,8 @@ class QASportsDataset(SQuadDataset):
 
     def _get_answers(self, data):
         # Get question answer
-        return [data["answer"]["text"]]
+        data_dict = eval(data["answer"])
+        return [data_dict["text"]]
 
 
 def dataset_switch(
