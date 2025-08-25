@@ -217,19 +217,19 @@ def display_overview_latex(reader: DatasetAnalysisReader):
 
     # Create LaTeX table
     latex_table = []
-    latex_table.append("\\begin{table}[htbp]")
-    latex_table.append("\\centering")
+    latex_table.append("\\begin{table}[htb]")
+    latex_table.append("\\centering\\footnotesize")
     latex_table.append("\\caption{Dataset Overview Statistics by Sport}")
     latex_table.append("\\label{tab:dataset-overview}")
-    latex_table.append("\\begin{tabular}{lrrrrr}")
-    latex_table.append("\\hline")
+    latex_table.append("\\begin{tabular}{rlrrrrr}")
+    latex_table.append("\\toprule")
     latex_table.append(
-        "Sport & Total Examples & Unique Contexts & Unique Questions & Questions w/o Answers & \% w/o Answers \\\\"
+        "& Sport & Total Examples & Unique Contexts & Unique Questions & Questions w/o Answers & \% w/o Answers \\\\"
     )
-    latex_table.append("\\hline")
+    latex_table.append("\\midrule")
 
     # Add data rows
-    for _, row in overview_df.iterrows():
+    for idx, (_, row) in enumerate(overview_df.iterrows(), start=0):
         sport = row["sport"].replace("_", "\\_")  # Escape underscores for LaTeX
         total_examples = f"{row['total_examples']:,}"
         unique_contexts = f"{row['unique_contexts']:,}"
@@ -238,7 +238,7 @@ def display_overview_latex(reader: DatasetAnalysisReader):
         percentage = f"{row['percentage_without_answers']:.1f}"
 
         latex_table.append(
-            f"{sport} & {total_examples} & {unique_contexts} & {unique_questions} & {questions_without_answers} & {percentage}\\% \\\\"
+            f"{idx} & {sport.lower()} & {total_examples} & {unique_contexts} & {unique_questions} & {questions_without_answers} & {percentage}\\% \\\\"
         )
 
     # Add totals row
@@ -250,7 +250,7 @@ def display_overview_latex(reader: DatasetAnalysisReader):
         "percentage_without_answers": overview_df["percentage_without_answers"].mean(),
     }
 
-    latex_table.append("\\hline")
+    latex_table.append("\\midrule")
     latex_table.append(
         "\\textbf{Total} & "
         + f"\\textbf{{{totals['total_examples']:,}}} & "
@@ -260,22 +260,15 @@ def display_overview_latex(reader: DatasetAnalysisReader):
         + f"\\textbf{{{totals['percentage_without_answers']:.1f}\\%}} \\\\"
     )
 
-    latex_table.append("\\hline")
+    latex_table.append("\\bottomrule")
     latex_table.append("\\end{tabular}")
     latex_table.append("\\end{table}")
 
     # Print the LaTeX table
     print("\n".join(latex_table))
 
-    # Also save to file
-    latex_file = "dataset_overview_table.tex"
-    with open(latex_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(latex_table))
 
-    print(f"\n💾 LaTeX table saved to: {latex_file}")
-
-
-def display_question_type_analysis(reader: DatasetAnalysisReader):
+def display_question_type_table(reader: DatasetAnalysisReader):
     """Display question type analysis."""
     print("\n" + "=" * 80)
     print("❓ QUESTION TYPE ANALYSIS")
@@ -408,7 +401,7 @@ def main():
         # Display comprehensive analysis
         display_overview_table(reader)
         display_overview_latex(reader)
-        display_question_type_analysis(reader)
+        display_question_type_table(reader)
         display_error_summary(reader)
 
     print("\n" + "=" * 80)
