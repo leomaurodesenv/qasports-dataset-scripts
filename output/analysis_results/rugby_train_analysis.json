@@ -1,0 +1,91 @@
+{
+  "sport": "RUGBY",
+  "sport_value": "rugby",
+  "split": "train",
+  "analysis_timestamp": "2025-08-24T18:12:17.297366",
+  "overview": {
+    "total_examples": 927,
+    "unique_contexts": 418,
+    "unique_questions": 924,
+    "questions_without_answers": 319,
+    "percentage_without_answers": 34.41208198489752
+  },
+  "length_distributions": {
+    "context": {
+      "count": 927,
+      "mean": 39.325782092772386,
+      "median": 42.0,
+      "min": 1,
+      "max": 53,
+      "std": 9.740849926477914
+    },
+    "question": {
+      "count": 927,
+      "mean": 9.56957928802589,
+      "median": 9.0,
+      "min": 1,
+      "max": 26,
+      "std": 3.554364674205633
+    },
+    "answer": {
+      "count": 927,
+      "mean": 1.3451995685005393,
+      "median": 1.0,
+      "min": 0,
+      "max": 13,
+      "std": 1.64796502214632,
+      "empty_count": 319,
+      "empty_percentage": 34.41208198489752
+    }
+  },
+  "question_types": {
+    "who": {
+      "count": 123,
+      "percentage": 13.268608414239482,
+      "empty_answers": 46,
+      "empty_percentage": 37.39837398373984
+    },
+    "when": {
+      "count": 112,
+      "percentage": 12.081984897518879,
+      "empty_answers": 22,
+      "empty_percentage": 19.642857142857142
+    },
+    "how": {
+      "count": 139,
+      "percentage": 14.994606256742179,
+      "empty_answers": 34,
+      "empty_percentage": 24.46043165467626
+    },
+    "what": {
+      "count": 389,
+      "percentage": 41.963322545846815,
+      "empty_answers": 162,
+      "empty_percentage": 41.645244215938305
+    },
+    "where": {
+      "count": 57,
+      "percentage": 6.148867313915858,
+      "empty_answers": 12,
+      "empty_percentage": 21.052631578947366
+    },
+    "none": {
+      "count": 85,
+      "percentage": 9.169363538295578,
+      "empty_answers": 35,
+      "empty_percentage": 41.17647058823529
+    },
+    "which": {
+      "count": 17,
+      "percentage": 1.8338727076591153,
+      "empty_answers": 5,
+      "empty_percentage": 29.411764705882355
+    },
+    "why": {
+      "count": 5,
+      "percentage": 0.5393743257820928,
+      "empty_answers": 3,
+      "empty_percentage": 60.0
+    }
+  }
+}

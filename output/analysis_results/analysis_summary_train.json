@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-24T18:32:28.914329",
+    "total_sports": 21,
+    "split_analyzed": "train",
+    "include_all_sport": true,
+    "successful_analyses": 21,
+    "failed_analyses": 0,
+    "output_directory": "output/analysis_results"
+  },
+  "files_generated": [
+    "basketball_train_analysis.json",
+    "football_train_analysis.json",
+    "americanfootball_train_analysis.json",
+    "hockey_train_analysis.json",
+    "cricket_train_analysis.json",
+    "golf_train_analysis.json",
+    "rugbyunion_train_analysis.json",
+    "rugby_train_analysis.json",
+    "baseball_train_analysis.json",
+    "martialarts_train_analysis.json",
+    "boxing_train_analysis.json",
+    "mixedmartialarts_train_analysis.json",
+    "fitness_train_analysis.json",
+    "cycling_train_analysis.json",
+    "badminton_train_analysis.json",
+    "gymnastics_train_analysis.json",
+    "handball_train_analysis.json",
+    "skiing_train_analysis.json",
+    "horse_racing_train_analysis.json",
+    "f1_train_analysis.json",
+    "all_train_analysis.json"
+  ]
+}

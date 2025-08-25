@@ -1,0 +1,91 @@
+{
+  "sport": "RUGBYUNION",
+  "sport_value": "rugbyunion",
+  "split": "train",
+  "analysis_timestamp": "2025-08-24T18:11:17.868323",
+  "overview": {
+    "total_examples": 3861,
+    "unique_contexts": 1667,
+    "unique_questions": 3735,
+    "questions_without_answers": 1716,
+    "percentage_without_answers": 44.44444444444444
+  },
+  "length_distributions": {
+    "context": {
+      "count": 3861,
+      "mean": 39.562030562030564,
+      "median": 42.0,
+      "min": 1,
+      "max": 64,
+      "std": 9.79032174208906
+    },
+    "question": {
+      "count": 3861,
+      "mean": 9.29008029008029,
+      "median": 9.0,
+      "min": 2,
+      "max": 50,
+      "std": 3.8441238646461167
+    },
+    "answer": {
+      "count": 3861,
+      "mean": 1.0947940947940948,
+      "median": 1.0,
+      "min": 0,
+      "max": 17,
+      "std": 1.4460249581408573,
+      "empty_count": 1716,
+      "empty_percentage": 44.44444444444444
+    }
+  },
+  "question_types": {
+    "what": {
+      "count": 1512,
+      "percentage": 39.16083916083916,
+      "empty_answers": 748,
+      "empty_percentage": 49.47089947089947
+    },
+    "who": {
+      "count": 656,
+      "percentage": 16.99041699041699,
+      "empty_answers": 335,
+      "empty_percentage": 51.0670731707317
+    },
+    "how": {
+      "count": 635,
+      "percentage": 16.446516446516448,
+      "empty_answers": 253,
+      "empty_percentage": 39.84251968503937
+    },
+    "when": {
+      "count": 390,
+      "percentage": 10.1010101010101,
+      "empty_answers": 109,
+      "empty_percentage": 27.94871794871795
+    },
+    "which": {
+      "count": 94,
+      "percentage": 2.4346024346024344,
+      "empty_answers": 53,
+      "empty_percentage": 56.38297872340425
+    },
+    "none": {
+      "count": 373,
+      "percentage": 9.660709660709662,
+      "empty_answers": 143,
+      "empty_percentage": 38.337801608579085
+    },
+    "why": {
+      "count": 13,
+      "percentage": 0.33670033670033667,
+      "empty_answers": 8,
+      "empty_percentage": 61.53846153846154
+    },
+    "where": {
+      "count": 188,
+      "percentage": 4.869204869204869,
+      "empty_answers": 67,
+      "empty_percentage": 35.638297872340424
+    }
+  }
+}

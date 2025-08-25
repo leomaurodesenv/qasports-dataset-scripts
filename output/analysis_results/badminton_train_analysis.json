@@ -1,0 +1,91 @@
+{
+  "sport": "BADMINTON",
+  "sport_value": "badminton",
+  "split": "train",
+  "analysis_timestamp": "2025-08-24T18:20:05.674897",
+  "overview": {
+    "total_examples": 330,
+    "unique_contexts": 160,
+    "unique_questions": 330,
+    "questions_without_answers": 158,
+    "percentage_without_answers": 47.878787878787875
+  },
+  "length_distributions": {
+    "context": {
+      "count": 330,
+      "mean": 39.56060606060606,
+      "median": 42.0,
+      "min": 1,
+      "max": 52,
+      "std": 9.919874125360339
+    },
+    "question": {
+      "count": 330,
+      "mean": 10.0,
+      "median": 9.0,
+      "min": 4,
+      "max": 51,
+      "std": 5.050052504977577
+    },
+    "answer": {
+      "count": 330,
+      "mean": 1.3424242424242425,
+      "median": 1.0,
+      "min": 0,
+      "max": 15,
+      "std": 2.0891538526442623,
+      "empty_count": 158,
+      "empty_percentage": 47.878787878787875
+    }
+  },
+  "question_types": {
+    "what": {
+      "count": 205,
+      "percentage": 62.121212121212125,
+      "empty_answers": 96,
+      "empty_percentage": 46.82926829268293
+    },
+    "none": {
+      "count": 45,
+      "percentage": 13.636363636363635,
+      "empty_answers": 22,
+      "empty_percentage": 48.888888888888886
+    },
+    "when": {
+      "count": 10,
+      "percentage": 3.0303030303030303,
+      "empty_answers": 3,
+      "empty_percentage": 30.0
+    },
+    "how": {
+      "count": 37,
+      "percentage": 11.212121212121213,
+      "empty_answers": 16,
+      "empty_percentage": 43.24324324324324
+    },
+    "who": {
+      "count": 13,
+      "percentage": 3.939393939393939,
+      "empty_answers": 6,
+      "empty_percentage": 46.15384615384615
+    },
+    "why": {
+      "count": 6,
+      "percentage": 1.8181818181818181,
+      "empty_answers": 4,
+      "empty_percentage": 66.66666666666666
+    },
+    "where": {
+      "count": 10,
+      "percentage": 3.0303030303030303,
+      "empty_answers": 7,
+      "empty_percentage": 70.0
+    },
+    "which": {
+      "count": 4,
+      "percentage": 1.2121212121212122,
+      "empty_answers": 4,
+      "empty_percentage": 100.0
+    }
+  }
+}

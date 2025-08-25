@@ -1,0 +1,85 @@
+{
+  "sport": "SKIING",
+  "sport_value": "skiing",
+  "split": "train",
+  "analysis_timestamp": "2025-08-24T18:23:08.549034",
+  "overview": {
+    "total_examples": 183,
+    "unique_contexts": 85,
+    "unique_questions": 179,
+    "questions_without_answers": 59,
+    "percentage_without_answers": 32.240437158469945
+  },
+  "length_distributions": {
+    "context": {
+      "count": 183,
+      "mean": 29.879781420765028,
+      "median": 34.0,
+      "min": 1,
+      "max": 50,
+      "std": 12.972302396275683
+    },
+    "question": {
+      "count": 183,
+      "mean": 8.344262295081966,
+      "median": 8.0,
+      "min": 1,
+      "max": 17,
+      "std": 2.8870461348501517
+    },
+    "answer": {
+      "count": 183,
+      "mean": 1.715846994535519,
+      "median": 1.0,
+      "min": 0,
+      "max": 19,
+      "std": 2.2314493852881787,
+      "empty_count": 59,
+      "empty_percentage": 32.240437158469945
+    }
+  },
+  "question_types": {
+    "when": {
+      "count": 26,
+      "percentage": 14.207650273224044,
+      "empty_answers": 0,
+      "empty_percentage": 0.0
+    },
+    "what": {
+      "count": 99,
+      "percentage": 54.09836065573771,
+      "empty_answers": 37,
+      "empty_percentage": 37.37373737373738
+    },
+    "none": {
+      "count": 25,
+      "percentage": 13.661202185792352,
+      "empty_answers": 9,
+      "empty_percentage": 36.0
+    },
+    "how": {
+      "count": 18,
+      "percentage": 9.836065573770492,
+      "empty_answers": 11,
+      "empty_percentage": 61.111111111111114
+    },
+    "where": {
+      "count": 5,
+      "percentage": 2.73224043715847,
+      "empty_answers": 1,
+      "empty_percentage": 20.0
+    },
+    "who": {
+      "count": 8,
+      "percentage": 4.371584699453552,
+      "empty_answers": 1,
+      "empty_percentage": 12.5
+    },
+    "which": {
+      "count": 2,
+      "percentage": 1.092896174863388,
+      "empty_answers": 0,
+      "empty_percentage": 0.0
+    }
+  }
+}

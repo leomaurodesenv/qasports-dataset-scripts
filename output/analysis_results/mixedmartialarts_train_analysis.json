@@ -1,0 +1,91 @@
+{
+  "sport": "MIXEDMARTIALARTS",
+  "sport_value": "mixedmartialarts",
+  "split": "train",
+  "analysis_timestamp": "2025-08-24T18:17:09.196132",
+  "overview": {
+    "total_examples": 15379,
+    "unique_contexts": 7209,
+    "unique_questions": 14096,
+    "questions_without_answers": 4848,
+    "percentage_without_answers": 31.5235060797191
+  },
+  "length_distributions": {
+    "context": {
+      "count": 15379,
+      "mean": 36.597373041160026,
+      "median": 41.0,
+      "min": 1,
+      "max": 55,
+      "std": 11.151438029227432
+    },
+    "question": {
+      "count": 15379,
+      "mean": 8.907796345666169,
+      "median": 8.0,
+      "min": 1,
+      "max": 46,
+      "std": 3.6549182501372854
+    },
+    "answer": {
+      "count": 15379,
+      "mean": 1.62435789063008,
+      "median": 1.0,
+      "min": 0,
+      "max": 32,
+      "std": 1.7616788276265118,
+      "empty_count": 4848,
+      "empty_percentage": 31.5235060797191
+    }
+  },
+  "question_types": {
+    "when": {
+      "count": 1187,
+      "percentage": 7.718317185772807,
+      "empty_answers": 170,
+      "empty_percentage": 14.321819713563604
+    },
+    "who": {
+      "count": 3077,
+      "percentage": 20.007802848039535,
+      "empty_answers": 886,
+      "empty_percentage": 28.794280142996424
+    },
+    "what": {
+      "count": 6661,
+      "percentage": 43.31230899278237,
+      "empty_answers": 2454,
+      "empty_percentage": 36.84131511785017
+    },
+    "none": {
+      "count": 1714,
+      "percentage": 11.145067949801678,
+      "empty_answers": 512,
+      "empty_percentage": 29.871645274212366
+    },
+    "how": {
+      "count": 1627,
+      "percentage": 10.579361466935431,
+      "empty_answers": 557,
+      "empty_percentage": 34.23478795328826
+    },
+    "where": {
+      "count": 985,
+      "percentage": 6.404837765784512,
+      "empty_answers": 230,
+      "empty_percentage": 23.3502538071066
+    },
+    "which": {
+      "count": 80,
+      "percentage": 0.5201898693022953,
+      "empty_answers": 26,
+      "empty_percentage": 32.5
+    },
+    "why": {
+      "count": 48,
+      "percentage": 0.3121139215813772,
+      "empty_answers": 13,
+      "empty_percentage": 27.083333333333332
+    }
+  }
+}

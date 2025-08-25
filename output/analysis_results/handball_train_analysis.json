@@ -1,0 +1,85 @@
+{
+  "sport": "HANDBALL",
+  "sport_value": "handball",
+  "split": "train",
+  "analysis_timestamp": "2025-08-24T18:22:14.365431",
+  "overview": {
+    "total_examples": 488,
+    "unique_contexts": 219,
+    "unique_questions": 462,
+    "questions_without_answers": 221,
+    "percentage_without_answers": 45.28688524590164
+  },
+  "length_distributions": {
+    "context": {
+      "count": 488,
+      "mean": 30.633196721311474,
+      "median": 33.0,
+      "min": 1,
+      "max": 48,
+      "std": 12.03302680306447
+    },
+    "question": {
+      "count": 488,
+      "mean": 8.569672131147541,
+      "median": 8.0,
+      "min": 3,
+      "max": 26,
+      "std": 3.1019663077585524
+    },
+    "answer": {
+      "count": 488,
+      "mean": 0.9979508196721312,
+      "median": 1.0,
+      "min": 0,
+      "max": 14,
+      "std": 1.3959821963991026,
+      "empty_count": 221,
+      "empty_percentage": 45.28688524590164
+    }
+  },
+  "question_types": {
+    "how": {
+      "count": 84,
+      "percentage": 17.21311475409836,
+      "empty_answers": 40,
+      "empty_percentage": 47.61904761904761
+    },
+    "what": {
+      "count": 229,
+      "percentage": 46.92622950819672,
+      "empty_answers": 120,
+      "empty_percentage": 52.40174672489083
+    },
+    "where": {
+      "count": 17,
+      "percentage": 3.483606557377049,
+      "empty_answers": 3,
+      "empty_percentage": 17.647058823529413
+    },
+    "when": {
+      "count": 58,
+      "percentage": 11.885245901639344,
+      "empty_answers": 9,
+      "empty_percentage": 15.517241379310345
+    },
+    "none": {
+      "count": 72,
+      "percentage": 14.754098360655737,
+      "empty_answers": 35,
+      "empty_percentage": 48.61111111111111
+    },
+    "who": {
+      "count": 23,
+      "percentage": 4.713114754098361,
+      "empty_answers": 12,
+      "empty_percentage": 52.17391304347826
+    },
+    "which": {
+      "count": 5,
+      "percentage": 1.0245901639344261,
+      "empty_answers": 2,
+      "empty_percentage": 40.0
+    }
+  }
+}
