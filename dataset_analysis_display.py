@@ -302,6 +302,87 @@ def display_question_type_table(reader: DatasetAnalysisReader):
     print(pivot_df.to_string(float_format="%.0f"))
 
 
+def display_question_type_latex(reader: DatasetAnalysisReader):
+    """Display question type statistics as a LaTeX table."""
+    print("\n" + "=" * 80)
+    print("❓ QUESTION TYPE ANALYSIS - LATEX TABLE")
+    print("=" * 80)
+
+    question_df = reader.get_question_type_statistics()
+
+    if question_df.empty:
+        print("❌ No question type data available")
+        return
+
+    # Pivot the data to create a wide format table
+    pivot_df = question_df.pivot(
+        index="sport", columns="question_type", values="count"
+    ).fillna(0)
+
+    # Add total column
+    pivot_df["total"] = pivot_df.sum(axis=1)
+
+    # Sort by sport name
+    pivot_df = pivot_df.sort_index(ascending=True)
+
+    # Get question types (excluding 'total')
+    question_types = [col for col in pivot_df.columns if col != "total"]
+    
+    # Create LaTeX table
+    latex_table = []
+    latex_table.append("\\begin{table}[htb]")
+    latex_table.append("\\centering\\footnotesize")
+    latex_table.append("\\caption{Question Type Distribution by Sport}")
+    latex_table.append("\\label{tab:question-types}")
+    
+    # Create column specification - sport + question types + total
+    col_spec = "l" + "r" * len(question_types) + "r"
+    latex_table.append(f"\\begin{{tabular}}{{{col_spec}}}")
+    latex_table.append("\\toprule")
+    
+    # Create header row
+    header = ["Sport"] + [qtype.replace("_", "\\_") for qtype in question_types] + ["Total"]
+    latex_table.append(" & ".join(header) + " \\\\")
+    latex_table.append("\\midrule")
+
+    # Add data rows
+    for sport_name in pivot_df.index:
+        row_data = [sport_name.replace("_", "\\_")]  # Escape underscores for LaTeX
+        
+        # Add question type counts
+        for qtype in question_types:
+            count = int(pivot_df.loc[sport_name, qtype])
+            row_data.append(f"{count:,}" if count > 0 else "0")
+        
+        # Add total
+        total = int(pivot_df.loc[sport_name, "total"])
+        row_data.append(f"\\textbf{{{total:,}}}")
+        
+        latex_table.append(" & ".join(row_data) + " \\\\")
+
+    # Add totals row
+    latex_table.append("\\midrule")
+    totals_row = ["\\textbf{Total}"]
+    
+    # Calculate column totals
+    for qtype in question_types:
+        col_total = int(pivot_df[qtype].sum())
+        totals_row.append(f"\\textbf{{{col_total:,}}}")
+    
+    # Grand total
+    grand_total = int(pivot_df["total"].sum())
+    totals_row.append(f"\\textbf{{{grand_total:,}}}")
+    
+    latex_table.append(" & ".join(totals_row) + " \\\\")
+
+    latex_table.append("\\bottomrule")
+    latex_table.append("\\end{tabular}")
+    latex_table.append("\\end{table}")
+
+    # Print the LaTeX table
+    print("\n".join(latex_table))
+
+
 def display_sport_comparison(reader: DatasetAnalysisReader, sports: List[str]):
     """Display detailed comparison between specific sports."""
     print("\n" + "=" * 80)
@@ -402,6 +483,7 @@ def main():
         display_overview_table(reader)
         display_overview_latex(reader)
         display_question_type_table(reader)
+        display_question_type_latex(reader)
         display_error_summary(reader)
 
     print("\n" + "=" * 80)
