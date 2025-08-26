@@ -30,7 +30,9 @@ class NumpyEncoder(json.JSONEncoder):
         return super().default(obj)
 
 
-def analyze_general_dataset(dataset_type: Dataset, split: DatasetSplit = DatasetSplit.TRAIN):
+def analyze_general_dataset(
+    dataset_type: Dataset, split: DatasetSplit = DatasetSplit.TRAIN
+):
     """
     Analyze a specific general dataset (SQuAD2, DuoRC, AdvQA) and return comprehensive results.
 
@@ -146,12 +148,14 @@ def generate_comprehensive_analysis_general_datasets(
             "datasets_analyzed": [dataset.name for dataset in datasets_to_analyze],
         },
         "files_generated": [
-            f"{dataset.name.lower()}_{split.value}_analysis.json" 
+            f"{dataset.name.lower()}_{split.value}_analysis.json"
             for dataset in datasets_to_analyze
         ],
     }
 
-    summary_filepath = os.path.join(output_dir, f"analysis_summary_general_{split.value}.json")
+    summary_filepath = os.path.join(
+        output_dir, f"analysis_summary_general_{split.value}.json"
+    )
     with open(summary_filepath, "w", encoding="utf-8") as f:
         json.dump(summary_data, f, indent=2, ensure_ascii=False, cls=NumpyEncoder)
 
@@ -377,12 +381,14 @@ def print_analysis_summary(summary_data):
 
 
 # Run the analysis
-generate_comprehensive_analysis(
-    output_dir="output/analysis_results", split=DatasetSplit.TRAIN
-)
+# generate_comprehensive_analysis(
+#    output_dir="output/analysis_results", split=DatasetSplit.TRAIN
+# )
 
 # Run the general datasets analysis
 # Uncomment the line below to analyze SQuAD2, DuoRC, and AdvQA datasets
-# generate_comprehensive_analysis_general_datasets(
-#     output_dir="output/analysis_results_general", split=DatasetSplit.TRAIN
-# )
+generate_comprehensive_analysis_general_datasets(
+    output_dir="output/analysis_results",
+    split=DatasetSplit.TRAIN,
+    datasets_to_analyze=[Dataset.SQuAD2, Dataset.DuoRC, Dataset.AdvQA],
+)

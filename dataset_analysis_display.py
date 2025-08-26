@@ -327,52 +327,59 @@ def display_question_type_latex(reader: DatasetAnalysisReader):
 
     # Get question types (excluding 'total')
     question_types = [col for col in pivot_df.columns if col != "total"]
-    
+
     # Create LaTeX table
     latex_table = []
     latex_table.append("\\begin{table}[htb]")
     latex_table.append("\\centering\\footnotesize")
     latex_table.append("\\caption{Question Type Distribution by Sport}")
     latex_table.append("\\label{tab:question-types}")
-    
+
     # Create column specification - sport + question types + total
-    col_spec = "l" + "r" * len(question_types) + "r"
+    col_spec = "rl" + "r" * len(question_types) + "r"
     latex_table.append(f"\\begin{{tabular}}{{{col_spec}}}")
     latex_table.append("\\toprule")
-    
+
     # Create header row
-    header = ["Sport"] + [qtype.replace("_", "\\_") for qtype in question_types] + ["Total"]
+    header = (
+        ["& Sport"]
+        + [qtype.replace("_", "\\_") for qtype in question_types]
+        + ["Total"]
+    )
     latex_table.append(" & ".join(header) + " \\\\")
     latex_table.append("\\midrule")
 
     # Add data rows
-    for sport_name in pivot_df.index:
-        row_data = [sport_name.replace("_", "\\_")]  # Escape underscores for LaTeX
-        
+    for idx, sport_name in enumerate(pivot_df.index, start=0):
+        row_data = [
+            f"{idx}",
+            sport_name.replace("_", "").lower(),
+        ]  # Escape underscores for LaTeX
+
         # Add question type counts
         for qtype in question_types:
             count = int(pivot_df.loc[sport_name, qtype])
             row_data.append(f"{count:,}" if count > 0 else "0")
-        
+
         # Add total
         total = int(pivot_df.loc[sport_name, "total"])
         row_data.append(f"\\textbf{{{total:,}}}")
-        
+
         latex_table.append(" & ".join(row_data) + " \\\\")
 
     # Add totals row
     latex_table.append("\\midrule")
     totals_row = ["\\textbf{Total}"]
-    
+
     # Calculate column totals
     for qtype in question_types:
         col_total = int(pivot_df[qtype].sum())
         totals_row.append(f"\\textbf{{{col_total:,}}}")
-    
+
     # Grand total
     grand_total = int(pivot_df["total"].sum())
     totals_row.append(f"\\textbf{{{grand_total:,}}}")
-    
+
     latex_table.append(" & ".join(totals_row) + " \\\\")
 
     latex_table.append("\\bottomrule")

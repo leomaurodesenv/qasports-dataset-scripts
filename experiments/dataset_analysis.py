@@ -198,61 +198,62 @@ def analyze_dataset_overview(dataset: AbstactDataset):
     }
 
 
-# Model setup
-# DATASET = Dataset.QASports
-# SPORT = Sports.SKIING
-# SPLIT = DatasetSplit.TRAIN
-parser = argparse.ArgumentParser(description="Run document reader experiments.")
-parser.add_argument(
-    "--dataset",
-    type=str,
-    default="QASports",
-    choices=[attr.name for attr in Dataset],
-    help="Dataset to use for the experiment.",
-)
+if __name__ == "__main__":
+    # Model setup
+    # DATASET = Dataset.QASports
+    # SPORT = Sports.SKIING
+    # SPLIT = DatasetSplit.TRAIN
+    parser = argparse.ArgumentParser(description="Run document reader experiments.")
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="QASports",
+        choices=[attr.name for attr in Dataset],
+        help="Dataset to use for the experiment.",
+    )
 
-parser.add_argument(
-    "--sport",
-    type=str,
-    default="ALL",
-    choices=[attr.name for attr in Sports],
-    help="Sport to filter for QASports dataset.",
-)
+    parser.add_argument(
+        "--sport",
+        type=str,
+        default="ALL",
+        choices=[attr.name for attr in Sports],
+        help="Sport to filter for QASports dataset.",
+    )
 
-parser.add_argument(
-    "--split",
-    type=str,
-    default="TRAIN",
-    choices=[attr.name for attr in DatasetSplit],
-    help="Dataset split to use (train, validation, test).",
-)
+    parser.add_argument(
+        "--split",
+        type=str,
+        default="TRAIN",
+        choices=[attr.name for attr in DatasetSplit],
+        help="Dataset split to use (train, validation, test).",
+    )
 
-args = parser.parse_args()
+    args = parser.parse_args()
 
-DATASET = Dataset[args.dataset]
-SPORT = Sports[args.sport]
-SPLIT = DatasetSplit[args.split]
-print(f"Dataset: {DATASET} // Sport: {SPORT} // Split: {SPLIT}")
+    DATASET = Dataset[args.dataset]
+    SPORT = Sports[args.sport]
+    SPLIT = DatasetSplit[args.split]
+    print(f"Dataset: {DATASET} // Sport: {SPORT} // Split: {SPLIT}")
 
-# Get the dataset
-dataset = dataset_switch(
-    choice=DATASET, sport=SPORT, split=SPLIT, remove_empty_answers=False
-)
+    # Get the dataset
+    dataset = dataset_switch(
+        choice=DATASET, sport=SPORT, split=SPLIT, remove_empty_answers=False
+    )
 
-# Perform comprehensive analysis
-print("\n🔍 Analyzing dataset...")
+    # Perform comprehensive analysis
+    print("\n🔍 Analyzing dataset...")
 
-# Overall statistics
-overview_stats = analyze_dataset_overview(dataset)
-print("Overall statistics")
-print(overview_stats)
+    # Overall statistics
+    overview_stats = analyze_dataset_overview(dataset)
+    print("Overall statistics")
+    print(overview_stats)
 
-# Length distributions
-length_stats = analyze_length_distributions(dataset)
-print("\nLength distributions")
-print(length_stats)
+    # Length distributions
+    length_stats = analyze_length_distributions(dataset)
+    print("\nLength distributions")
+    print(length_stats)
 
-# Question type analysis
-question_type_stats = analyze_question_types(dataset)
-print("\nQuestion type analysis")
-print(question_type_stats)
+    # Question type analysis
+    question_type_stats = analyze_question_types(dataset)
+    print("\nQuestion type analysis")
+    print(question_type_stats)
