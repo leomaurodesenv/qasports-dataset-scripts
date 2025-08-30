@@ -137,5 +137,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use QASports in your research, please cite our paper:
 
 ```bibtex
-# paper submitted, under review
+@inproceedings{jardim:2023:qasports-dataset,
+    author={Pedro Calciolari Jardim and Leonardo Mauro Pereira Moraes and Cristina Dutra Aguiar},
+    title = {{QASports}: A Question Answering Dataset about Sports},
+    booktitle = {Proceedings of the Brazilian Symposium on Databases: Dataset Showcase Workshop},
+    address = {Belo Horizonte, MG, Brazil},
+    url = {https://github.com/leomaurodesenv/qasports-dataset-scripts},
+    publisher = {Brazilian Computer Society},
+    pages = {1-12},
+    year = {2023}
+}
 ```
