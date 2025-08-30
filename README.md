@@ -1,4 +1,4 @@
-# 📄 QASports2: Question Answering Dataset about Sports
+# 📄 QASports2: Question-Answering Dataset about Sports
 
 [![GitHub](https://img.shields.io/static/v1?label=Code&message=GitHub&color=blue&style=flat-square)](https://github.com/leomaurodesenv/qasports-dataset-scripts)
 [![MIT license](https://img.shields.io/static/v1?label=License&message=MIT&color=blue&style=flat-square)](LICENSE)
@@ -12,11 +12,9 @@ QASports is a comprehensive dataset featuring over **1 million question-answer-c
 
 ## 📚 Research Paper
 
-**Pedro Calciolari Jardim, Leonardo Mauro Pereira Moraes, and Cristina Dutra Aguiar.** [QASports: A Question Answering Dataset about Sports](https://doi.org/10.5753/dsw.2023.233602). In Proceedings of the Brazilian Symposium on Databases: Dataset Showcase Workshop, pages 1-12, Belo Horizonte, Minas Gerais, Brazil, 2023.
-
 ### Abstract
 
-Sport is one of the most popular and revenue-generating forms of entertainment. Therefore, analyzing data related to this domain introduces several opportunities for Question Answering (QA) systems, such as supporting tactical decision-making. But, to develop and evaluate QA systems, researchers and developers need datasets that contain questions and their corresponding answers. In this paper, we focus on this issue. We propose QASports, the first large sports question answering dataset for extractive answer questions. QASports contains more than 1.5 million triples of questions, answers, and context about three popular sports: soccer, American football, and basketball. We describe the QASports processes of data collection and questions and answers generation. We also describe the characteristics of the QASports data. Furthermore, we analyze the sources used to obtain raw data and investigate the usability of QASports by issuing "wh-queries". Moreover, we describe scenarios for using QASports, highlighting its importance for training and evaluating QA systems.
+Sport is an engaging topic that is quickly evolving due to its growing popularity and revenue potential. This theme introduces several opportunities for question-answering (QA) systems, such as supporting tactical decision-making. Nevertheless, these QA systems require expert, specialized datasets and models. To advance the field of sports question-answering, we firstly present QASports2, a novel and significantly expanded dataset. QASports2 compiles information from 20 different wiki sports sources, resulting in over 1 million context-question-answer tuples. Subsequently, we introduce a data labeling validation algorithm that leverages both cluster sampling and large language models (LLMs). To corroborate the LLM results, we conducted a detailed manual review to ensure the labeling was accurate. We found Qwen2 to have the closest LLM results when compared to human labeling, reaching 83.9% question and 87.5% answer accuracy. Additionally, we conduct 399 comparative analysis of language models on QASports2 to evaluate their effectiveness as document reader and retriever models. We highlight the best models, BM25 and MiniLM which obtained 90.8% recall@20 and 93.4% f-score, respectively. Besides, this work outlines different aspects and applications this real-world sports data.
 
 ## 🚀 Quick Start
 
@@ -81,10 +79,10 @@ uv run -m src.extracting_context.run
 uv run -m src.question_answer.run
 uv run -m src.question_answer.run_huggingface  # Optional
 
-# 6. Sampling: Select representative questions
+# 6. Sampling: Select representative questions (~1h 30 minutes)
 uv run -m src.sampling.run
 
-# 7. LLM Labeling: Label samples using LLMs (~1h 30 minutes)
+# 7. LLM Labeling: Label samples using LLMs (~91 hours)
 uv run -m src.labeling_llm.run
 ```
 
@@ -95,7 +93,7 @@ This repository includes experimental frameworks for evaluating QA systems using
 ### Document Retriever Experiments
 
 ```bash
-# Run document retriever experiments
+# Run document retriever experiments (~24 days)
 uv run -m experiments.doc_retriever --help
 
 # Example usage
@@ -105,7 +103,7 @@ uv run -m experiments.doc_retriever --model BM25 --num_k 3
 ### Document Reader Experiments
 
 ```bash
-# Run document reader experiments
+# Run document reader experiments (~37 hours)
 uv run -m experiments.doc_reader --help
 
 # Example usage

@@ -109,7 +109,7 @@ def generate_wiki_pages() -> list:
         {
             "url": "https://thoroughbred-racing.fandom.com/wiki/Special:AllPages",
             "url_base": "https://thoroughbred-racing.fandom.com",
-            "sport_name": "horse_racing",
+            "sport_name": "horseracing",
         },
         {
             "url": "https://f1.fandom.com/wiki/Special:AllPages",
