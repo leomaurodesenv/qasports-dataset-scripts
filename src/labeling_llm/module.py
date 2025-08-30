@@ -5,16 +5,16 @@ import ast
 import torch
 import pandas as pd
 from tqdm import tqdm
+from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Constants
 MODEL_SHORT_NAME = "qwen"
-MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
+MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 # Sample of models
-#   "Qwen/Qwen2.5-3B-Instruct"
 #   "Qwen/Qwen2.5-7B-Instruct"
-#   "Qwen/Qwen2.5-14B-Instruct"
-#   "Qwen/Qwen2.5-72B-Instruct"
+#   "mistralai/Mistral-7B-Instruct-v0.3"
+#   "meta-llama/Llama-3.1-8B-Instruct"
 
 # Loading LLM
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
@@ -137,6 +137,7 @@ def labeling_from_file(input_file: str, output_file: str, test: bool = False):
     if test:
         df = df.head(5)
     df = labeling(df)
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_file, index=False)
     print(df)
     print(f"Saved {len(df)} samples to {output_file}")

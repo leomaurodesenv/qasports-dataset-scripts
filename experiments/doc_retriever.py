@@ -50,8 +50,8 @@ args = parser.parse_args()
 NUM_K = args.num_k
 DATASET = Dataset[args.dataset]
 DOC_RETRIEVER = DocRetriever[args.model]
-SPORT = Sports[args.sport].value
-print(f"Dataset: {DATASET} // Sport: {SPORT}")
+SPORT = Sports[args.sport]
+print(f"Dataset: {DATASET} // Sport: {SPORT.value}")
 print(f"Model: {DOC_RETRIEVER} // Top-K: {NUM_K}")
 
 

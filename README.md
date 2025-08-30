@@ -118,6 +118,14 @@ uv run -m experiments.doc_reader --model RoBERTa --dataset SQuAD
 - **Question Types**: Extractive QA, Wh-questions
 - **Sports Covered**: Football, American Football, Basketball, Cricket, +15 Sports
 
+```bash
+# Run dataset general analysis
+uv run -m experiments.dataset_analysis --help
+
+# Example usage
+uv run -m experiments.dataset_analysis --dataset QASports --sport RUGBY
+```
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
