@@ -1,0 +1,9 @@
+Dataset: Dataset.QASports // Sport: all
+Model: DocRetriever.DPR // Top-K: 20
+## QASports Dataset (validation, non-empty=True) ##
+Columns: Index(['qa_id', 'question', 'answer', 'context', 'context_id', 'context_url',
+       'context_title', 'context_categories'],
+      dtype='object')
+Rows: 68820
+Retriever: <haystack.nodes.retriever.dense.DensePassageRetriever object at 0x74e684168820>
+{'Retriever': {'recall_multi_hit': 0.6326527543901852, 'recall_single_hit': 0.6326527543901852, 'precision': 0.06674905603831498, 'map': 0.37075714400420723, 'mrr': 0.3756206478598743, 'ndcg': 0.42198032517573897}}
